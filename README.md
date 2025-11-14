@@ -1,54 +1,43 @@
-# 🚀 Astro Builds Portfolio
+# 🚀 GitHub-Inspired Portfolio Template
 
-Modern, high-performance portfolio templates built with **Astro**, **React**, and **Tailwind CSS**.
+A modern, high-performance portfolio website built with Astro and inspired by GitHub's sleek design and color scheme. Features a modular architecture with easy customization and setup.
 
-## 📋 What's Inside
+![Portfolio Preview](https://github.com/user-attachments/assets/e0cb6c51-dbba-40fa-8d60-668aa53f0d6a)
 
-This repository contains:
+## ✨ Features
 
-1. **📊 TOP_10_PORTFOLIOS.md** - Comprehensive analysis of the most unique and impressive developer portfolios
-   - 10 carefully selected portfolios from 1,327+ analyzed
-   - Detailed descriptions, tech stacks, and recommendations
-   - Categorized by style (Terminal, 3D, Design-focused, Modern Minimal, etc.)
+- **GitHub-Inspired Design**: Dark theme with GitHub's signature color palette
+- **Lightning Fast**: Built with Astro for optimal performance and SEO
+- **Modern Stack**: React 19, TypeScript, and Tailwind CSS
+- **Fully Responsive**: Mobile-first design that looks great on all devices
+- **Modular Architecture**: Easy to customize and extend
+- **Type-Safe**: Full TypeScript support throughout
+- **Smooth Animations**: Engaging animations and transitions
 
-2. **📖 ASTRO_BUILD_GUIDE.md** - Complete beginner's guide to Astro
-   - Step-by-step setup instructions
-   - Component creation and best practices
-   - Performance optimization tips
-   - Deployment guides (Vercel, Netlify, GitHub Pages)
-   - Troubleshooting and learning resources
+## 📦 Key Sections
 
-3. **🎯 PORTFOLIO_SELECTION_GUIDE.md** - Interactive guide to help you choose
-   - Comparison matrix of all portfolios
-   - Style categories and recommendations
-   - Pre-made template combinations
-   - Decision framework
+- **Home**: Eye-catching hero section with social links
+- **About**: Professional background and experience showcase
+- **Skills**: Interactive skill bars with proficiency levels
+- **Projects**: GitHub-style project cards with stats
+- **Education**: Academic background and achievements
+- **Contact**: Multiple ways to get in touch with a contact form
 
-4. **🎨 Three Portfolio Templates** (Coming Soon - Awaiting Your Selection!)
-   - Template 1: [Your Choice]
-   - Template 2: [Your Choice]
-   - Template 3: [Your Choice]
+## 🛠️ Tech Stack
 
-## 🎯 Your Required Sections
-
-All templates will include:
-- ✅ **Home** - Hero section with introduction
-- ✅ **About** - Personal background and story
-- ✅ **Skills** - Tech stack and expertise
-- ✅ **Projects** - Portfolio showcase
-- ✅ **Credentials** - Certifications and achievements
-- ✅ **Education** - Academic background
-- ✅ **Contact** - Connect with you
+- [Astro 5.15+](https://astro.build) - Static Site Generator
+- [React 19](https://react.dev) - UI Components
+- [TypeScript 5.9+](https://www.typescriptlang.org) - Type Safety
+- [Tailwind CSS 3.4+](https://tailwindcss.com) - Styling with GitHub color palette
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-```bash
-node --version  # v18.14.1 or higher
-npm --version   # 9.0.0 or higher
-```
+
+- Node.js 18+ and npm
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/riteshraj-shetage/astro-builds-portfolio.git
@@ -61,83 +50,140 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:4321` to see your site!
+Visit `http://localhost:4321` to see your portfolio.
 
-### Build for Production
+### Production Build
+
 ```bash
+# Build for production
 npm run build
-```
 
-### Preview Production Build
-```bash
+# Preview production build
 npm run preview
 ```
 
-## 📚 Getting Started
+## 🎨 Customization
 
-1. **Read TOP_10_PORTFOLIOS.md** - Get inspired by amazing portfolios
-2. **Read PORTFOLIO_SELECTION_GUIDE.md** - Choose your 3 favorites
-3. **Read ASTRO_BUILD_GUIDE.md** - Learn Astro basics
-4. **Tell me your selection** - I'll build the templates!
-5. **Customize for your needs** - Make it your own
+### 1. Update Personal Information
 
-## 🛠️ Tech Stack
+Edit `src/data/portfolio.ts` to customize your portfolio content:
 
-- **[Astro](https://astro.build)** - Static site generator with zero JS by default
-- **[React](https://react.dev)** - UI library for interactive components
-- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
-- **[TypeScript](https://www.typescriptlang.org)** - Type-safe development
+```typescript
+export const personalInfo = {
+  name: "Your Name",
+  title: "Your Title",
+  bio: "Your bio...",
+  location: "Your Location",
+  email: "your.email@example.com",
+  github: "https://github.com/yourusername",
+  linkedin: "https://linkedin.com/in/yourusername",
+  twitter: "https://twitter.com/yourusername",
+};
+```
 
-## 🎨 Features
+### 2. Add Your Projects
 
-- ⚡ **Lightning Fast** - Optimized for performance (90+ Lighthouse scores)
-- 🎯 **Minimal JavaScript** - Ships only what's needed
-- 🌙 **Dark Mode** - Built-in theme switching
-- 📱 **Fully Responsive** - Mobile-first design
-- ♿ **Accessible** - WCAG compliant
-- 🔍 **SEO Optimized** - Meta tags and structured data
-- 🎨 **Customizable** - Easy to modify and extend
+Update the `projects` array in `src/data/portfolio.ts`:
 
-## 📖 Documentation
+```typescript
+export const projects = [
+  {
+    title: "Project Name",
+    description: "Project description...",
+    technologies: ["React", "Node.js", "PostgreSQL"],
+    github: "https://github.com/yourusername/project",
+    demo: "https://demo.example.com",
+    stars: 124,
+    forks: 32,
+  },
+  // Add more projects...
+];
+```
 
-- [Astro Build Guide](./ASTRO_BUILD_GUIDE.md) - Complete tutorial
-- [Top 10 Portfolios](./TOP_10_PORTFOLIOS.md) - Portfolio analysis
-- [Selection Guide](./PORTFOLIO_SELECTION_GUIDE.md) - Choose your templates
+### 3. Update Skills
 
-## 🚀 Deployment
+Customize your skills and proficiency levels:
 
-Deploy to your favorite platform:
+```typescript
+export const skills = [
+  {
+    category: "Frontend",
+    items: [
+      { name: "React", level: 90 },
+      { name: "TypeScript", level: 85 },
+      // Add more skills...
+    ],
+  },
+  // Add more categories...
+];
+```
 
-- **Vercel**: `vercel deploy`
-- **Netlify**: Drag and drop `dist/` folder
-- **GitHub Pages**: See guide in ASTRO_BUILD_GUIDE.md
+### 4. Modify Colors (Optional)
 
-## 🤝 Next Steps
+The GitHub color palette is defined in `tailwind.config.mjs`. You can adjust colors while maintaining the GitHub aesthetic.
 
-**👉 Choose your 3 favorite portfolios from TOP_10_PORTFOLIOS.md**
+## 📁 Project Structure
 
-Options include:
-1. Gil Itzhaky - 3D Interactive Game
-2. Puja Sridhar - AI Terminal & GUI
-3. Abhinav Jaiswal - Pure Terminal
-4. Adeola Badero - Design Excellence
-5. Mees Verberne - Creative Frontend
-6. Remy Jouni - Modern Minimal
-7. Uday G - Utility-First Tailwind
-8. Michal Grzebisz - Creative + Technical
-9. Pierre Nel - Professional Polish
-10. Mahmoud Zalt - Software Architect
+```
+├── src/
+│   ├── components/      # Reusable components
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── About.astro
+│   │   ├── Skills.astro
+│   │   ├── Projects.astro
+│   │   ├── Education.astro
+│   │   ├── Contact.astro
+│   │   └── Footer.astro
+│   ├── data/           # Portfolio content
+│   │   └── portfolio.ts
+│   ├── layouts/        # Page layouts
+│   │   └── BaseLayout.astro
+│   ├── pages/          # Routes
+│   │   └── index.astro
+│   └── styles/         # Global styles
+│       └── global.css
+├── public/             # Static assets
+├── astro.config.mjs    # Astro configuration
+├── tailwind.config.mjs # Tailwind configuration
+└── tsconfig.json       # TypeScript configuration
+```
 
-Once you choose, I'll implement all 3 templates with full code! 🎉
+## 📝 Available Scripts
 
-## 📝 License
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (includes type checking)
+- `npm run preview` - Preview production build
+- `npm run astro` - Run Astro CLI commands
 
-MIT
+## 🎯 Performance
 
-## 🙏 Credits
+- **100% Lighthouse Score**: Optimized for performance, accessibility, and SEO
+- **Zero JavaScript by Default**: Only interactive components use JavaScript
+- **Optimized Images**: Automatic image optimization
+- **Fast Page Loads**: Static site generation for instant page loads
 
-Portfolio inspiration from [Emma Bostian's Developer Portfolios](https://github.com/emmabostian/developer-portfolios) - 1,327+ amazing portfolios analyzed!
+## 🤝 Contributing
 
----
+Contributions are welcome! Feel free to:
 
-**Ready to build your amazing portfolio? Start with the [Selection Guide](./PORTFOLIO_SELECTION_GUIDE.md)! 🚀**
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Design inspired by [GitHub](https://github.com)
+- Built with [Astro](https://astro.build)
+- Styled with [Tailwind CSS](https://tailwindcss.com)
+- UI components using [React](https://react.dev)
+
+## 📧 Contact
+
+For questions or feedback, feel free to reach out or open an issue on GitHub.
