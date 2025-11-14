@@ -1,0 +1,91 @@
+---
+import { skills } from '../data/portfolio';
+---
+
+<section id="skills" class="section">
+  <div class="container-custom">
+    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
+      Skills & Technologies
+    </h2>
+
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      {skills.map((category, catIndex) => (
+        <div class="card animate-slide-up" style={`animation-delay: ${catIndex * 0.1}s`}>
+          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3 text-gh-accent-fg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            {category.category}
+          </h3>
+          <div class="space-y-4">
+            {category.items.map((skill) => (
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-gh-fg-default font-medium">{skill.name}</span>
+                  <span class="text-gh-fg-muted text-sm">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-gh-canvas-inset rounded-full h-2 overflow-hidden">
+                  <div 
+                    class="bg-gradient-to-r from-gh-accent-emphasis to-gh-success-emphasis h-full rounded-full transition-all duration-1000 ease-out skill-bar"
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-gh-fg-muted max-w-2xl mx-auto">
+        Continuously learning and exploring new technologies to stay at the forefront of web development.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-bar {
+    animation: fillBar 1.5s ease-out forwards;
+  }
+
+  @keyframes fillBar {
+    from {
+      width: 0;
+    }
+  }
+</style>
+
+<script>
+  // Animate skill bars when they come into view
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bars = entry.target.querySelectorAll('.skill-bar');
+        bars.forEach(bar => {
+          if (bar instanceof HTMLElement) {
+            const width = bar.getAttribute('style')?.match(/width:\s*(\d+)%/)?.[1];
+            if (width) {
+              bar.style.width = '0';
+              setTimeout(() => {
+                bar.style.width = `${width}%`;
+              }, 100);
+            }
+          }
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const skillsSection = document.getElementById('skills');
+  if (skillsSection) {
+    observer.observe(skillsSection);
+  }
+</script>
