@@ -6,38 +6,37 @@ export const personalInfo = {
   email: "your.email@example.com",
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourusername",
-  twitter: "https://twitter.com/yourusername",
 };
 
 export const skills = [
   {
     category: "Frontend",
     items: [
-      { name: "React", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Astro", level: 80 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "Next.js", level: 85 },
+      { name: "React" },
+      { name: "TypeScript" },
+      { name: "Astro" },
+      { name: "Tailwind CSS" },
+      { name: "Next.js" },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 80 },
-      { name: "PostgreSQL", level: 75 },
-      { name: "MongoDB", level: 70 },
-      { name: "REST APIs", level: 90 },
+      { name: "Node.js" },
+      { name: "Python" },
+      { name: "PostgreSQL" },
+      { name: "MongoDB" },
+      { name: "REST APIs" },
     ],
   },
   {
     category: "Tools & Others",
     items: [
-      { name: "Git", level: 90 },
-      { name: "Docker", level: 75 },
-      { name: "AWS", level: 70 },
-      { name: "CI/CD", level: 80 },
-      { name: "Linux", level: 85 },
+      { name: "Git" },
+      { name: "Docker" },
+      { name: "AWS" },
+      { name: "CI/CD" },
+      { name: "Linux" },
     ],
   },
 ];
@@ -112,5 +111,22 @@ export const experience = [
     period: "2020 - 2022",
     description: "Built scalable web applications and RESTful APIs. Improved application performance by 40%.",
     technologies: ["Python", "Django", "PostgreSQL", "Redis"],
+  },
+];
+
+export const credentials = [
+  {
+    title: "AWS Certified Solutions Architect",
+    issuer: "Amazon Web Services",
+    date: "2023",
+    credentialId: "AWS-12345",
+    description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
+  },
+  {
+    title: "Google Cloud Professional Developer",
+    issuer: "Google Cloud",
+    date: "2022",
+    credentialId: "GCP-67890",
+    description: "Certification validating proficiency in developing cloud-native applications on GCP.",
   },
 ];
