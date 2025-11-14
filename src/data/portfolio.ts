@@ -121,6 +121,8 @@ export const credentials = [
     date: "2023",
     credentialId: "AWS-12345",
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
+    certificateImage: "/certificate-placeholder.svg",
+    verificationUrl: "https://www.credly.com/badges/example-aws-badge",
   },
   {
     title: "Google Cloud Professional Developer",
@@ -128,5 +130,7 @@ export const credentials = [
     date: "2022",
     credentialId: "GCP-67890",
     description: "Certification validating proficiency in developing cloud-native applications on GCP.",
+    certificateImage: "/certificate-placeholder.svg",
+    verificationUrl: "https://www.credential.net/example-gcp-credential",
   },
 ];
