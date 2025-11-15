@@ -13,44 +13,131 @@
 
   body {
     @apply bg-gh-canvas-default text-gh-fg-default font-sans antialiased;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold text-gh-fg-default;
+    line-height: 1.25;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
   }
 
   a {
-    @apply text-gh-accent-fg hover:underline transition-colors;
+    @apply text-gh-accent-fg transition-colors;
+  }
+
+  a:hover {
+    @apply text-gh-accent-emphasis;
   }
 }
 
 @layer components {
   .section {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-32;
+  }
+
+  .section-alt {
+    @apply bg-gh-canvas-subtle;
   }
 
   .container-custom {
     @apply container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
   }
 
+  /* Button Styles - GitHub-inspired */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md font-medium transition-all duration-200;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-medium transition-all duration-200 no-underline;
+    line-height: 1.5;
   }
 
   .btn-primary {
-    @apply bg-gh-accent-emphasis text-gh-fg-onEmphasis hover:bg-gh-accent-fg border border-gh-border-default;
+    @apply bg-gh-success-emphasis text-gh-fg-onEmphasis hover:bg-gh-success-fg border border-gh-success-emphasis shadow-sm;
+  }
+
+  .btn-primary:hover {
+    @apply no-underline shadow-md;
   }
 
   .btn-secondary {
-    @apply bg-gh-canvas-subtle text-gh-fg-default hover:bg-gh-border-default border border-gh-border-default;
+    @apply bg-gh-canvas-subtle text-gh-fg-default border border-gh-border-default;
   }
 
+  .btn-secondary:hover {
+    @apply no-underline border-gh-fg-muted;
+    background-color: #161b22;
+  }
+
+  /* Card Styles */
   .card {
-    @apply bg-gh-canvas-subtle border border-gh-border-default rounded-lg p-6 transition-all duration-200 hover:border-gh-border-muted;
+    @apply bg-gh-canvas-subtle border border-gh-border-default rounded-lg p-6 transition-all duration-300;
   }
 
+  .card:hover {
+    @apply border-gh-fg-muted shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  .card-highlight {
+    @apply card relative overflow-hidden;
+  }
+
+  .card-highlight::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gh-accent-emphasis to-gh-success-emphasis;
+  }
+
+  /* Skill & Technology Tags */
   .skill-tag {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm bg-gh-accent-subtle text-gh-accent-fg border border-gh-accent-muted;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm bg-gh-accent-subtle text-gh-accent-fg border border-gh-accent-muted transition-all duration-200;
+  }
+
+  .skill-tag:hover {
+    @apply bg-gh-accent-muted border-gh-accent-fg;
+  }
+
+  /* Section Headers */
+  .section-header {
+    @apply text-center mb-16;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gh-fg-default via-gh-accent-fg to-gh-fg-default bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gh-fg-muted max-w-2xl mx-auto;
+  }
+
+  /* Link Styles */
+  .link-hover {
+    @apply text-gh-fg-muted hover:text-gh-accent-fg transition-colors duration-200 no-underline;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-gh-border-default my-8;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium text-gh-fg-muted border border-gh-border-muted;
+    background-color: rgba(110, 118, 129, 0.1);
+  }
+
+  /* GitHub-style repo stats */
+  .repo-stat {
+    @apply inline-flex items-center gap-1 text-sm text-gh-fg-muted;
   }
 }
 
@@ -71,4 +158,16 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #484f58;
+}
+
+/* Selection */
+::selection {
+  background: rgba(56, 139, 253, 0.3);
+  color: #e6edf3;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid #2f81f7;
+  outline-offset: 2px;
 }

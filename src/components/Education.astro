@@ -2,18 +2,19 @@
 import { education } from '../data/portfolio';
 ---
 
-<section id="education" class="section bg-gh-canvas-subtle">
+<section id="education" class="section">
   <div class="container-custom">
-    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
-      Education
-    </h2>
+    <div class="section-header">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">Academic background and continuous learning journey</p>
+    </div>
 
     <div class="max-w-4xl mx-auto space-y-6">
       {education.map((edu, index) => (
-        <div class="card animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-gh-accent-subtle rounded-lg flex items-center justify-center border border-gh-accent-muted">
-              <svg class="w-6 h-6 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="card-highlight animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="flex items-start gap-6">
+            <div class="p-3 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted flex-shrink-0">
+              <svg class="w-8 h-8 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
@@ -21,15 +22,15 @@ import { education } from '../data/portfolio';
             </div>
 
             <div class="flex-1">
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                 <div>
                   <h3 class="text-xl font-semibold text-gh-fg-default mb-1">{edu.degree}</h3>
                   <p class="text-gh-accent-fg font-medium">{edu.institution}</p>
                 </div>
-                <div class="flex flex-col items-start md:items-end gap-1 mt-2 md:mt-0">
-                  <span class="text-gh-fg-muted text-sm">{edu.period}</span>
+                <div class="flex flex-col items-start md:items-end gap-2 mt-2 md:mt-0">
+                  <span class="badge">{edu.period}</span>
                   {edu.gpa && (
-                    <span class="text-gh-success-fg text-sm font-medium">GPA: {edu.gpa}</span>
+                    <span class="text-gh-success-fg text-sm font-semibold">GPA: {edu.gpa}</span>
                   )}
                 </div>
               </div>
@@ -43,12 +44,12 @@ import { education } from '../data/portfolio';
       ))}
     </div>
 
-    <div class="mt-12 text-center">
-      <div class="inline-flex items-center gap-3 px-6 py-3 bg-gh-canvas-subtle border border-gh-border-default rounded-lg">
-        <svg class="w-6 h-6 text-gh-success-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="mt-16 text-center">
+      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default">
+        <svg class="w-6 h-6 text-gh-success-fg animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <span class="text-gh-fg-muted">
+        <span class="text-gh-fg-muted text-sm md:text-base">
           Committed to continuous learning and professional development
         </span>
       </div>
