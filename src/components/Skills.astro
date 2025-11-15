@@ -2,21 +2,17 @@
 import { skills } from '../data/portfolio';
 
 // Devicon mapping for different technologies
-// Using devicon.dev icons - format: devicon-{name}-{style}
 const deviconMapping: Record<string, string> = {
-  // Frontend
   'React': 'devicon-react-original colored',
   'TypeScript': 'devicon-typescript-plain colored',
   'Astro': 'devicon-astro-plain colored',
   'Tailwind CSS': 'devicon-tailwindcss-original colored',
   'Next.js': 'devicon-nextjs-plain colored',
-  // Backend
   'Node.js': 'devicon-nodejs-plain colored',
   'Python': 'devicon-python-plain colored',
   'PostgreSQL': 'devicon-postgresql-plain colored',
   'MongoDB': 'devicon-mongodb-plain colored',
-  'REST APIs': 'devicon-fastapi-plain colored', // Using fastapi as REST API icon
-  // Tools
+  'REST APIs': 'devicon-fastapi-plain colored',
   'Git': 'devicon-git-plain colored',
   'Docker': 'devicon-docker-plain colored',
   'AWS': 'devicon-amazonwebservices-plain-wordmark colored',
@@ -24,30 +20,36 @@ const deviconMapping: Record<string, string> = {
   'Linux': 'devicon-linux-plain colored',
 };
 
-// Default icon class for technologies without specific icons
 const defaultIcon = 'devicon-code-plain';
 ---
 
 <section id="skills" class="section">
   <div class="container-custom">
-    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
-      Skills & Technologies
-    </h2>
+    <div class="section-header">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="section-subtitle">Tools and technologies I work with to build amazing products</p>
+    </div>
 
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
       {skills.map((category, catIndex) => (
-        <div class="card animate-slide-up" style={`animation-delay: ${catIndex * 0.1}s`}>
-          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3 text-gh-accent-fg">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-            {category.category}
-          </h3>
-          <div class="grid grid-cols-2 gap-4">
+        <div class="card-highlight animate-fade-in-up" style={`animation-delay: ${catIndex * 0.1}s`}>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted">
+              <svg class="w-6 h-6 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gh-fg-default">{category.category}</h3>
+          </div>
+          
+          <div class="space-y-3">
             {category.items.map((skill) => (
-              <div class="flex flex-col items-center text-center p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
-                <i class={`${deviconMapping[skill.name] || defaultIcon} text-4xl mb-2 group-hover:scale-110 transition-transform`}></i>
-                <span class="text-sm font-medium text-gh-fg-default">{skill.name}</span>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-subtle transition-all group">
+                <i class={`${deviconMapping[skill.name] || defaultIcon} text-3xl group-hover:scale-110 transition-transform`}></i>
+                <span class="text-sm font-medium text-gh-fg-default flex-1">{skill.name}</span>
+                <svg class="w-4 h-4 text-gh-success-fg opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
               </div>
             ))}
           </div>
@@ -55,10 +57,15 @@ const defaultIcon = 'devicon-code-plain';
       ))}
     </div>
 
-    <div class="mt-12 text-center">
-      <p class="text-gh-fg-muted max-w-2xl mx-auto">
-        Continuously learning and exploring new technologies to stay at the forefront of web development.
-      </p>
+    <div class="mt-16 text-center">
+      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default">
+        <svg class="w-6 h-6 text-gh-success-fg animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <p class="text-gh-fg-muted text-sm md:text-base">
+          Continuously learning and exploring new technologies
+        </p>
+      </div>
     </div>
   </div>
 </section>

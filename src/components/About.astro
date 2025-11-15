@@ -1,47 +1,81 @@
 ---
-import { personalInfo } from '../data/portfolio';
+import { personalInfo, experience } from '../data/portfolio';
 ---
 
-<section id="about" class="section bg-gh-canvas-subtle">
+<section id="about" class="section section-alt">
   <div class="container-custom">
-    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
-      About Me
-    </h2>
+    <div class="section-header">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Building the future, one commit at a time</p>
+    </div>
 
-    <div class="max-w-4xl mx-auto">
-      <div class="card mb-8 animate-slide-up">
-        <div class="flex items-start gap-4 mb-6">
-          <svg class="w-8 h-8 text-gh-accent-fg flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-          </svg>
-          <div>
-            <h3 class="text-2xl font-semibold mb-2">Who I Am</h3>
-            <p class="text-gh-fg-muted leading-relaxed">
+    <div class="max-w-5xl mx-auto space-y-8">
+      <!-- Main bio card -->
+      <div class="card-highlight animate-fade-in-up">
+        <div class="flex items-start gap-6">
+          <div class="p-3 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted flex-shrink-0">
+            <svg class="w-8 h-8 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-3 text-gh-fg-default">Who I Am</h3>
+            <p class="text-gh-fg-muted leading-relaxed text-lg">
               {personalInfo.bio}
             </p>
           </div>
         </div>
 
-        <div class="border-t border-gh-border-default pt-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="flex items-center gap-3">
+        <div class="divider"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex items-center gap-3 group">
+            <div class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors">
               <svg class="w-5 h-5 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span class="text-gh-fg-muted">{personalInfo.location}</span>
             </div>
-            <div class="flex items-center gap-3">
+            <span class="text-gh-fg-muted">{personalInfo.location}</span>
+          </div>
+          <div class="flex items-center gap-3 group">
+            <div class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors">
               <svg class="w-5 h-5 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <a href={`mailto:${personalInfo.email}`} class="text-gh-accent-fg hover:underline">
-                {personalInfo.email}
-              </a>
             </div>
+            <a href={`mailto:${personalInfo.email}`} class="link-hover">
+              {personalInfo.email}
+            </a>
           </div>
         </div>
       </div>
+
+      <!-- Experience Timeline -->
+      {experience && experience.length > 0 && (
+        <div class="space-y-6">
+          <h3 class="text-2xl font-semibold text-center mb-8">Professional Experience</h3>
+          <div class="space-y-4">
+            {experience.map((exp, index) => (
+              <div class="card animate-fade-in-up" style={`animation-delay: ${(index + 1) * 0.1}s`}>
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                  <div>
+                    <h4 class="text-xl font-semibold text-gh-fg-default">{exp.title}</h4>
+                    <p class="text-gh-accent-fg font-medium">{exp.company}</p>
+                  </div>
+                  <span class="badge mt-2 md:mt-0">{exp.period}</span>
+                </div>
+                <p class="text-gh-fg-muted mb-4">{exp.description}</p>
+                <div class="flex flex-wrap gap-2">
+                  {exp.technologies.map((tech) => (
+                    <span class="skill-tag text-xs">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </div>
 </section>
