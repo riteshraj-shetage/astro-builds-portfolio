@@ -12,31 +12,31 @@ export const skills = [
   {
     category: "Frontend",
     items: [
-      { name: "React" },
-      { name: "TypeScript" },
-      { name: "Astro" },
-      { name: "Tailwind CSS" },
-      { name: "Next.js" },
+      { name: "React", icon: "react" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Astro", icon: "astro" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
+      { name: "Next.js", icon: "nextdotjs" },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js" },
-      { name: "Python" },
-      { name: "PostgreSQL" },
-      { name: "MongoDB" },
-      { name: "REST APIs" },
+      { name: "Node.js", icon: "nodedotjs" },
+      { name: "Python", icon: "python" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "FastAPI", icon: "fastapi" },
     ],
   },
   {
     category: "Tools & Others",
     items: [
-      { name: "Git" },
-      { name: "Docker" },
-      { name: "AWS" },
-      { name: "CI/CD" },
-      { name: "Linux" },
+      { name: "Git", icon: "git" },
+      { name: "Docker", icon: "docker" },
+      { name: "AWS", icon: "amazonaws" },
+      { name: "GitHub Actions", icon: "githubactions" },
+      { name: "Linux", icon: "linux" },
     ],
   },
 ];
@@ -48,8 +48,8 @@ export const projects = [
     technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
     github: "https://github.com/yourusername/ecommerce",
     demo: "https://demo.example.com",
-    stars: 124,
-    forks: 32,
+    image: "/images/project-placeholder-1.svg",
+    status: "Active",
   },
   {
     title: "AI Code Assistant",
@@ -57,8 +57,8 @@ export const projects = [
     technologies: ["Python", "TensorFlow", "FastAPI", "React"],
     github: "https://github.com/yourusername/ai-assistant",
     demo: "https://ai-demo.example.com",
-    stars: 256,
-    forks: 48,
+    image: "/images/project-placeholder-2.svg",
+    status: "Active",
   },
   {
     title: "Task Management App",
@@ -66,8 +66,8 @@ export const projects = [
     technologies: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
     github: "https://github.com/yourusername/taskmanager",
     demo: "https://tasks.example.com",
-    stars: 89,
-    forks: 21,
+    image: "/images/project-placeholder-3.svg",
+    status: "In Development",
   },
   {
     title: "Portfolio Template",
@@ -75,8 +75,8 @@ export const projects = [
     technologies: ["Astro", "React", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/yourusername/portfolio-template",
     demo: "https://portfolio.example.com",
-    stars: 178,
-    forks: 45,
+    image: "/images/project-placeholder-4.svg",
+    status: "Active",
   },
 ];
 
@@ -121,7 +121,7 @@ export const credentials = [
     date: "2023",
     credentialId: "AWS-12345",
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
-    certificateImage: "/certificate-placeholder.svg",
+    certificateImage: "/images/certificate-placeholder.svg",
     verificationUrl: "https://www.credly.com/badges/example-aws-badge",
   },
   {
@@ -130,7 +130,7 @@ export const credentials = [
     date: "2022",
     credentialId: "GCP-67890",
     description: "Certification validating proficiency in developing cloud-native applications on GCP.",
-    certificateImage: "/certificate-placeholder.svg",
+    certificateImage: "/images/certificate-placeholder.svg",
     verificationUrl: "https://www.credential.net/example-gcp-credential",
   },
 ];
