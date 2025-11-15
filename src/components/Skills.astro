@@ -1,26 +1,5 @@
 ---
 import { skills } from '../data/portfolio';
-
-// Devicon mapping for different technologies
-const deviconMapping: Record<string, string> = {
-  'React': 'devicon-react-original colored',
-  'TypeScript': 'devicon-typescript-plain colored',
-  'Astro': 'devicon-astro-plain colored',
-  'Tailwind CSS': 'devicon-tailwindcss-original colored',
-  'Next.js': 'devicon-nextjs-plain colored',
-  'Node.js': 'devicon-nodejs-plain colored',
-  'Python': 'devicon-python-plain colored',
-  'PostgreSQL': 'devicon-postgresql-plain colored',
-  'MongoDB': 'devicon-mongodb-plain colored',
-  'REST APIs': 'devicon-fastapi-plain colored',
-  'Git': 'devicon-git-plain colored',
-  'Docker': 'devicon-docker-plain colored',
-  'AWS': 'devicon-amazonwebservices-plain-wordmark colored',
-  'CI/CD': 'devicon-githubactions-plain colored',
-  'Linux': 'devicon-linux-plain colored',
-};
-
-const defaultIcon = 'devicon-code-plain';
 ---
 
 <section id="skills" class="section">
@@ -44,8 +23,12 @@ const defaultIcon = 'devicon-code-plain';
           
           <div class="space-y-3">
             {category.items.map((skill) => (
-              <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-subtle transition-all group">
-                <i class={`${deviconMapping[skill.name] || defaultIcon} text-3xl group-hover:scale-110 transition-transform`}></i>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
+                <div class="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-7 h-7 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted flex items-center justify-center text-xs font-bold text-gh-accent-fg group-hover:bg-gh-accent-muted transition-colors">
+                    {skill.name.substring(0, 2).toUpperCase()}
+                  </div>
+                </div>
                 <span class="text-sm font-medium text-gh-fg-default flex-1">{skill.name}</span>
                 <svg class="w-4 h-4 text-gh-success-fg opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
@@ -69,6 +52,3 @@ const defaultIcon = 'devicon-code-plain';
     </div>
   </div>
 </section>
-
-<!-- Load Devicon CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
