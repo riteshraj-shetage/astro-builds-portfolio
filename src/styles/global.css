@@ -3,6 +3,52 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light mode colors */
+    --gh-canvas-default: #ffffff;
+    --gh-canvas-subtle: #f6f8fa;
+    --gh-canvas-inset: #f6f8fa;
+    --gh-canvas-overlay: #ffffff;
+    --gh-border-default: #d0d7de;
+    --gh-border-muted: #d8dee4;
+    --gh-border-subtle: #d8dee4;
+    --gh-fg-default: #1f2328;
+    --gh-fg-muted: #656d76;
+    --gh-fg-subtle: #6e7781;
+    --gh-fg-onEmphasis: #ffffff;
+    --gh-accent-fg: #0969da;
+    --gh-accent-emphasis: #0550ae;
+    --gh-accent-muted: rgba(84, 174, 255, 0.4);
+    --gh-accent-subtle: rgba(84, 174, 255, 0.15);
+    --gh-success-fg: #1a7f37;
+    --gh-success-emphasis: #116329;
+    --gh-success-muted: rgba(26, 127, 55, 0.4);
+    --gh-success-subtle: rgba(26, 127, 55, 0.15);
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --gh-canvas-default: #0d1117;
+    --gh-canvas-subtle: #161b22;
+    --gh-canvas-inset: #010409;
+    --gh-canvas-overlay: #161b22;
+    --gh-border-default: #30363d;
+    --gh-border-muted: #21262d;
+    --gh-border-subtle: #21262d;
+    --gh-fg-default: #e6edf3;
+    --gh-fg-muted: #7d8590;
+    --gh-fg-subtle: #6e7681;
+    --gh-fg-onEmphasis: #ffffff;
+    --gh-accent-fg: #2f81f7;
+    --gh-accent-emphasis: #1f6feb;
+    --gh-accent-muted: rgba(56, 139, 253, 0.4);
+    --gh-accent-subtle: rgba(56, 139, 253, 0.15);
+    --gh-success-fg: #3fb950;
+    --gh-success-emphasis: #238636;
+    --gh-success-muted: rgba(46, 160, 67, 0.4);
+    --gh-success-subtle: rgba(46, 160, 67, 0.15);
+  }
+
   * {
     @apply border-gh-border-default;
   }
@@ -14,6 +60,7 @@
   body {
     @apply bg-gh-canvas-default text-gh-fg-default font-sans antialiased;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -89,12 +136,7 @@
   }
 
   .card-highlight {
-    @apply card relative overflow-hidden;
-  }
-
-  .card-highlight::before {
-    content: '';
-    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gh-accent-emphasis to-gh-success-emphasis;
+    @apply card;
   }
 
   /* Skill & Technology Tags */

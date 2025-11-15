@@ -1,5 +1,5 @@
 ---
-import { personalInfo, experience } from '../data/portfolio';
+import { personalInfo } from '../data/portfolio';
 ---
 
 <section id="about" class="section section-alt">
@@ -51,31 +51,7 @@ import { personalInfo, experience } from '../data/portfolio';
         </div>
       </div>
 
-      <!-- Experience Timeline -->
-      {experience && experience.length > 0 && (
-        <div class="space-y-6">
-          <h3 class="text-2xl font-semibold text-center mb-8">Professional Experience</h3>
-          <div class="space-y-4">
-            {experience.map((exp, index) => (
-              <div class="card animate-fade-in-up" style={`animation-delay: ${(index + 1) * 0.1}s`}>
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div>
-                    <h4 class="text-xl font-semibold text-gh-fg-default">{exp.title}</h4>
-                    <p class="text-gh-accent-fg font-medium">{exp.company}</p>
-                  </div>
-                  <span class="badge mt-2 md:mt-0">{exp.period}</span>
-                </div>
-                <p class="text-gh-fg-muted mb-4">{exp.description}</p>
-                <div class="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <span class="skill-tag text-xs">{tech}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+
     </div>
   </div>
 </section>

@@ -5,36 +5,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        // GitHub-inspired color palette - Enhanced
+        // GitHub-inspired color palette - Enhanced with light mode support
         gh: {
           canvas: {
-            default: '#0d1117',
-            subtle: '#161b22',
-            inset: '#010409',
-            overlay: '#161b22',
+            default: 'var(--gh-canvas-default, #0d1117)',
+            subtle: 'var(--gh-canvas-subtle, #161b22)',
+            inset: 'var(--gh-canvas-inset, #010409)',
+            overlay: 'var(--gh-canvas-overlay, #161b22)',
           },
           border: {
-            default: '#30363d',
-            muted: '#21262d',
-            subtle: '#21262d',
+            default: 'var(--gh-border-default, #30363d)',
+            muted: 'var(--gh-border-muted, #21262d)',
+            subtle: 'var(--gh-border-subtle, #21262d)',
           },
           fg: {
-            default: '#e6edf3',
-            muted: '#7d8590',
-            subtle: '#6e7681',
-            onEmphasis: '#ffffff',
+            default: 'var(--gh-fg-default, #e6edf3)',
+            muted: 'var(--gh-fg-muted, #7d8590)',
+            subtle: 'var(--gh-fg-subtle, #6e7681)',
+            onEmphasis: 'var(--gh-fg-onEmphasis, #ffffff)',
           },
           accent: {
-            fg: '#2f81f7',
-            emphasis: '#1f6feb',
-            muted: 'rgba(56, 139, 253, 0.4)',
-            subtle: 'rgba(56, 139, 253, 0.15)',
+            fg: 'var(--gh-accent-fg, #2f81f7)',
+            emphasis: 'var(--gh-accent-emphasis, #1f6feb)',
+            muted: 'var(--gh-accent-muted, rgba(56, 139, 253, 0.4))',
+            subtle: 'var(--gh-accent-subtle, rgba(56, 139, 253, 0.15))',
           },
           success: {
-            fg: '#3fb950',
-            emphasis: '#238636',
-            muted: 'rgba(46, 160, 67, 0.4)',
-            subtle: 'rgba(46, 160, 67, 0.15)',
+            fg: 'var(--gh-success-fg, #3fb950)',
+            emphasis: 'var(--gh-success-emphasis, #238636)',
+            muted: 'var(--gh-success-muted, rgba(46, 160, 67, 0.4))',
+            subtle: 'var(--gh-success-subtle, rgba(46, 160, 67, 0.15))',
           },
           danger: {
             fg: '#f85149',
