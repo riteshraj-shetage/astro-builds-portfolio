@@ -117,12 +117,11 @@
   }
 
   .btn-secondary {
-    @apply bg-gh-canvas-subtle text-gh-fg-default border border-gh-border-default;
+    @apply bg-gh-canvas-subtle text-gh-fg-default border border-gh-border-default hover:bg-gh-canvas-inset hover:border-gh-accent-muted;
   }
 
   .btn-secondary:hover {
-    @apply no-underline border-gh-fg-muted;
-    background-color: #161b22;
+    @apply no-underline;
   }
 
   /* Card Styles */
