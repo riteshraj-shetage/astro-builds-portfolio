@@ -25,9 +25,12 @@ import { skills } from '../data/portfolio';
             {category.items.map((skill) => (
               <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
                 <div class="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <div class="w-7 h-7 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted flex items-center justify-center text-xs font-bold text-gh-accent-fg group-hover:bg-gh-accent-muted transition-colors">
-                    {skill.name.substring(0, 2).toUpperCase()}
-                  </div>
+                  <img 
+                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.icon}/${skill.icon}-original.svg`}
+                    alt={skill.name}
+                    class="w-7 h-7 devicon-img"
+                    data-icon={skill.icon}
+                  />
                 </div>
                 <span class="text-sm font-medium text-gh-fg-default flex-1">{skill.name}</span>
                 <svg class="w-4 h-4 text-gh-success-fg opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20">
@@ -52,3 +55,19 @@ import { skills } from '../data/portfolio';
     </div>
   </div>
 </section>
+
+<script>
+  // Fallback for devicon images
+  document.addEventListener('DOMContentLoaded', () => {
+    const deviconImages = document.querySelectorAll('.devicon-img');
+    deviconImages.forEach((img) => {
+      const imgElement = img as HTMLImageElement;
+      imgElement.addEventListener('error', () => {
+        const icon = imgElement.dataset.icon;
+        if (icon && !imgElement.src.includes('-plain.svg')) {
+          imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-plain.svg`;
+        }
+      });
+    });
+  });
+</script>
