@@ -16,13 +16,13 @@ export const skills = [
       { name: "TypeScript", icon: "typescript" },
       { name: "Astro", icon: "astro" },
       { name: "Tailwind CSS", icon: "tailwindcss" },
-      { name: "Next.js", icon: "nextdotjs" },
+      { name: "Next.js", icon: "nextjs" },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", icon: "nodedotjs" },
+      { name: "Node.js", icon: "nodejs" },
       { name: "Python", icon: "python" },
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "MongoDB", icon: "mongodb" },
@@ -34,7 +34,7 @@ export const skills = [
     items: [
       { name: "Git", icon: "git" },
       { name: "Docker", icon: "docker" },
-      { name: "AWS", icon: "amazonaws" },
+      { name: "AWS", icon: "amazonwebservices" },
       { name: "GitHub Actions", icon: "githubactions" },
       { name: "Linux", icon: "linux" },
     ],
