@@ -64,8 +64,8 @@ import { skills } from '../data/portfolio';
       const imgElement = img as HTMLImageElement;
       imgElement.addEventListener('error', () => {
         const icon = imgElement.dataset.icon;
-        if (icon && !imgElement.src.includes('-plain.svg')) {
-          imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-plain.svg`;
+        if (icon && !imgElement.src.includes('-wordmark.svg')) {
+          imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-wordmark.svg`;
         }
       });
     });
