@@ -66,19 +66,19 @@ export const projects = [
 ];
 
 export const education = [
+    {
+    degree: "Master of Science in Software Engineering",
+    institution: "Tech Institute",
+    period: "2020 - Present",
+    description: "Specialized in distributed systems and cloud computing. Research on microservices architecture.",
+    cgpa: "9.5/10",
+  },
   {
     degree: "Bachelor of Science in Computer Science",
     institution: "University of Technology",
     period: "2016 - 2020",
     description: "Focused on software engineering, algorithms, and data structures. Graduated with honors.",
     cgpa: "8.5/10",
-  },
-  {
-    degree: "Master of Science in Software Engineering",
-    institution: "Tech Institute",
-    period: "2020 - Present",
-    description: "Specialized in distributed systems and cloud computing. Research on microservices architecture.",
-    cgpa: "9.5/10",
   },
 ];
 
