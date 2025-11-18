@@ -24,6 +24,10 @@
     --gh-success-emphasis: #116329;
     --gh-success-muted: rgba(26, 127, 55, 0.4);
     --gh-success-subtle: rgba(26, 127, 55, 0.15);
+    --gh-attention-fg: #9a6700;
+    --gh-attention-emphasis: #7d4e00;
+    --gh-attention-muted: rgba(212, 167, 44, 0.4);
+    --gh-attention-subtle: rgba(212, 167, 44, 0.15);
   }
 
   .dark {
@@ -47,6 +51,10 @@
     --gh-success-emphasis: #238636;
     --gh-success-muted: rgba(46, 160, 67, 0.4);
     --gh-success-subtle: rgba(46, 160, 67, 0.15);
+    --gh-attention-fg: #d29922;
+    --gh-attention-emphasis: #bb8009;
+    --gh-attention-muted: rgba(187, 128, 9, 0.4);
+    --gh-attention-subtle: rgba(187, 128, 9, 0.15);
   }
 
   * {
