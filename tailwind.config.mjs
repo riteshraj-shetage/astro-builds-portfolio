@@ -43,10 +43,10 @@ export default {
             subtle: 'rgba(248, 81, 73, 0.15)',
           },
           attention: {
-            fg: '#d29922',
-            emphasis: '#9e6a03',
-            muted: 'rgba(187, 128, 9, 0.4)',
-            subtle: 'rgba(187, 128, 9, 0.15)',
+            fg: 'var(--gh-attention-fg, #d29922)',
+            emphasis: 'var(--gh-attention-emphasis, #bb8009)',
+            muted: 'var(--gh-attention-muted, rgba(187, 128, 9, 0.4))',
+            subtle: 'var(--gh-attention-subtle, rgba(187, 128, 9, 0.15))',
           },
           neutral: {
             muted: 'rgba(110, 118, 129, 0.4)',
