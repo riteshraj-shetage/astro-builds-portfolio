@@ -12,13 +12,20 @@ import { personalInfo } from '../data/portfolio';
         
         <!-- Avatar with GitHub-style border -->
         <div class="flex-shrink-0">
-          <div class="relative group">
+          <div class="relative">
             <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-gh-accent-emphasis via-gh-success-emphasis to-gh-accent-emphasis p-0.5 animate-scale-in">
-              <div class="w-full h-full rounded-full bg-gh-canvas-default flex items-center justify-center text-7xl md:text-8xl font-bold text-gh-accent-fg">
-                {personalInfo.name.charAt(0)}
-              </div>
+              {personalInfo.profileImage ? (
+                <img 
+                  src={personalInfo.profileImage} 
+                  alt={personalInfo.name}
+                  class="w-full h-full rounded-full object-cover bg-gh-canvas-default"
+                />
+              ) : (
+                <div class="w-full h-full rounded-full bg-gh-canvas-default flex items-center justify-center text-7xl md:text-8xl font-bold text-gh-accent-fg">
+                  {personalInfo.name.charAt(0)}
+                </div>
+              )}
             </div>
-            <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-gh-accent-emphasis to-gh-success-emphasis opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>
           </div>
         </div>
 
@@ -26,7 +33,7 @@ import { personalInfo } from '../data/portfolio';
         <div class="flex-1 text-center md:text-left space-y-6">
           <!-- Name and Title -->
           <div class="space-y-3">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gh-fg-default via-gh-accent-fg to-gh-fg-default bg-clip-text text-transparent leading-tight">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gh-fg-default leading-tight pb-2">
               {personalInfo.name}
             </h1>
 
