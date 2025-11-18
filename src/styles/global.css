@@ -161,7 +161,7 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gh-fg-default via-gh-accent-fg to-gh-fg-default bg-clip-text text-transparent;
+    @apply text-4xl md:text-5xl font-bold mb-4 text-gh-fg-default;
   }
 
   .section-subtitle {
