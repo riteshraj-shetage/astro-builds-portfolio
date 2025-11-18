@@ -13,7 +13,7 @@ import { education } from '../data/portfolio';
       <!-- Timeline Container -->
       <div class="relative">
         <!-- Vertical Line -->
-        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gh-border-default"></div>
+        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gh-border-default"></div>
         
         <!-- Education Items (bottom to top) -->
         <div class="space-y-8">
@@ -25,15 +25,11 @@ import { education } from '../data/portfolio';
             return (
               <div class="relative pl-16 animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
                 <!-- Node Circle -->
-                <div class={`absolute left-0 w-12 h-12 rounded-full border-4 ${
+                <div class={`absolute left-0 w-8 h-8 rounded-full border-3 ${
                   isCurrent 
                     ? 'bg-gh-success-emphasis border-gh-success-muted shadow-lg' 
                     : 'bg-gh-accent-subtle border-gh-accent-muted'
-                } flex items-center justify-center ${isFirst && isCurrent ? 'animate-pulse' : ''}`}>
-                  <svg class={`w-6 h-6 ${isCurrent ? 'text-white' : 'text-gh-accent-fg'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  </svg>
+                } ${isFirst && isCurrent ? 'animate-pulse' : ''}`}>
                 </div>
 
                 <!-- Content Card -->
