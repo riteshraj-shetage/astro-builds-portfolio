@@ -21,14 +21,9 @@ const {
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
-    <!-- Initialize theme before page render to prevent flash -->
+    <!-- Initialize theme as dark by default -->
     <script is:inline>
-      const theme = localStorage.getItem('theme') || 'dark';
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      document.documentElement.classList.add('dark');
     </script>
   </head>
   <body>

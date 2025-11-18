@@ -118,7 +118,7 @@ export const credentials = [
   {
     title: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
-    date: "2023",
+    date: "June 2023",
     credentialId: "AWS-12345",
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
     certificateImage: "/images/certificate-placeholder.svg",
@@ -127,7 +127,7 @@ export const credentials = [
   {
     title: "Google Cloud Professional Developer",
     issuer: "Google Cloud",
-    date: "2022",
+    date: "March 2022",
     credentialId: "GCP-67890",
     description: "Certification validating proficiency in developing cloud-native applications on GCP.",
     certificateImage: "/images/certificate-placeholder.svg",
