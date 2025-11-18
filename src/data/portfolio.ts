@@ -6,38 +6,23 @@ export const personalInfo = {
   email: "your.email@example.com",
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourusername",
+  profileImage: "/images/profile-placeholder.svg",
+  brandLogo: "/images/brand-logo.svg",
+  brandName: "Your Brand",
 };
 
 export const skills = [
   {
     category: "Frontend",
-    items: [
-      { name: "React", icon: "react" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "Astro", icon: "astro" },
-      { name: "Tailwind CSS", icon: "tailwindcss" },
-      { name: "Next.js", icon: "nextjs" },
-    ],
+    items: ["React", "TypeScript", "Astro", "Tailwind CSS", "Next.js"],
   },
   {
     category: "Backend",
-    items: [
-      { name: "Node.js", icon: "nodejs" },
-      { name: "Python", icon: "python" },
-      { name: "PostgreSQL", icon: "postgresql" },
-      { name: "MongoDB", icon: "mongodb" },
-      { name: "FastAPI", icon: "fastapi" },
-    ],
+    items: ["Node.js", "Python", "PostgreSQL", "MongoDB", "FastAPI"],
   },
   {
     category: "Tools & Others",
-    items: [
-      { name: "Git", icon: "git" },
-      { name: "Docker", icon: "docker" },
-      { name: "AWS", icon: "amazonwebservices" },
-      { name: "GitHub Actions", icon: "githubactions" },
-      { name: "Linux", icon: "linux" },
-    ],
+    items: ["Git", "Docker", "AWS", "GitHub Actions", "Linux"],
   },
 ];
 
@@ -48,7 +33,7 @@ export const projects = [
     technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
     github: "https://github.com/yourusername/ecommerce",
     demo: "https://demo.example.com",
-    image: "/images/project-placeholder-1.svg",
+    image: "/images/projects/project-placeholder-1.svg",
     status: "Active",
   },
   {
@@ -57,7 +42,7 @@ export const projects = [
     technologies: ["Python", "TensorFlow", "FastAPI", "React"],
     github: "https://github.com/yourusername/ai-assistant",
     demo: "https://ai-demo.example.com",
-    image: "/images/project-placeholder-2.svg",
+    image: "/images/projects/project-placeholder-2.svg",
     status: "Active",
   },
   {
@@ -66,7 +51,7 @@ export const projects = [
     technologies: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
     github: "https://github.com/yourusername/taskmanager",
     demo: "https://tasks.example.com",
-    image: "/images/project-placeholder-3.svg",
+    image: "/images/projects/project-placeholder-3.svg",
     status: "In Development",
   },
   {
@@ -75,7 +60,7 @@ export const projects = [
     technologies: ["Astro", "React", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/yourusername/portfolio-template",
     demo: "https://portfolio.example.com",
-    image: "/images/project-placeholder-4.svg",
+    image: "/images/projects/project-placeholder-4.svg",
     status: "Active",
   },
 ];
@@ -86,32 +71,38 @@ export const education = [
     institution: "University of Technology",
     period: "2016 - 2020",
     description: "Focused on software engineering, algorithms, and data structures. Graduated with honors.",
-    gpa: "3.8/4.0",
+    cgpa: "8.5/10",
   },
   {
     degree: "Master of Science in Software Engineering",
     institution: "Tech Institute",
-    period: "2020 - 2022",
+    period: "2020 - Present",
     description: "Specialized in distributed systems and cloud computing. Research on microservices architecture.",
-    gpa: "3.9/4.0",
+    cgpa: "9.5/10",
   },
 ];
 
-export const experience = [
+export const highlights = [
   {
-    title: "Senior Software Engineer",
-    company: "Tech Corp",
-    period: "2022 - Present",
-    description: "Leading development of cloud-native applications. Mentoring junior developers and contributing to architectural decisions.",
-    technologies: ["React", "Node.js", "AWS", "Docker"],
+    title: "5+ Years Experience",
+    description: "Building scalable web applications and distributed systems",
+    icon: "experience"
   },
   {
-    title: "Software Engineer",
-    company: "StartUp Inc",
-    period: "2020 - 2022",
-    description: "Built scalable web applications and RESTful APIs. Improved application performance by 40%.",
-    technologies: ["Python", "Django", "PostgreSQL", "Redis"],
+    title: "Open Source Contributor",
+    description: "Active contributor to various open-source projects",
+    icon: "opensource"
   },
+  {
+    title: "Continuous Learner",
+    description: "Always exploring new technologies and best practices",
+    icon: "learning"
+  },
+  {
+    title: "Problem Solver",
+    description: "Passionate about tackling complex technical challenges",
+    icon: "problem"
+  }
 ];
 
 export const credentials = [
@@ -121,7 +112,7 @@ export const credentials = [
     date: "June 2023",
     credentialId: "AWS-12345",
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
-    certificateImage: "/images/certificate-placeholder.svg",
+    certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credly.com/badges/example-aws-badge",
   },
   {
@@ -130,7 +121,7 @@ export const credentials = [
     date: "March 2022",
     credentialId: "GCP-67890",
     description: "Certification validating proficiency in developing cloud-native applications on GCP.",
-    certificateImage: "/images/certificate-placeholder.svg",
+    certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credential.net/example-gcp-credential",
   },
 ];
