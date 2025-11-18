@@ -1,8 +1,5 @@
 ---
 import { education } from '../data/portfolio';
-
-// Check if education is current (last item in chronological order)
-const currentYear = new Date().getFullYear();
 ---
 
 <section id="education" class="section">
@@ -12,52 +9,63 @@ const currentYear = new Date().getFullYear();
       <p class="section-subtitle">Academic background and continuous learning journey</p>
     </div>
 
-    <div class="max-w-4xl mx-auto">
-      <div class="space-y-6">
-        {education.map((edu, index) => {
-          const isCurrent = edu.period.toLowerCase().includes('present') || 
-                           edu.period.toLowerCase().includes('current') ||
-                           edu.period.split('-').pop()?.trim() === currentYear.toString();
-          
-          return (
-            <div class="card-highlight animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
-              <div class="flex items-start gap-6">
-                <div class={`p-3 rounded-lg ${isCurrent ? 'bg-gh-success-subtle border-gh-success-muted' : 'bg-gh-accent-subtle border-gh-accent-muted'} border flex-shrink-0`}>
-                  <svg class={`w-8 h-8 ${isCurrent ? 'text-gh-success-fg' : 'text-gh-accent-fg'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="max-w-3xl mx-auto">
+      <!-- Timeline Container -->
+      <div class="relative">
+        <!-- Vertical Line -->
+        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gh-border-default"></div>
+        
+        <!-- Education Items (bottom to top) -->
+        <div class="space-y-8">
+          {education.map((edu, index) => {
+            const isCurrent = edu.period.toLowerCase().includes('present') || 
+                             edu.period.toLowerCase().includes('current');
+            const isFirst = index === 0;
+            
+            return (
+              <div class="relative pl-16 animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
+                <!-- Node Circle -->
+                <div class={`absolute left-0 w-12 h-12 rounded-full border-4 ${
+                  isCurrent 
+                    ? 'bg-gh-success-emphasis border-gh-success-muted shadow-lg' 
+                    : 'bg-gh-accent-subtle border-gh-accent-muted'
+                } flex items-center justify-center ${isFirst && isCurrent ? 'animate-pulse' : ''}`}>
+                  <svg class={`w-6 h-6 ${isCurrent ? 'text-white' : 'text-gh-accent-fg'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                   </svg>
                 </div>
 
-                <div class="flex-1">
+                <!-- Content Card -->
+                <div class="card-highlight">
                   <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                     <div class="flex-1">
-                      <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-xl font-semibold text-gh-fg-default">{edu.degree}</h3>
+                      <div class="flex items-center gap-2 mb-2 flex-wrap">
+                        <h3 class="text-lg font-semibold text-gh-fg-default">{edu.degree}</h3>
                         {isCurrent && (
                           <span class="px-2 py-1 rounded-full text-xs font-medium bg-gh-success-subtle text-gh-success-fg border border-gh-success-muted">
-                            Current
+                            Ongoing
                           </span>
                         )}
                       </div>
                       <p class="text-gh-accent-fg font-medium mb-2">{edu.institution}</p>
                     </div>
-                    <div class="flex flex-col items-start md:items-end gap-2 mt-2 md:mt-0">
-                      <span class="badge">{edu.period}</span>
-                      {edu.gpa && (
-                        <span class="text-gh-success-fg text-sm font-semibold">GPA: {edu.gpa}</span>
+                    <div class="flex flex-col items-start md:items-end gap-1 mt-2 md:mt-0">
+                      <span class="badge text-xs">{edu.period}</span>
+                      {edu.cgpa && (
+                        <span class="text-gh-success-fg text-sm font-semibold">CGPA: {edu.cgpa}</span>
                       )}
                     </div>
                   </div>
                   
-                  <p class="text-gh-fg-muted leading-relaxed">
+                  <p class="text-gh-fg-muted leading-relaxed text-sm">
                     {edu.description}
                   </p>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
 

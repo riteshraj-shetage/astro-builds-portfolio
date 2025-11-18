@@ -33,22 +33,49 @@ import { skills } from '../data/portfolio';
             </div>
             
             <div class="space-y-3">
-              {category.items.map((skill) => (
-              <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
-                <div class="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <img 
-                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.icon}/${skill.icon}-original.svg`}
-                    alt={skill.name}
-                    class="w-7 h-7 devicon-img"
-                    data-icon={skill.icon}
-                  />
-                </div>
-                <span class="text-sm font-medium text-gh-fg-default flex-1">{skill.name}</span>
-                <svg class="w-4 h-4 text-gh-success-fg opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                </div>
-              ))}
+              {category.items.map((skillName) => {
+                // Convert skill name to icon name
+                let icon = skillName.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
+                
+                // Handle special cases
+                if (skillName === "GitHub Actions") {
+                  icon = "githubactions";
+                } else if (skillName === "Node.js") {
+                  icon = "nodejs";
+                } else if (skillName === "Tailwind CSS") {
+                  icon = "tailwindcss";
+                } else if (skillName === "Next.js") {
+                  icon = "nextjs";
+                }
+                
+                // Determine if AWS (uses wordmark variant)
+                const isAWS = skillName === "AWS";
+                if (isAWS) {
+                  icon = "amazonwebservices";
+                }
+                
+                const iconUrl = isAWS 
+                  ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`
+                  : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original.svg`;
+                
+                return (
+                  <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
+                    <div class="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <img 
+                        src={iconUrl}
+                        alt={skillName}
+                        class="w-7 h-7 devicon-img"
+                        data-icon={icon}
+                        data-is-aws={isAWS}
+                      />
+                    </div>
+                    <span class="text-sm font-medium text-gh-fg-default flex-1">{skillName}</span>
+                    <svg class="w-4 h-4 text-gh-success-fg opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                );
+              })}
             </div>
           </div>
         );
@@ -76,8 +103,16 @@ import { skills } from '../data/portfolio';
       const imgElement = img as HTMLImageElement;
       imgElement.addEventListener('error', () => {
         const icon = imgElement.dataset.icon;
-        if (icon && !imgElement.src.includes('-original-wordmark.svg')) {
-          imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`;
+        const isAWS = imgElement.dataset.isAws === 'true';
+        
+        if (icon) {
+          if (isAWS && !imgElement.src.includes('-plain-wordmark.svg')) {
+            // AWS: try plain-wordmark variant if original-wordmark fails
+            imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-plain-wordmark.svg`;
+          } else if (!isAWS && !imgElement.src.includes('-original-wordmark.svg')) {
+            // Non-AWS: try original-wordmark variant if original fails
+            imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`;
+          }
         }
       });
     });
