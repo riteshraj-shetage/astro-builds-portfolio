@@ -11,15 +11,20 @@ import { skills } from '../data/portfolio';
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
       {skills.map((category, catIndex) => {
-        // Determine icon based on category
-        let iconPath = "";
-        if (category.category.toLowerCase().includes("frontend")) {
-          iconPath = "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z";
-        } else if (category.category.toLowerCase().includes("backend")) {
-          iconPath = "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01";
-        } else {
-          iconPath = "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z";
-        }
+        // Universal function to get category icon based on category name
+        const getCategoryIcon = (categoryName: string) => {
+          const lowerName = categoryName.toLowerCase();
+          if (lowerName.includes("frontend")) {
+            return "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z";
+          } else if (lowerName.includes("backend")) {
+            return "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01";
+          } else {
+            // Default icon for tools, devops, or other categories
+            return "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z";
+          }
+        };
+        
+        const iconPath = getCategoryIcon(category.category);
         
         return (
           <div class="card-highlight animate-fade-in-up" style={`animation-delay: ${catIndex * 0.1}s`}>
@@ -34,27 +39,21 @@ import { skills } from '../data/portfolio';
             
             <div class="space-y-3">
               {category.items.map((skillName) => {
-                // Convert skill name to icon name
-                let icon = skillName.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
+                // Universal function to convert skill name to icon name
+                const convertSkillToIcon = (name: string) => {
+                  // Special case for AWS
+                  if (name === "AWS") {
+                    return { icon: "amazonwebservices", isWordmark: true };
+                  }
+                  
+                  // Universal conversion: lowercase, remove spaces and dots
+                  const icon = name.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
+                  return { icon, isWordmark: false };
+                };
                 
-                // Handle special cases
-                if (skillName === "GitHub Actions") {
-                  icon = "githubactions";
-                } else if (skillName === "Node.js") {
-                  icon = "nodejs";
-                } else if (skillName === "Tailwind CSS") {
-                  icon = "tailwindcss";
-                } else if (skillName === "Next.js") {
-                  icon = "nextjs";
-                }
+                const { icon, isWordmark } = convertSkillToIcon(skillName);
                 
-                // Determine if AWS (uses wordmark variant)
-                const isAWS = skillName === "AWS";
-                if (isAWS) {
-                  icon = "amazonwebservices";
-                }
-                
-                const iconUrl = isAWS 
+                const iconUrl = isWordmark 
                   ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`
                   : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original.svg`;
                 
@@ -66,7 +65,7 @@ import { skills } from '../data/portfolio';
                         alt={skillName}
                         class="w-7 h-7 devicon-img"
                         data-icon={icon}
-                        data-is-aws={isAWS}
+                        data-is-wordmark={isWordmark}
                       />
                     </div>
                     <span class="text-sm font-medium text-gh-fg-default flex-1">{skillName}</span>
@@ -103,14 +102,14 @@ import { skills } from '../data/portfolio';
       const imgElement = img as HTMLImageElement;
       imgElement.addEventListener('error', () => {
         const icon = imgElement.dataset.icon;
-        const isAWS = imgElement.dataset.isAws === 'true';
+        const isWordmark = imgElement.dataset.isWordmark === 'true';
         
         if (icon) {
-          if (isAWS && !imgElement.src.includes('-plain-wordmark.svg')) {
-            // AWS: try plain-wordmark variant if original-wordmark fails
+          if (isWordmark && !imgElement.src.includes('-plain-wordmark.svg')) {
+            // Wordmark variant: try plain-wordmark if original-wordmark fails
             imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-plain-wordmark.svg`;
-          } else if (!isAWS && !imgElement.src.includes('-original-wordmark.svg')) {
-            // Non-AWS: try original-wordmark variant if original fails
+          } else if (!isWordmark && !imgElement.src.includes('-original-wordmark.svg')) {
+            // Regular variant: try original-wordmark if original fails
             imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`;
           }
         }

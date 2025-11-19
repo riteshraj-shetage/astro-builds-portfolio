@@ -14,14 +14,7 @@ import { personalInfo, highlights } from '../data/portfolio';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Overview Section -->
         <div class="card-highlight animate-fade-in-up">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="p-3 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted flex-shrink-0">
-              <svg class="w-8 h-8 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-semibold text-gh-fg-default">Overview</h3>
-          </div>
+          <h3 class="text-2xl font-semibold text-gh-fg-default mb-4">Overview</h3>
           
           <p class="text-gh-fg-muted leading-relaxed text-lg mb-6">
             {personalInfo.bio}
@@ -56,32 +49,19 @@ import { personalInfo, highlights } from '../data/portfolio';
         <div class="card-highlight animate-fade-in-up" style="animation-delay: 0.1s">
           <h3 class="text-2xl font-semibold mb-6 text-gh-fg-default">Highlights</h3>
           <div class="space-y-4">
-            {highlights.map((highlight) => {
-              let iconPath = "";
-              if (highlight.icon === "experience") {
-                iconPath = "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z";
-              } else if (highlight.icon === "opensource") {
-                iconPath = "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4";
-              } else if (highlight.icon === "learning") {
-                iconPath = "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253";
-              } else {
-                iconPath = "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z";
-              }
-              
-              return (
-                <div class="flex items-start gap-3 p-4 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted transition-all group">
-                  <div class="p-2 rounded-md bg-gh-accent-subtle group-hover:bg-gh-accent-emphasis transition-colors flex-shrink-0">
-                    <svg class="w-5 h-5 text-gh-accent-fg group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPath} />
-                    </svg>
-                  </div>
-                  <div class="flex-1">
-                    <h4 class="font-semibold text-gh-fg-default mb-1">{highlight.title}</h4>
-                    <p class="text-sm text-gh-fg-muted">{highlight.description}</p>
-                  </div>
+            {highlights.map((highlight) => (
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted transition-all group">
+                <div class="p-2 rounded-md bg-gh-success-subtle group-hover:bg-gh-success-emphasis transition-colors flex-shrink-0">
+                  <svg class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
-              );
-            })}
+                <div class="flex-1">
+                  <h4 class="font-semibold text-gh-fg-default mb-1">{highlight.title}</h4>
+                  <p class="text-sm text-gh-fg-muted">{highlight.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
