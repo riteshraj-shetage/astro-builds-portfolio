@@ -114,6 +114,7 @@ export const credentials = [
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
     certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credly.com/badges/example-aws-badge",
+    relatedSkills: ["AWS", "Docker", "Node.js", "PostgreSQL"],
   },
   {
     title: "Google Cloud Professional Developer",
@@ -123,5 +124,6 @@ export const credentials = [
     description: "Certification validating proficiency in developing cloud-native applications on GCP.",
     certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credential.net/example-gcp-credential",
+    relatedSkills: ["Python", "Docker", "FastAPI", "MongoDB"],
   },
 ];
