@@ -34,27 +34,21 @@ import { skills } from '../data/portfolio';
             
             <div class="space-y-3">
               {category.items.map((skillName) => {
-                // Convert skill name to icon name
-                let icon = skillName.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
+                // Universal function to convert skill name to icon name
+                const convertSkillToIcon = (name: string) => {
+                  // Special case for AWS
+                  if (name === "AWS") {
+                    return { icon: "amazonwebservices", isWordmark: true };
+                  }
+                  
+                  // Universal conversion: lowercase, remove spaces and dots
+                  const icon = name.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
+                  return { icon, isWordmark: false };
+                };
                 
-                // Handle special cases
-                if (skillName === "GitHub Actions") {
-                  icon = "githubactions";
-                } else if (skillName === "Node.js") {
-                  icon = "nodejs";
-                } else if (skillName === "Tailwind CSS") {
-                  icon = "tailwindcss";
-                } else if (skillName === "Next.js") {
-                  icon = "nextjs";
-                }
+                const { icon, isWordmark } = convertSkillToIcon(skillName);
                 
-                // Determine if AWS (uses wordmark variant)
-                const isAWS = skillName === "AWS";
-                if (isAWS) {
-                  icon = "amazonwebservices";
-                }
-                
-                const iconUrl = isAWS 
+                const iconUrl = isWordmark 
                   ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`
                   : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original.svg`;
                 
@@ -66,7 +60,7 @@ import { skills } from '../data/portfolio';
                         alt={skillName}
                         class="w-7 h-7 devicon-img"
                         data-icon={icon}
-                        data-is-aws={isAWS}
+                        data-is-wordmark={isWordmark}
                       />
                     </div>
                     <span class="text-sm font-medium text-gh-fg-default flex-1">{skillName}</span>
@@ -103,14 +97,14 @@ import { skills } from '../data/portfolio';
       const imgElement = img as HTMLImageElement;
       imgElement.addEventListener('error', () => {
         const icon = imgElement.dataset.icon;
-        const isAWS = imgElement.dataset.isAws === 'true';
+        const isWordmark = imgElement.dataset.isWordmark === 'true';
         
         if (icon) {
-          if (isAWS && !imgElement.src.includes('-plain-wordmark.svg')) {
-            // AWS: try plain-wordmark variant if original-wordmark fails
+          if (isWordmark && !imgElement.src.includes('-plain-wordmark.svg')) {
+            // Wordmark variant: try plain-wordmark if original-wordmark fails
             imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-plain-wordmark.svg`;
-          } else if (!isAWS && !imgElement.src.includes('-original-wordmark.svg')) {
-            // Non-AWS: try original-wordmark variant if original fails
+          } else if (!isWordmark && !imgElement.src.includes('-original-wordmark.svg')) {
+            // Regular variant: try original-wordmark if original fails
             imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`;
           }
         }
