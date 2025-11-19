@@ -18,8 +18,15 @@ import { education } from '../data/portfolio';
         <!-- Education Items (bottom to top) -->
         <div class="space-y-8">
           {education.map((edu, index) => {
-            const isCurrent = edu.period.toLowerCase().includes('present') || 
-                             edu.period.toLowerCase().includes('current');
+            // Universal function to check if education is current/ongoing
+            const isCurrentEducation = (period: string) => {
+              const lowerPeriod = period.toLowerCase();
+              return lowerPeriod.includes('present') || 
+                     lowerPeriod.includes('current') || 
+                     lowerPeriod.includes('ongoing');
+            };
+            
+            const isCurrent = isCurrentEducation(edu.period);
             const isFirst = index === 0;
             
             return (
