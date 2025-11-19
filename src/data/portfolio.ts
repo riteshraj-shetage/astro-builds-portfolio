@@ -84,24 +84,24 @@ export const education = [
 
 export const highlights = [
   {
-    title: "5+ Years Experience",
+    title: "Full Stack Development",
     description: "Building scalable web applications and distributed systems",
-    icon: "experience"
+    icon: "check"
   },
   {
     title: "Open Source Contributor",
     description: "Active contributor to various open-source projects",
-    icon: "opensource"
+    icon: "check"
   },
   {
     title: "Continuous Learner",
     description: "Always exploring new technologies and best practices",
-    icon: "learning"
+    icon: "check"
   },
   {
     title: "Problem Solver",
     description: "Passionate about tackling complex technical challenges",
-    icon: "problem"
+    icon: "check"
   }
 ];
 
