@@ -80,6 +80,13 @@ export const education = [
     description: "Focused on software engineering, algorithms, and data structures. Graduated with honors.",
     cgpa: "8.5/10",
   },
+  {
+    degree: "High School Diploma in Science",
+    institution: "Central High School",
+    period: "2014 - 2016",
+    description: "Completed advanced coursework in mathematics, physics, and computer science with distinction.",
+    cgpa: "9.0/10",
+  },
 ];
 
 export const highlights = [
@@ -125,5 +132,15 @@ export const credentials = [
     certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credential.net/example-gcp-credential",
     relatedSkills: ["Python", "Docker", "FastAPI", "MongoDB"],
+  },
+  {
+    title: "Certified Kubernetes Administrator",
+    issuer: "Cloud Native Computing Foundation",
+    date: "September 2023",
+    credentialId: "CKA-54321",
+    description: "Expert-level certification validating skills in deploying, managing, and troubleshooting Kubernetes clusters.",
+    certificateImage: "/images/certificates/certificate-placeholder.svg",
+    verificationUrl: "https://www.credly.com/badges/example-cka-badge",
+    relatedSkills: ["Docker", "AWS", "Linux", "Node.js"],
   },
 ];
