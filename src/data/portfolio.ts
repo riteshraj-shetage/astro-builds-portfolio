@@ -1,4 +1,56 @@
-export const personalInfo = {
+// Type definitions for better type safety and maintainability
+export interface PersonalInfo {
+  name: string;
+  title: string;
+  bio: string;
+  location: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  profileImage: string;
+  brandLogo: string;
+  brandName: string;
+}
+
+export interface Skill {
+  category: string;
+  items: string[];
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  github: string;
+  demo: string;
+  image: string;
+  status: string;
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  description: string;
+  cgpa: string;
+}
+
+export interface Highlight {
+  title: string;
+  description: string;
+}
+
+export interface Credential {
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  certificateImage: string;
+  verificationUrl: string;
+  relatedSkills: string[];
+}
+
+export const personalInfo: PersonalInfo = {
   name: "Your Name",
   title: "Full Stack Developer",
   bio: "Passionate about building elegant solutions to complex problems. Open source enthusiast and continuous learner.",
@@ -11,7 +63,7 @@ export const personalInfo = {
   brandName: "Your Brand",
 };
 
-export const skills = [
+export const skills: Skill[] = [
   {
     category: "Frontend",
     items: ["React", "TypeScript", "Astro", "Tailwind CSS", "Next.js"],
@@ -26,7 +78,7 @@ export const skills = [
   },
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
@@ -65,7 +117,7 @@ export const projects = [
   },
 ];
 
-export const education = [
+export const education: Education[] = [
     {
     degree: "Master of Science in Software Engineering",
     institution: "Tech Institute",
@@ -89,35 +141,30 @@ export const education = [
   },
 ];
 
-export const highlights = [
+export const highlights: Highlight[] = [
   {
     title: "Full Stack Development",
-    description: "Building scalable web applications and distributed systems",
-    icon: "check"
+    description: "Building scalable web applications and distributed systems"
   },
   {
     title: "Open Source Contributor",
-    description: "Active contributor to various open-source projects",
-    icon: "check"
+    description: "Active contributor to various open-source projects"
   },
   {
     title: "Continuous Learner",
-    description: "Always exploring new technologies and best practices",
-    icon: "check"
+    description: "Always exploring new technologies and best practices"
   },
   {
     title: "Problem Solver",
-    description: "Passionate about tackling complex technical challenges",
-    icon: "check"
+    description: "Passionate about tackling complex technical challenges"
   }
 ];
 
-export const credentials = [
+export const credentials: Credential[] = [
   {
     title: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
     date: "June 2023",
-    credentialId: "AWS-12345",
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
     certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credly.com/badges/example-aws-badge",
@@ -127,7 +174,6 @@ export const credentials = [
     title: "Google Cloud Professional Developer",
     issuer: "Google Cloud",
     date: "March 2022",
-    credentialId: "GCP-67890",
     description: "Certification validating proficiency in developing cloud-native applications on GCP.",
     certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credential.net/example-gcp-credential",
@@ -137,7 +183,6 @@ export const credentials = [
     title: "Certified Kubernetes Administrator",
     issuer: "Cloud Native Computing Foundation",
     date: "September 2023",
-    credentialId: "CKA-54321",
     description: "Expert-level certification validating skills in deploying, managing, and troubleshooting Kubernetes clusters.",
     certificateImage: "/images/certificates/certificate-placeholder.svg",
     verificationUrl: "https://www.credly.com/badges/example-cka-badge",
