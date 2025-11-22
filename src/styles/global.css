@@ -146,15 +146,6 @@
     @apply card;
   }
 
-  /* Skill & Technology Tags */
-  .skill-tag {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm bg-gh-accent-subtle text-gh-accent-fg border border-gh-accent-muted transition-all duration-200;
-  }
-
-  .skill-tag:hover {
-    @apply bg-gh-accent-muted border-gh-accent-fg;
-  }
-
   /* Section Headers */
   .section-header {
     @apply text-center mb-16;
