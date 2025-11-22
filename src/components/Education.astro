@@ -27,16 +27,22 @@ import { education } from '../data/portfolio';
             };
             
             const isCurrent = isCurrentEducation(edu.period);
-            const isFirst = index === 0;
             
             return (
               <div class="relative pl-16 animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
                 <!-- Node Circle -->
-                <div class={`absolute left-0 w-8 h-8 rounded-full border-3 ${
+                <div class={`absolute left-0 w-8 h-8 rounded-full flex items-center justify-center ${
                   isCurrent 
-                    ? 'bg-gh-success-emphasis border-gh-success-muted shadow-lg' 
-                    : 'bg-gh-accent-subtle border-gh-accent-muted'
-                } ${isFirst && isCurrent ? 'animate-pulse' : ''}`}>
+                    ? 'bg-gh-success-emphasis border-2 border-gh-success-fg shadow-lg' 
+                    : 'bg-gh-canvas-subtle border-2 border-gh-border-default'
+                }`}>
+                  {isCurrent ? (
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm9.78-2.22-5.5 5.5a.75.75 0 0 1-1.06 0l-2.5-2.5a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L5 9.44l4.97-4.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"/>
+                    </svg>
+                  ) : (
+                    <div class="w-2 h-2 rounded-full bg-gh-fg-muted"></div>
+                  )}
                 </div>
 
                 <!-- Content Card -->

@@ -7,7 +7,7 @@ export const personalInfo = {
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourusername",
   profileImage: "/images/profile-placeholder.svg",
-  brandLogo: "/images/brand-logo.svg",
+  brandLogo: "/images/github-logo.svg",
   brandName: "Your Brand",
 };
 
