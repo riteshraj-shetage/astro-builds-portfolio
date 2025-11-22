@@ -41,21 +41,27 @@ import { skills } from '../data/portfolio';
               {category.items.map((skillName) => {
                 // Universal function to convert skill name to icon name
                 const convertSkillToIcon = (name: string) => {
-                  // Special case for AWS
-                  if (name === "AWS") {
-                    return { icon: "amazonwebservices", isWordmark: true };
+                  // Hardcoded special cases
+                  const specialCases: { [key: string]: { icon: string; variant: string } } = {
+                    "AWS": { icon: "amazonwebservices", variant: "original-wordmark" },
+                    ".NET": { icon: "dot-net", variant: "original" },
+                    "Django": { icon: "django", variant: "plain" },
+                    "C#": { icon: "csharp", variant: "original" },
+                    "C++": { icon: "cplusplus", variant: "original" }
+                  };
+                  
+                  if (specialCases[name]) {
+                    const { icon, variant } = specialCases[name];
+                    return { icon, variant };
                   }
                   
                   // Universal conversion: lowercase, remove spaces and dots
                   const icon = name.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
-                  return { icon, isWordmark: false };
+                  return { icon, variant: "original" };
                 };
                 
-                const { icon, isWordmark } = convertSkillToIcon(skillName);
-                
-                const iconUrl = isWordmark 
-                  ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`
-                  : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original.svg`;
+                const { icon, variant } = convertSkillToIcon(skillName);
+                const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${variant}.svg`;
                 
                 return (
                   <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
@@ -65,7 +71,7 @@ import { skills } from '../data/portfolio';
                         alt={skillName}
                         class="w-7 h-7 devicon-img"
                         data-icon={icon}
-                        data-is-wordmark={isWordmark}
+                        data-variant={variant}
                       />
                     </div>
                     <span class="text-sm font-medium text-gh-fg-default flex-1">{skillName}</span>
@@ -102,15 +108,20 @@ import { skills } from '../data/portfolio';
       const imgElement = img as HTMLImageElement;
       imgElement.addEventListener('error', () => {
         const icon = imgElement.dataset.icon;
-        const isWordmark = imgElement.dataset.isWordmark === 'true';
+        const variant = imgElement.dataset.variant;
         
-        if (icon) {
-          if (isWordmark && !imgElement.src.includes('-plain-wordmark.svg')) {
-            // Wordmark variant: try plain-wordmark if original-wordmark fails
-            imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-plain-wordmark.svg`;
-          } else if (!isWordmark && !imgElement.src.includes('-original-wordmark.svg')) {
-            // Regular variant: try original-wordmark if original fails
-            imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-original-wordmark.svg`;
+        if (icon && variant) {
+          // Try fallback variants in order
+          const fallbacks = ['plain', 'original-wordmark', 'plain-wordmark'];
+          const currentVariant = variant;
+          
+          // Find next fallback that hasn't been tried
+          for (const fallback of fallbacks) {
+            if (fallback !== currentVariant && !imgElement.src.includes(`${icon}-${fallback}.svg`)) {
+              imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${fallback}.svg`;
+              imgElement.dataset.variant = fallback;
+              break;
+            }
           }
         }
       });
