@@ -11,46 +11,30 @@ import Icon from './Icon.astro';
     </div>
 
     <div class="max-w-3xl mx-auto">
-      <!-- Timeline Container -->
-      <div class="relative">
-        <!-- Vertical Line -->
-        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gh-border-default"></div>
-        
-        <!-- Education Items (bottom to top) -->
-        <div class="space-y-8">
-          {education.map((edu, index) => {
-            // Universal function to check if education is current/ongoing
-            const isCurrentEducation = (period: string) => {
-              const lowerPeriod = period.toLowerCase();
-              return lowerPeriod.includes('present') || 
-                     lowerPeriod.includes('current') || 
-                     lowerPeriod.includes('ongoing');
-            };
-            
-            const isCurrent = isCurrentEducation(edu.period);
-            const isFirst = index === 0;
-            
-            const iconClassName = [
-              "absolute left-0 w-8 h-8 rounded-full border-3",
-              isCurrent
-                ? "bg-gh-success-emphasis border-gh-success-muted shadow-lg"
-                : "bg-gh-accent-subtle border-gh-accent-muted",
-              isFirst && isCurrent ? "animate-pulse" : ""
-            ].join(" ");
-            
-            return (
-              <div class="relative pl-16 animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
-                <!-- Node Circle -->
-                <Icon name="dot" size={16} class={iconClassName} />
-
-                <!-- Content Card -->
+      <!-- GitHub Primer Timeline Container -->
+      <div class="timeline">
+        {education.map((edu, index) => {
+          const isFirst = index === 0;
+          const isCurrent = edu.period.toLowerCase().includes('present') || 
+                           edu.period.toLowerCase().includes('current') || 
+                           edu.period.toLowerCase().includes('ongoing');
+          
+          return (
+            <div class="timeline-item" style={`animation-delay: ${index * 0.1}s`}>
+              <!-- Timeline Badge (Dot) -->
+              <div class={`timeline-badge ${isCurrent ? 'timeline-badge-success' : 'timeline-badge-accent'} ${isFirst && isCurrent ? 'animate-pulse' : ''}`}>
+                <Icon name={isCurrent ? "dot-fill" : "dot"} size={16} class="w-4 h-4" />
+              </div>
+              
+              <!-- Timeline Body (Content Card) -->
+              <div class="timeline-body">
                 <div class="card-highlight">
                   <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                     <div class="flex-1">
                       <div class="flex items-center gap-2 mb-2 flex-wrap">
                         <h3 class="text-lg font-semibold text-gh-fg-default">{edu.degree}</h3>
                         {isCurrent && (
-                          <span class="px-2 py-1 rounded-full text-xs font-medium bg-gh-success-subtle text-gh-success-fg border border-gh-success-muted">
+                          <span class="timeline-badge-label timeline-badge-label-success">
                             Ongoing
                           </span>
                         )}
@@ -70,9 +54,9 @@ import Icon from './Icon.astro';
                   </p>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </div>
 
