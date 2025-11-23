@@ -1,5 +1,6 @@
 ---
 import { personalInfo, highlights } from '../data/portfolio';
+import Icon from './Icon.astro';
 ---
 
 <section id="about" class="section section-alt">
@@ -25,18 +26,13 @@ import { personalInfo, highlights } from '../data/portfolio';
           <div class="space-y-4">
             <div class="flex items-center gap-3 group">
               <div class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors">
-                <svg class="w-5 h-5 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+                <Icon name="location" size={20} class="w-5 h-5 text-gh-accent-fg" />
               </div>
               <span class="text-gh-fg-muted">{personalInfo.location}</span>
             </div>
             <div class="flex items-center gap-3 group">
               <div class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors">
-                <svg class="w-5 h-5 text-gh-accent-fg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+                <Icon name="mail" size={20} class="w-5 h-5 text-gh-accent-fg" />
               </div>
               <a href={`mailto:${personalInfo.email}`} class="link-hover">
                 {personalInfo.email}
@@ -52,9 +48,7 @@ import { personalInfo, highlights } from '../data/portfolio';
             {highlights.map((highlight) => (
               <div class="flex items-start gap-3 p-4 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted transition-all group">
                 <div class="p-2 rounded-md bg-gh-success-subtle group-hover:bg-gh-success-emphasis transition-colors flex-shrink-0">
-                  <svg class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Icon name="check" size={20} class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors" />
                 </div>
                 <div class="flex-1">
                   <h4 class="font-semibold text-gh-fg-default mb-1">{highlight.title}</h4>
@@ -74,9 +68,7 @@ import { personalInfo, highlights } from '../data/portfolio';
           rel="noopener noreferrer"
           class="btn btn-secondary inline-flex items-center gap-2"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
+          <Icon name="file-code" size={20} class="w-5 h-5" />
           View Resume
         </a>
       </div>
