@@ -22,6 +22,7 @@
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "@astrojs/tailwind": "^6.0.2",
+    "@primer/octicons": "^19.21.0",
     "astro": "^5.15.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -29,6 +30,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.5"
+    "@astrojs/check": "^0.9.5",
+    "@types/primer__octicons": "^19.11.1"
   }
 }

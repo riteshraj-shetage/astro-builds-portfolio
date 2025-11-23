@@ -1,0 +1,13 @@
+---
+import { icons, type IconName } from "../lib/icons";
+
+interface Props {
+  name: IconName;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 24, class: className = "" } = Astro.props;
+---
+
+<div class={className} set:html={icons[name].toSVG({ width: size, height: size })}></div>
