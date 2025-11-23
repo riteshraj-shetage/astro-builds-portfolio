@@ -15,20 +15,18 @@ if (!icon) {
   console.warn(`Icon "${String(name)}" not found in octicons`);
 }
 
-// Generate the SVG HTML
-const svgHtml = icon ? icon.toSVG({ width: size, height: size }) : '';
+// Generate the SVG HTML. Provide sensible defaults for fill and viewBox so icons inherit text color
+// and have a consistent coordinate system. Keep width/height from `size` prop.
+const svgHtml = icon
+  ? icon.toSVG({ width: size, height: size, fill: 'currentColor' })
+  : '';
 
-// Extract the SVG tag and add our custom class and id if provided
+// Insert `id` and `class` attributes onto the <svg> tag in one operation to avoid multiple
+// string replacements which can miss the tag after the first replacement.
 let finalSvg = svgHtml;
 if (svgHtml && (className || id)) {
-  // Add class to the svg tag
-  if (className) {
-    finalSvg = svgHtml.replace('<svg ', `<svg class="${className}" `);
-  }
-  // Add id to the svg tag
-  if (id) {
-    finalSvg = finalSvg.replace('<svg ', `<svg id="${id}" `);
-  }
+  const attrs = `${id ? ` id="${id}"` : ''}${className ? ` class="${className}"` : ''}`;
+  finalSvg = svgHtml.replace(/^<svg\b/, `<svg${attrs}`);
 }
 ---
 {finalSvg && <div set:html={finalSvg} style="display: contents;" />}
