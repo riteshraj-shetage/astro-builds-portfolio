@@ -211,22 +211,28 @@
   /* GitHub Primer Timeline - Commit style with clipped sidebar */
   .timeline {
     @apply relative;
-    padding-left: 0;
   }
 
   .timeline-item {
-    @apply relative pb-8 animate-fade-in-up;
-    padding-left: 2rem;
+    @apply relative animate-fade-in-up;
+    display: flex;
+    padding-bottom: 1rem;
   }
 
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Timeline sidebar - creates the vertical line effect */
   .timeline-item:before {
     content: '';
     position: absolute;
-    left: 0.5rem;
-    top: 2rem;
-    bottom: -0.5rem;
+    left: 15px;
+    top: 0;
+    bottom: -1rem;
     width: 2px;
     background: var(--gh-border-default);
+    z-index: 1;
   }
 
   .timeline-item:last-child:before {
@@ -234,33 +240,51 @@
   }
 
   .timeline-badge {
-    @apply absolute left-0 top-0 w-8 h-8 rounded-full flex items-center justify-center;
-    border: 2px solid;
-    z-index: 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    z-index: 2;
   }
 
   .timeline-badge-accent {
-    @apply bg-gh-accent-subtle border-gh-accent-muted;
-    color: var(--gh-accent-fg);
+    background: var(--gh-canvas-subtle);
+    border: 2px solid var(--gh-border-default);
+    color: var(--gh-fg-muted);
   }
 
   .timeline-badge-success {
-    @apply bg-gh-success-emphasis border-gh-success-muted;
+    background: var(--gh-success-emphasis);
+    border: 2px solid var(--gh-success-emphasis);
     color: white;
-    box-shadow: 0 0 0 4px var(--gh-success-subtle);
+    box-shadow: 0 0 0 3px var(--gh-canvas-default);
   }
 
   .timeline-badge-label {
-    @apply px-2 py-1 rounded-full text-xs font-medium border;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid;
   }
 
   .timeline-badge-label-success {
-    @apply bg-gh-success-subtle text-gh-success-fg border-gh-success-muted;
+    background: var(--gh-success-subtle);
+    color: var(--gh-success-fg);
+    border-color: var(--gh-success-muted);
   }
 
   .timeline-body {
-    @apply relative;
-    min-height: 2rem;
+    flex: 1;
+    min-width: 0;
   }
 }
 
