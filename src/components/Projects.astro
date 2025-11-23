@@ -11,10 +11,10 @@ import { projects } from '../data/portfolio';
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
       {projects.map((project, index) => (
-        <div class="card-highlight animate-fade-in-up overflow-hidden" style={`animation-delay: ${index * 0.1}s`}>
+        <div class="card-highlight animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
           <!-- Project Image with Hover Overlay -->
           {project.image && (
-            <div class="relative -m-6 mb-4 overflow-hidden group">
+            <div class="relative overflow-hidden rounded-t-lg group -mx-6 -mt-6 mb-4">
               <img 
                 src={project.image} 
                 alt={project.title}
