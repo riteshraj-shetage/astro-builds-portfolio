@@ -4,34 +4,38 @@
 
 @layer base {
   :root {
-    /* Light mode colors */
+    /* Light mode colors - GitHub Primer primitives */
     --gh-canvas-default: #ffffff;
     --gh-canvas-subtle: #f6f8fa;
     --gh-canvas-inset: #f6f8fa;
     --gh-canvas-overlay: #ffffff;
-    --gh-border-default: #d0d7de;
+    --gh-border-default: #d1d9e0;
     --gh-border-muted: #d8dee4;
-    --gh-border-subtle: #d8dee4;
+    --gh-border-subtle: #eaeef2;
     --gh-fg-default: #1f2328;
-    --gh-fg-muted: #656d76;
-    --gh-fg-subtle: #6e7781;
+    --gh-fg-muted: #59636e;
+    --gh-fg-subtle: #656d76;
     --gh-fg-onEmphasis: #ffffff;
     --gh-accent-fg: #0969da;
     --gh-accent-emphasis: #0550ae;
     --gh-accent-muted: rgba(84, 174, 255, 0.4);
     --gh-accent-subtle: rgba(84, 174, 255, 0.15);
     --gh-success-fg: #1a7f37;
-    --gh-success-emphasis: #116329;
+    --gh-success-emphasis: #117f32;
     --gh-success-muted: rgba(26, 127, 55, 0.4);
     --gh-success-subtle: rgba(26, 127, 55, 0.15);
-    --gh-attention-fg: #9a6700;
-    --gh-attention-emphasis: #7d4e00;
+    --gh-attention-fg: #bf8700;
+    --gh-attention-emphasis: #9a6700;
     --gh-attention-muted: rgba(212, 167, 44, 0.4);
     --gh-attention-subtle: rgba(212, 167, 44, 0.15);
+    --gh-danger-fg: #d1242f;
+    --gh-danger-emphasis: #a40e26;
+    --gh-danger-muted: rgba(255, 129, 130, 0.4);
+    --gh-danger-subtle: rgba(255, 129, 130, 0.15);
   }
 
   .dark {
-    /* Dark mode colors */
+    /* Dark mode colors - GitHub Primer primitives */
     --gh-canvas-default: #0d1117;
     --gh-canvas-subtle: #161b22;
     --gh-canvas-inset: #010409;
@@ -40,10 +44,10 @@
     --gh-border-muted: #21262d;
     --gh-border-subtle: #21262d;
     --gh-fg-default: #e6edf3;
-    --gh-fg-muted: #7d8590;
-    --gh-fg-subtle: #6e7681;
+    --gh-fg-muted: #848d97;
+    --gh-fg-subtle: #7d8590;
     --gh-fg-onEmphasis: #ffffff;
-    --gh-accent-fg: #2f81f7;
+    --gh-accent-fg: #4493f8;
     --gh-accent-emphasis: #1f6feb;
     --gh-accent-muted: rgba(56, 139, 253, 0.4);
     --gh-accent-subtle: rgba(56, 139, 253, 0.15);
@@ -52,9 +56,13 @@
     --gh-success-muted: rgba(46, 160, 67, 0.4);
     --gh-success-subtle: rgba(46, 160, 67, 0.15);
     --gh-attention-fg: #d29922;
-    --gh-attention-emphasis: #bb8009;
+    --gh-attention-emphasis: #ae7c14;
     --gh-attention-muted: rgba(187, 128, 9, 0.4);
     --gh-attention-subtle: rgba(187, 128, 9, 0.15);
+    --gh-danger-fg: #f85149;
+    --gh-danger-emphasis: #da3633;
+    --gh-danger-muted: rgba(248, 81, 73, 0.4);
+    --gh-danger-subtle: rgba(248, 81, 73, 0.15);
   }
 
   * {
@@ -71,21 +79,41 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  /* Typography - GitHub Primer product guidelines */
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold text-gh-fg-default;
     line-height: 1.25;
+    letter-spacing: -0.01em;
   }
 
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
+    line-height: 1.1;
   }
 
   h2 {
     @apply text-3xl md:text-4xl lg:text-5xl;
+    line-height: 1.2;
   }
 
   h3 {
     @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
+  }
+
+  h6 {
+    @apply text-base;
+  }
+
+  p {
+    line-height: 1.6;
   }
 
   a {
@@ -178,6 +206,85 @@
   /* GitHub-style repo stats */
   .repo-stat {
     @apply inline-flex items-center gap-1 text-sm text-gh-fg-muted;
+  }
+
+  /* GitHub Primer Timeline - Commit style with clipped sidebar */
+  .timeline {
+    @apply relative;
+  }
+
+  .timeline-item {
+    @apply relative animate-fade-in-up;
+    display: flex;
+    padding-bottom: 1rem;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Timeline sidebar - creates the vertical line effect */
+  .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: -1rem;
+    width: 2px;
+    background: var(--gh-border-default);
+    z-index: 1;
+  }
+
+  .timeline-item:last-child:before {
+    display: none;
+  }
+
+  .timeline-badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .timeline-badge-accent {
+    background: var(--gh-canvas-subtle);
+    border: 2px solid var(--gh-border-default);
+    color: var(--gh-fg-muted);
+  }
+
+  .timeline-badge-success {
+    background: var(--gh-success-emphasis);
+    border: 2px solid var(--gh-success-emphasis);
+    color: white;
+    box-shadow: 0 0 0 3px var(--gh-canvas-default);
+  }
+
+  .timeline-badge-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid;
+  }
+
+  .timeline-badge-label-success {
+    background: var(--gh-success-subtle);
+    color: var(--gh-success-fg);
+    border-color: var(--gh-success-muted);
+  }
+
+  .timeline-body {
+    flex: 1;
+    min-width: 0;
   }
 }
 
