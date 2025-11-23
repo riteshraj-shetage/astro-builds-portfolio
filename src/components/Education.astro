@@ -23,7 +23,7 @@ import Icon from './Icon.astro';
             <div class="timeline-item" style={`animation-delay: ${index * 0.1}s`}>
               <!-- Timeline Badge (Dot) -->
               <div class={`timeline-badge ${isCurrent ? 'timeline-badge-success' : 'timeline-badge-accent'} ${isFirst && isCurrent ? 'animate-pulse' : ''}`}>
-                <Icon name={isCurrent ? "dot-fill" : "dot"} size={16} class="w-4 h-4" />
+                <Icon name={isCurrent ? "issue-draft" : "issue-closed"} size={16} class="w-4 h-4" />
               </div>
               
               <!-- Timeline Body (Content Card) -->
