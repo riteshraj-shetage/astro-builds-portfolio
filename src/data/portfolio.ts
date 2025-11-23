@@ -58,7 +58,7 @@ export const personalInfo: PersonalInfo = {
   email: "your.email@example.com",
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourusername",
-  profileImage: "/images/profile-placeholder.svg",
+  profileImage: "/images/profile-photo.svg",
   brandLogo: "/images/brand-logo.svg",
   brandName: "Your Brand",
 };
