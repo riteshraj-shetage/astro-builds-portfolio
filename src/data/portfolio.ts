@@ -1,5 +1,5 @@
 // Type definitions for better type safety and maintainability
-export interface PersonalInfo {
+export type PersonalInfo = {
   name: string;
   title: string;
   bio: string;
@@ -12,12 +12,12 @@ export interface PersonalInfo {
   brandName: string;
 }
 
-export interface Skill {
+export type Skill = {
   category: string;
   items: string[];
 }
 
-export interface Project {
+export type Project = {
   title: string;
   description: string;
   technologies: string[];
@@ -27,7 +27,7 @@ export interface Project {
   status: string;
 }
 
-export interface Education {
+export type Education = {
   degree: string;
   institution: string;
   period: string;
@@ -35,12 +35,12 @@ export interface Education {
   cgpa: string;
 }
 
-export interface Highlight {
+export type Highlight = {
   title: string;
   description: string;
 }
 
-export interface Credential {
+export type Credential = {
   title: string;
   issuer: string;
   date: string;

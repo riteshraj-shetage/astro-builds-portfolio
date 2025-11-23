@@ -1,0 +1,34 @@
+---
+import { icons, type IconName } from "../lib/icons";
+
+interface Props {
+  name: IconName | string;
+  size?: number;
+  class?: string;
+  id?: string;
+}
+
+const { name, size = 24, class: className = "", id } = Astro.props;
+const icon = icons[name as IconName];
+
+if (!icon) {
+  console.warn(`Icon "${String(name)}" not found in octicons`);
+}
+
+// Generate the SVG HTML
+const svgHtml = icon ? icon.toSVG({ width: size, height: size }) : '';
+
+// Extract the SVG tag and add our custom class and id if provided
+let finalSvg = svgHtml;
+if (svgHtml && (className || id)) {
+  // Add class to the svg tag
+  if (className) {
+    finalSvg = svgHtml.replace('<svg ', `<svg class="${className}" `);
+  }
+  // Add id to the svg tag
+  if (id) {
+    finalSvg = finalSvg.replace('<svg ', `<svg id="${id}" `);
+  }
+}
+---
+{finalSvg && <div set:html={finalSvg} style="display: contents;" />}
