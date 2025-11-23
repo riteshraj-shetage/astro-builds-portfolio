@@ -30,15 +30,18 @@ import Icon from './Icon.astro';
             const isCurrent = isCurrentEducation(edu.period);
             const isFirst = index === 0;
             
+            const iconClassName = [
+              "absolute left-0 w-8 h-8 rounded-full border-3",
+              isCurrent
+                ? "bg-gh-success-emphasis border-gh-success-muted shadow-lg"
+                : "bg-gh-accent-subtle border-gh-accent-muted",
+              isFirst && isCurrent ? "animate-pulse" : ""
+            ].join(" ");
+            
             return (
               <div class="relative pl-16 animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
                 <!-- Node Circle -->
-                <div class={`absolute left-0 w-8 h-8 rounded-full border-3 ${
-                  isCurrent 
-                    ? 'bg-gh-success-emphasis border-gh-success-muted shadow-lg' 
-                    : 'bg-gh-accent-subtle border-gh-accent-muted'
-                } ${isFirst && isCurrent ? 'animate-pulse' : ''}`}>
-                </div>
+                <Icon name="git-merge" size={16} class={iconClassName} />
 
                 <!-- Content Card -->
                 <div class="card-highlight">

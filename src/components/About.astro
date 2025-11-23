@@ -48,7 +48,7 @@ import Icon from './Icon.astro';
             {highlights.map((highlight) => (
               <div class="flex items-start gap-3 p-4 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted transition-all group">
                 <div class="p-2 rounded-md bg-gh-success-subtle group-hover:bg-gh-success-emphasis transition-colors flex-shrink-0">
-                  <Icon name="check" size={20} class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors" />
+                  <Icon name="focus-center" size={20} class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors" />
                 </div>
                 <div class="flex-1">
                   <h4 class="font-semibold text-gh-fg-default mb-1">{highlight.title}</h4>
@@ -68,7 +68,7 @@ import Icon from './Icon.astro';
           rel="noopener noreferrer"
           class="btn btn-secondary inline-flex items-center gap-2"
         >
-          <Icon name="file-code" size={20} class="w-5 h-5" />
+          <Icon name="file" size={20} class="w-5 h-5" />
           View Resume
         </a>
       </div>
