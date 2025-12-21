@@ -14,14 +14,12 @@ import Icon from './Icon.astro';
       <!-- GitHub Primer Timeline Container -->
       <div class="timeline">
         {education.map((edu, index) => {
-          const isCurrent = edu.period.toLowerCase().includes('present') || 
-                           edu.period.toLowerCase().includes('current') || 
-                           edu.period.toLowerCase().includes('ongoing');
+          const isCurrent = edu.isCurrent || false;
           
           return (
             <div class="timeline-item" style={`animation-delay: ${index * 0.1}s`}>
               <!-- Timeline Badge (Dot) -->
-              <div class={`timeline-badge ${isCurrent ? 'timeline-badge-success' : 'timeline-badge-accent'}`}>
+              <div class="timeline-badge timeline-badge-accent">
                 <Icon name={isCurrent ? "issue-opened" : "issue-closed"} size={16} class="w-4 h-4" />
               </div>
               
@@ -37,8 +35,8 @@ import Icon from './Icon.astro';
                     </div>
                     <div class="flex flex-col items-start md:items-end gap-1 mt-2 md:mt-0">
                       <span class="badge text-xs">{edu.period}</span>
-                      {edu.cgpa && (
-                        <span class="text-gh-success-fg text-sm font-semibold">CGPA: {edu.cgpa}</span>
+                      {edu.grade && (
+                        <span class="text-gh-success-fg text-sm font-semibold">{edu.grade}</span>
                       )}
                     </div>
                   </div>

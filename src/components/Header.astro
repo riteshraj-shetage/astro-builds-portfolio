@@ -1,6 +1,6 @@
 ---
-import { personalInfo } from '../data/portfolio';
-import Icon from './Icon.astro';
+import { personalInfo } from "../data/portfolio";
+import Icon from "./Icon.astro";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -12,29 +12,42 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-gh-canvas-default border-b border-gh-border-default shadow-sm">
+<header
+  class="sticky top-0 z-50 bg-gh-canvas-default border-b border-gh-border-default shadow-sm"
+>
   <nav class="container-custom py-3">
     <div class="flex items-center justify-between">
       <!-- Logo/Brand -->
-      <a href="#home" class="flex items-center gap-2.5 text-gh-fg-default no-underline hover:text-gh-fg-default transition-all group">
-          <img src={personalInfo.brandLogo} alt="Logo" class="w-8 h-8 transition-transform group-hover:scale-110" />
-        <span class="text-lg font-semibold tracking-tight">{personalInfo.brandName}</span>
+      <a
+        href="#home"
+        class="flex items-center gap-2.5 text-gh-fg-default no-underline hover:text-gh-fg-default transition-all group"
+      >
+        <img
+          src={personalInfo.brandLogo}
+          alt="Logo"
+          class="w-8 h-8 transition-transform group-hover:scale-110"
+        />
+        <span class="text-lg font-semibold tracking-tight"
+          >{personalInfo.brandName}</span
+        >
       </a>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-1">
-        {navItems.map((item) => (
-          <a 
-            href={item.href} 
-            class="px-3 py-2 text-sm text-gh-fg-default no-underline hover:text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all font-medium"
-          >
-            {item.name}
-          </a>
-        ))}
-        
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="px-3 py-2 text-sm text-gh-fg-default no-underline hover:text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all font-medium"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+
         <!-- Theme Toggle Button (Desktop) -->
-        <button 
-          id="theme-toggle" 
+        <button
+          id="theme-toggle"
           class="ml-2 p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all"
           aria-label="Toggle theme"
         >
@@ -46,17 +59,22 @@ const navItems = [
       <!-- Mobile Menu and Theme Toggle Buttons -->
       <div class="md:hidden flex items-center gap-2">
         <!-- Theme Toggle Button (Mobile) -->
-        <button 
-          id="theme-toggle-mobile" 
+        <button
+          id="theme-toggle-mobile"
           class="p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all"
           aria-label="Toggle theme"
         >
-          <Icon name="sun" size={20} class="w-5 h-5 hidden" id="sun-icon-mobile" />
+          <Icon
+            name="sun"
+            size={20}
+            class="w-5 h-5 hidden"
+            id="sun-icon-mobile"
+          />
           <Icon name="moon" size={20} class="w-5 h-5" id="moon-icon-mobile" />
         </button>
-        
-        <button 
-          id="mobile-menu-button" 
+
+        <button
+          id="mobile-menu-button"
           class="p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all"
           aria-label="Toggle menu"
         >
@@ -67,76 +85,81 @@ const navItems = [
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden mt-3 pt-3 border-t border-gh-border-default animate-slide-down">
-      {navItems.map((item) => (
-        <a 
-          href={item.href} 
-          class="block px-3 py-2.5 text-sm text-center text-gh-fg-default no-underline hover:text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all mb-1"
-        >
-          {item.name}
-        </a>
-      ))}
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden mt-3 pt-3 border-t border-gh-border-default animate-slide-down"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="block px-3 py-2.5 text-sm text-center text-gh-fg-default no-underline hover:text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all mb-1"
+          >
+            {item.name}
+          </a>
+        ))
+      }
     </div>
   </nav>
 </header>
 
 <script>
   // Mobile menu toggle
-  const menuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
 
-  menuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-    menuIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
+  menuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
   });
 
   // Close mobile menu when clicking on a link
-  const mobileLinks = mobileMenu?.querySelectorAll('a');
-  mobileLinks?.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
+  const mobileLinks = mobileMenu?.querySelectorAll("a");
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
     });
   });
 
   // Add scroll effect to header
-  const header = document.querySelector('header');
-  
-  window.addEventListener('scroll', () => {
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
-      header?.classList.add('shadow-md');
+      header?.classList.add("shadow-md");
     } else {
-      header?.classList.remove('shadow-md');
+      header?.classList.remove("shadow-md");
     }
   });
 
   // Theme toggle functionality
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-  const sunIcon = document.getElementById('sun-icon');
-  const moonIcon = document.getElementById('moon-icon');
-  const sunIconMobile = document.getElementById('sun-icon-mobile');
-  const moonIconMobile = document.getElementById('moon-icon-mobile');
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+  const sunIconMobile = document.getElementById("sun-icon-mobile");
+  const moonIconMobile = document.getElementById("moon-icon-mobile");
 
   // Update icon visibility based on current theme
   const updateIcons = (): void => {
-    const isDark = document.documentElement.classList.contains('dark');
+    const isDark = document.documentElement.classList.contains("dark");
     if (isDark) {
-      sunIcon?.classList.add('hidden');
-      moonIcon?.classList.remove('hidden');
-      sunIconMobile?.classList.add('hidden');
-      moonIconMobile?.classList.remove('hidden');
+      sunIcon?.classList.add("hidden");
+      moonIcon?.classList.remove("hidden");
+      sunIconMobile?.classList.add("hidden");
+      moonIconMobile?.classList.remove("hidden");
     } else {
-      sunIcon?.classList.remove('hidden');
-      moonIcon?.classList.add('hidden');
-      sunIconMobile?.classList.remove('hidden');
-      moonIconMobile?.classList.add('hidden');
+      sunIcon?.classList.remove("hidden");
+      moonIcon?.classList.add("hidden");
+      sunIconMobile?.classList.remove("hidden");
+      moonIconMobile?.classList.add("hidden");
     }
   };
 
@@ -145,10 +168,10 @@ const navItems = [
 
   // Toggle theme
   const toggleTheme = () => {
-    document.documentElement.classList.toggle('dark');
+    document.documentElement.classList.toggle("dark");
     updateIcons();
   };
 
-  themeToggle?.addEventListener('click', toggleTheme);
-  themeToggleMobile?.addEventListener('click', toggleTheme);
+  themeToggle?.addEventListener("click", toggleTheme);
+  themeToggleMobile?.addEventListener("click", toggleTheme);
 </script>

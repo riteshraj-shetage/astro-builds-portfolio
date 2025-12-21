@@ -2,6 +2,7 @@
 export type PersonalInfo = {
   name: string;
   title: string;
+  tagLine: string;
   bio: string;
   location: string;
   email: string;
@@ -13,7 +14,7 @@ export type PersonalInfo = {
 }
 
 export type Skill = {
-  category: string;
+  category: "Frontend" | "Backend" | "Tools";
   items: string[];
 }
 
@@ -32,7 +33,8 @@ export type Education = {
   institution: string;
   period: string;
   description: string;
-  cgpa: string;
+  grade: string;
+  isCurrent?: boolean;
 }
 
 export type Highlight = {
@@ -53,7 +55,8 @@ export type Credential = {
 export const personalInfo: PersonalInfo = {
   name: "Your Name",
   title: "Full Stack Developer",
-  bio: "Passionate about building elegant solutions to complex problems. Open source enthusiast and continuous learner.",
+  tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast and continuous learner.",
+  bio: "Aspiring Full Stack Developer with strong programming and database foundations, skilled in building scalable web applications and proactively mastering modern frontend, backend, and cloud technologies.",
   location: "San Francisco, CA",
   email: "your.email@example.com",
   github: "https://github.com/yourusername",
@@ -73,7 +76,7 @@ export const skills: Skill[] = [
     items: ["Node.js", "Python", "PostgreSQL", "MongoDB", "FastAPI"],
   },
   {
-    category: "Tools & Others",
+    category: "Tools",
     items: ["Git", "Docker", "AWS", "GitHub Actions", "Linux"],
   },
 ];
@@ -123,21 +126,22 @@ export const education: Education[] = [
     institution: "Tech Institute",
     period: "2024 - 2026",
     description: "Specialized in distributed systems and cloud computing. Research on microservices architecture.",
-    cgpa: "9.5/10",
+    grade: "CGPA: 9.5/10",
+    isCurrent: true,
   },
   {
     degree: "Bachelor of Science in Computer Science",
     institution: "University of Technology",
     period: "2021 - 2024",
     description: "Focused on software engineering, algorithms, and data structures. Graduated with honors.",
-    cgpa: "8.5/10",
+    grade: "CGPA: 8.5/10",
   },
   {
     degree: "High School Diploma in Science",
     institution: "Central High School",
     period: "2020 - 2021",
     description: "Completed advanced coursework in mathematics, physics, and computer science with distinction.",
-    cgpa: "9.0/10",
+    grade: "Score: 92%",
   },
 ];
 
