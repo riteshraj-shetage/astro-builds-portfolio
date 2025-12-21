@@ -46,23 +46,6 @@ import Icon from './Icon.astro';
                   </a>
                 )}
               </div>
-              <div class="absolute top-3 right-3">
-                <span class={`px-3 py-1 rounded-full text-xs font-medium border ${
-                  // Universal function to get status styling based on status text
-                  (() => {
-                    const status = project.status.toLowerCase();
-                    if (status.includes('active') || status.includes('complete')) {
-                      return 'bg-gh-success-subtle text-gh-success-fg border-gh-success-muted';
-                    } else if (status.includes('development') || status.includes('progress')) {
-                      return 'bg-gh-attention-subtle text-gh-attention-fg border-gh-attention-muted';
-                    } else {
-                      return 'bg-gh-canvas-subtle text-gh-fg-muted border-gh-border-default';
-                    }
-                  })()
-                }`}>
-                  {project.status}
-                </span>
-              </div>
             </div>
           )}
 
@@ -70,7 +53,7 @@ import Icon from './Icon.astro';
             <!-- Project header -->
             <div class="flex items-start gap-3">
               <Icon name="file-directory" size={24} class="w-6 h-6 text-gh-fg-muted group-hover:text-gh-accent-fg transition-colors flex-shrink-0 mt-0.5" />
-              <h3 class="text-xl font-semibold text-gh-accent-fg group-hover:text-gh-accent-emphasis transition-colors">
+              <h3 class="text-xl font-semibold text-gh-fg-default group-hover:text-gh-accent-emphasis transition-colors">
                 {project.title}
               </h3>
             </div>
