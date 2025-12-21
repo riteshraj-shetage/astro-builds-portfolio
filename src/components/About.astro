@@ -1,6 +1,6 @@
 ---
-import { personalInfo, highlights } from '../data/portfolio';
-import Icon from './Icon.astro';
+import { personalInfo, highlights } from "../data/portfolio";
+import Icon from "./Icon.astro";
 ---
 
 <section id="about" class="section section-alt">
@@ -15,8 +15,10 @@ import Icon from './Icon.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Overview Section -->
         <div class="card-highlight animate-fade-in-up">
-          <h3 class="text-2xl font-semibold text-gh-fg-default mb-4">Overview</h3>
-          
+          <h3 class="text-2xl font-semibold text-gh-fg-default mb-4">
+            Overview
+          </h3>
+
           <p class="text-gh-fg-muted leading-relaxed text-lg mb-6">
             {personalInfo.bio}
           </p>
@@ -25,13 +27,21 @@ import Icon from './Icon.astro';
 
           <div class="space-y-4">
             <div class="flex items-center gap-3 group">
-              <div class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors">
-                <Icon name="location" size={20} class="w-5 h-5 text-gh-accent-fg" />
+              <div
+                class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors"
+              >
+                <Icon
+                  name="location"
+                  size={20}
+                  class="w-5 h-5 text-gh-accent-fg"
+                />
               </div>
               <span class="text-gh-fg-muted">{personalInfo.location}</span>
             </div>
             <div class="flex items-center gap-3 group">
-              <div class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors">
+              <div
+                class="p-2 rounded-md bg-gh-canvas-subtle group-hover:bg-gh-accent-subtle transition-colors"
+              >
                 <Icon name="mail" size={20} class="w-5 h-5 text-gh-accent-fg" />
               </div>
               <a href={`mailto:${personalInfo.email}`} class="link-hover">
@@ -42,29 +52,44 @@ import Icon from './Icon.astro';
         </div>
 
         <!-- Highlights Section -->
-        <div class="card-highlight animate-fade-in-up" style="animation-delay: 0.1s">
-          <h3 class="text-2xl font-semibold mb-6 text-gh-fg-default">Highlights</h3>
+        <div
+          class="card-highlight animate-fade-in-up"
+          style="animation-delay: 0.1s"
+        >
+          <h3 class="text-2xl font-semibold mb-6 text-gh-fg-default">
+            Highlights
+          </h3>
           <div class="space-y-4">
-            {highlights.map((highlight) => (
-              <div class="flex items-start gap-3 p-4 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted transition-all group">
-                <div class="p-2 rounded-md bg-gh-success-subtle group-hover:bg-gh-success-emphasis transition-colors flex-shrink-0">
-                  <Icon name="zap" size={20} class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors" />
+            {
+              highlights.map((highlight) => (
+                <div class="flex items-start gap-3 p-4 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted transition-all group">
+                  <div class="p-2 rounded-md bg-gh-success-subtle group-hover:bg-gh-success-emphasis transition-colors flex-shrink-0">
+                    <Icon
+                      name="zap"
+                      size={20}
+                      class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-semibold text-gh-fg-default mb-1">
+                      {highlight.title}
+                    </h4>
+                    <p class="text-sm text-gh-fg-muted">
+                      {highlight.description}
+                    </p>
+                  </div>
                 </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold text-gh-fg-default mb-1">{highlight.title}</h4>
-                  <p class="text-sm text-gh-fg-muted">{highlight.description}</p>
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </div>
 
       <!-- View Resume Button -->
       <div class="mt-8 text-center">
-        <a 
-          href="/resume.pdf" 
-          target="_blank" 
+        <a
+          href="/resume.pdf"
+          target="_blank"
           rel="noopener noreferrer"
           class="btn btn-secondary inline-flex items-center gap-2"
         >
