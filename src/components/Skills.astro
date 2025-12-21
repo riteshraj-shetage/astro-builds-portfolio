@@ -1,92 +1,125 @@
 ---
-import { skills } from '../data/portfolio';
-import Icon from './Icon.astro';
+import { skills } from "../data/portfolio";
+import Icon from "./Icon.astro";
 ---
 
 <section id="skills" class="section">
   <div class="container-custom">
     <div class="section-header">
       <h2 class="section-title">Skills & Technologies</h2>
-      <p class="section-subtitle">Tools and technologies I work with to build amazing products</p>
+      <p class="section-subtitle">
+        Tools and technologies I work with to build amazing products
+      </p>
     </div>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-      {skills.map((category, catIndex) => {
-        // Universal function to get category icon based on category name
-        const getCategoryIcon = (categoryName: string) => {
-          const lowerName = categoryName.toLowerCase();
-          if (lowerName.includes("frontend")) {
-            return "device-desktop";
-          } else if (lowerName.includes("backend")) {
-            return "server";
-          } else {
-            // Default icon for tools, devops, or other categories
-            return "tools";
-          }
-        };
-        
-        const iconName = getCategoryIcon(category.category);
-        
-        return (
-          <div class="card-highlight animate-fade-in-up" style={`animation-delay: ${catIndex * 0.1}s`}>
-            <div class="flex items-center gap-3 mb-6">
-              <div class="p-2 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted">
-                <Icon name={iconName} size={24} class="w-6 h-6 text-gh-accent-fg" />
+      {
+        skills.map((category, catIndex) => {
+          // Universal function to get category icon based on category name
+          const getCategoryIcon = (categoryName: string) => {
+            const lowerName = categoryName.toLowerCase();
+            if (lowerName.includes("frontend")) {
+              return "device-desktop";
+            } else if (lowerName.includes("backend")) {
+              return "server";
+            } else {
+              // Default icon for tools, devops, or other categories
+              return "tools";
+            }
+          };
+
+          const iconName = getCategoryIcon(category.category);
+
+          return (
+            <div
+              class="card-highlight animate-fade-in-up"
+              style={`animation-delay: ${catIndex * 0.1}s`}
+            >
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 rounded-lg bg-gh-accent-subtle border border-gh-accent-muted">
+                  <Icon
+                    name={iconName}
+                    size={24}
+                    class="w-6 h-6 text-gh-accent-fg"
+                  />
+                </div>
+                <h3 class="text-xl font-semibold text-gh-fg-default">
+                  {category.category}
+                </h3>
               </div>
-              <h3 class="text-xl font-semibold text-gh-fg-default">{category.category}</h3>
-            </div>
-            
-            <div class="space-y-3">
-              {category.items.map((skillName) => {
-                // Universal function to convert skill name to icon name
-                const convertSkillToIcon = (name: string) => {
-                  // Hardcoded special cases
-                  const specialCases: { [key: string]: { icon: string; variant: string } } = {
-                    "AWS": { icon: "amazonwebservices", variant: "original-wordmark" },
-                    ".NET": { icon: "dot-net", variant: "original" },
-                    "Django": { icon: "django", variant: "plain" },
-                    "C#": { icon: "csharp", variant: "original" },
-                    "C++": { icon: "cplusplus", variant: "original" }
+
+              <div class="space-y-3">
+                {category.items.map((skillName) => {
+                  // Universal function to convert skill name to icon name
+                  const convertSkillToIcon = (name: string) => {
+                    // Hardcoded special cases
+                    const specialCases: {
+                      [key: string]: { icon: string; variant: string };
+                    } = {
+                      AWS: {
+                        icon: "amazonwebservices",
+                        variant: "original-wordmark",
+                      },
+                      ".NET": { icon: "dot-net", variant: "original" },
+                      Django: { icon: "django", variant: "plain" },
+                      "C#": { icon: "csharp", variant: "original" },
+                      "C++": { icon: "cplusplus", variant: "original" },
+                    };
+
+                    if (specialCases[name]) {
+                      const { icon, variant } = specialCases[name];
+                      return { icon, variant };
+                    }
+
+                    // Universal conversion: lowercase, remove spaces and dots
+                    const icon = name
+                      .toLowerCase()
+                      .replace(/\s+/g, "")
+                      .replace(/\./g, "");
+                    return { icon, variant: "original" };
                   };
-                  
-                  if (specialCases[name]) {
-                    const { icon, variant } = specialCases[name];
-                    return { icon, variant };
-                  }
-                  
-                  // Universal conversion: lowercase, remove spaces and dots
-                  const icon = name.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
-                  return { icon, variant: "original" };
-                };
-                
-                const { icon, variant } = convertSkillToIcon(skillName);
-                const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${variant}.svg`;
-                
-                return (
-                  <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
-                    <div class="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <img 
-                        src={iconUrl}
-                        alt={skillName}
-                        class="w-7 h-7 devicon-img"
-                        data-icon={icon}
-                        data-variant={variant}
+
+                  const { icon, variant } = convertSkillToIcon(skillName);
+                  const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${variant}.svg`;
+
+                  return (
+                    <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
+                      <div class="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <img
+                          src={iconUrl}
+                          alt={skillName}
+                          class="w-7 h-7 devicon-img"
+                          data-icon={icon}
+                          data-variant={variant}
+                        />
+                      </div>
+                      <span class="text-sm font-medium text-gh-fg-default flex-1">
+                        {skillName}
+                      </span>
+                      <Icon
+                        name="check-circle-fill"
+                        size={16}
+                        class="w-4 h-4 text-gh-success-fg opacity-0 group-hover:opacity-100 transition-opacity"
                       />
                     </div>
-                    <span class="text-sm font-medium text-gh-fg-default flex-1">{skillName}</span>
-                    <Icon name="check-circle-fill" size={16} class="w-4 h-4 text-gh-success-fg opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })
+      }
     </div>
 
     <div class="mt-16 text-center">
-      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default">
-        <Icon name="zap" size={24} class="w-6 h-6 text-gh-success-fg animate-pulse" />
+      <div
+        class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default"
+      >
+        <Icon
+          name="zap"
+          size={24}
+          class="w-6 h-6 text-gh-success-fg animate-pulse"
+        />
         <p class="text-gh-fg-muted text-sm md:text-base">
           Continuously learning and exploring new technologies
         </p>
@@ -97,22 +130,25 @@ import Icon from './Icon.astro';
 
 <script>
   // Fallback for devicon images
-  document.addEventListener('DOMContentLoaded', () => {
-    const deviconImages = document.querySelectorAll('.devicon-img');
+  document.addEventListener("DOMContentLoaded", () => {
+    const deviconImages = document.querySelectorAll(".devicon-img");
     deviconImages.forEach((img) => {
       const imgElement = img as HTMLImageElement;
-      imgElement.addEventListener('error', () => {
+      imgElement.addEventListener("error", () => {
         const icon = imgElement.dataset.icon;
         const variant = imgElement.dataset.variant;
-        
+
         if (icon && variant) {
           // Try fallback variants in order
-          const fallbacks = ['plain', 'original-wordmark', 'plain-wordmark'];
+          const fallbacks = ["plain", "original-wordmark", "plain-wordmark"];
           const currentVariant = variant;
-          
+
           // Find next fallback that hasn't been tried
           for (const fallback of fallbacks) {
-            if (fallback !== currentVariant && !imgElement.src.includes(`${icon}-${fallback}.svg`)) {
+            if (
+              fallback !== currentVariant &&
+              !imgElement.src.includes(`${icon}-${fallback}.svg`)
+            ) {
               imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${fallback}.svg`;
               imgElement.dataset.variant = fallback;
               break;

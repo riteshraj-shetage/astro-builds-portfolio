@@ -119,10 +119,6 @@
   a {
     @apply text-gh-accent-fg transition-colors;
   }
-
-  a:hover {
-    @apply text-gh-accent-emphasis;
-  }
 }
 
 @layer components {
