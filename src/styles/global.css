@@ -199,11 +199,6 @@
     background-color: rgba(110, 118, 129, 0.1);
   }
 
-  /* GitHub-style repo stats */
-  .repo-stat {
-    @apply inline-flex items-center gap-1 text-sm text-gh-fg-muted;
-  }
-
   /* GitHub Primer Timeline - Commit style with clipped sidebar */
   .timeline {
     @apply relative;
@@ -291,27 +286,27 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d1117;
+  background: var(--gh-canvas-default);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #30363d;
+  background: var(--gh-border-default);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #484f58;
+  background: var(--gh-border-muted);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(56, 139, 253, 0.3);
-  color: #e6edf3;
+  background: var(--gh-accent-muted);
+  color: var(--gh-fg-default);
 }
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid #2f81f7;
+  outline: 2px solid var(--gh-accent-emphasis);
   outline-offset: 2px;
 }
 
