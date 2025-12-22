@@ -1,0 +1,80 @@
+---
+interface Props {
+  skillName: string;
+  class?: string;
+}
+
+const { skillName, class: className = "" } = Astro.props;
+
+// Universal function to convert skill name to icon name
+const convertSkillToIcon = (name: string) => {
+  // Hardcoded special cases
+  const specialCases: {
+    [key: string]: { icon: string; variant: string };
+  } = {
+    AWS: {
+      icon: "amazonwebservices",
+      variant: "original-wordmark",
+    },
+    ".NET": { icon: "dot-net", variant: "original" },
+    Django: { icon: "django", variant: "plain" },
+    "C#": { icon: "csharp", variant: "original" },
+    "C++": { icon: "cplusplus", variant: "original" },
+  };
+
+  if (specialCases[name]) {
+    const { icon, variant } = specialCases[name];
+    return { icon, variant };
+  }
+
+  // Universal conversion: lowercase, remove spaces and dots
+  const icon = name
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/\./g, "");
+  return { icon, variant: "original" };
+};
+
+const { icon, variant } = convertSkillToIcon(skillName);
+const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${variant}.svg`;
+---
+
+<img
+  src={iconUrl}
+  alt={skillName}
+  class={`devicon-img ${className}`}
+  data-icon={icon}
+  data-variant={variant}
+/>
+
+<script>
+  // Fallback for devicon images
+  document.addEventListener("DOMContentLoaded", () => {
+    const deviconImages = document.querySelectorAll(".devicon-img");
+    deviconImages.forEach((img) => {
+      const imgElement = img as HTMLImageElement;
+      imgElement.addEventListener("error", () => {
+        const icon = imgElement.dataset.icon;
+        const variant = imgElement.dataset.variant;
+
+        if (icon && variant) {
+          // Try fallback variants in order
+          const fallbacks = ["plain", "original-wordmark", "plain-wordmark"];
+          const currentVariant = variant;
+
+          // Find next fallback that hasn't been tried
+          for (const fallback of fallbacks) {
+            if (
+              fallback !== currentVariant &&
+              !imgElement.src.includes(`${icon}-${fallback}.svg`)
+            ) {
+              imgElement.src = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${fallback}.svg`;
+              imgElement.dataset.variant = fallback;
+              break;
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
