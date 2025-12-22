@@ -32,6 +32,11 @@
     --gh-danger-emphasis: #a40e26;
     --gh-danger-muted: rgba(255, 129, 130, 0.4);
     --gh-danger-subtle: rgba(255, 129, 130, 0.15);
+    /* GitHub brand colors for gitlines and special styling */
+    --gh-rose: #f78166;
+    --gh-blue: #1f6feb;
+    --gh-green: #3fb950;
+    --gh-gold: #d29922;
   }
 
   .dark {
@@ -63,6 +68,11 @@
     --gh-danger-emphasis: #da3633;
     --gh-danger-muted: rgba(248, 81, 73, 0.4);
     --gh-danger-subtle: rgba(248, 81, 73, 0.15);
+    /* GitHub brand colors for gitlines and special styling */
+    --gh-rose: #f78166;
+    --gh-blue: #1f6feb;
+    --gh-green: #3fb950;
+    --gh-gold: #d29922;
   }
 
   * {
@@ -276,6 +286,13 @@
   .timeline-body {
     flex: 1;
     min-width: 0;
+  }
+
+  /* Gitlines border - GitHub brand inspired gradient */
+  .gitlines-border {
+    background: linear-gradient(135deg, var(--gh-rose) 0%, var(--gh-blue) 25%, var(--gh-green) 50%, var(--gh-gold) 75%, var(--gh-rose) 100%);
+    background-size: 300% 300%;
+    animation: gitlines-gradient 8s ease infinite;
   }
 }
 

@@ -42,7 +42,7 @@ const navItems = [
               data-section={item.href.substring(1)}
             >
               {item.name}
-              <span class="nav-underline absolute bottom-0 left-0 right-0 h-0.5 bg-[#f78166] transform scale-x-0 transition-transform duration-200"></span>
+              <span class="nav-underline absolute bottom-0 left-0 right-0 h-0.5 bg-gh-rose transform scale-x-0 transition-transform duration-200"></span>
             </a>
           ))
         }
@@ -180,42 +180,40 @@ const navItems = [
   // Active section detection based on scroll
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
+  let currentActiveSection = "";
 
   const setActiveLink = () => {
     const scrollY = window.pageYOffset;
+    let activeSection = "";
 
-    sections.forEach((section) => {
-      const sectionTop = (section as HTMLElement).offsetTop;
-      const sectionHeight = (section as HTMLElement).offsetHeight;
-      const sectionId = section.getAttribute("id");
-
-      // Check if section is in view (with offset for header)
-      if (
-        scrollY >= sectionTop - 150 &&
-        scrollY < sectionTop + sectionHeight - 150
-      ) {
-        navLinks.forEach((link) => {
-          const linkSection = link.getAttribute("data-section");
-          const underline = link.querySelector(".nav-underline");
-
-          if (linkSection === sectionId) {
-            underline?.classList.add("scale-x-100");
-            underline?.classList.remove("scale-x-0");
-          } else {
-            underline?.classList.add("scale-x-0");
-            underline?.classList.remove("scale-x-100");
-          }
-        });
-      }
-    });
-
-    // Handle edge case for top of page (home section)
+    // Find the current active section
     if (scrollY < 100) {
+      activeSection = "home";
+    } else {
+      sections.forEach((section) => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        const sectionHeight = (section as HTMLElement).offsetHeight;
+        const sectionId = section.getAttribute("id") || "";
+
+        // Check if section is in view (with offset for header)
+        if (
+          scrollY >= sectionTop - 150 &&
+          scrollY < sectionTop + sectionHeight - 150
+        ) {
+          activeSection = sectionId;
+        }
+      });
+    }
+
+    // Only update DOM if active section changed
+    if (activeSection && activeSection !== currentActiveSection) {
+      currentActiveSection = activeSection;
+
       navLinks.forEach((link) => {
         const linkSection = link.getAttribute("data-section");
         const underline = link.querySelector(".nav-underline");
 
-        if (linkSection === "home") {
+        if (linkSection === activeSection) {
           underline?.classList.add("scale-x-100");
           underline?.classList.remove("scale-x-0");
         } else {
