@@ -52,6 +52,10 @@ export default {
             muted: 'rgba(110, 118, 129, 0.4)',
             subtle: 'rgba(110, 118, 129, 0.1)',
           },
+          rose: 'var(--gh-rose, #f78166)',
+          blue: 'var(--gh-blue, #1f6feb)',
+          green: 'var(--gh-green, #3fb950)',
+          gold: 'var(--gh-gold, #d29922)',
         },
       },
       fontFamily: {
