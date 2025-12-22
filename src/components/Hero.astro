@@ -21,8 +21,11 @@ import Icon from "./Icon.astro";
         <!-- Avatar with GitHub-style border -->
         <div class="flex-shrink-0">
           <div class="relative">
+            <!-- Gitlines-inspired border effect -->
+            <div class="absolute -inset-1 bg-gradient-to-br from-gh-accent-fg via-gh-success-fg to-gh-accent-fg opacity-75 blur-sm rounded-full"></div>
             <div
-              class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-gh-accent-emphasis via-gh-success-emphasis to-gh-accent-emphasis p-0.5 animate-scale-in"
+              class="relative w-48 h-48 md:w-64 md:h-64 rounded-full p-1 animate-scale-in"
+              style="background: linear-gradient(135deg, #f78166 0%, #1f6feb 25%, #3fb950 50%, #d29922 75%, #f78166 100%); background-size: 300% 300%; animation: gitlines-gradient 8s ease infinite;"
             >
               {
                 personalInfo.profileImage ? (
