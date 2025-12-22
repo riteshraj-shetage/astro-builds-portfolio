@@ -182,12 +182,16 @@ const navItems = [
   const navLinks = document.querySelectorAll(".nav-link");
   let currentActiveSection = "";
 
+  // Constants for scroll detection
+  const SCROLL_THRESHOLD = 100;
+  const HEADER_OFFSET = 150;
+
   const setActiveLink = () => {
     const scrollY = window.pageYOffset;
     let activeSection = "";
 
     // Find the current active section
-    if (scrollY < 100) {
+    if (scrollY < SCROLL_THRESHOLD) {
       activeSection = "home";
     } else {
       sections.forEach((section) => {
@@ -197,8 +201,8 @@ const navItems = [
 
         // Check if section is in view (with offset for header)
         if (
-          scrollY >= sectionTop - 150 &&
-          scrollY < sectionTop + sectionHeight - 150
+          scrollY >= sectionTop - HEADER_OFFSET &&
+          scrollY < sectionTop + sectionHeight - HEADER_OFFSET
         ) {
           activeSection = sectionId;
         }
