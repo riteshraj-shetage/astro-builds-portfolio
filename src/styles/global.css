@@ -207,25 +207,25 @@
 
   .btn-primary {
     @apply text-gh-fg-onEmphasis border shadow-sm;
-    background-color: var(--gh-btn-primary-bg);
+    background-color: var(--gh-btn-primary-bg, #1a7f37);
     border-color: rgba(27, 31, 36, 0.15);
   }
 
   .btn-primary:hover {
     @apply no-underline shadow-md;
-    background-color: var(--gh-btn-primary-hover-bg);
+    background-color: var(--gh-btn-primary-hover-bg, #1a8f3f);
   }
 
   .btn-secondary {
     @apply text-gh-fg-default border shadow-sm;
-    background-color: var(--gh-btn-secondary-bg);
-    border-color: var(--gh-border-default);
+    background-color: var(--gh-btn-secondary-bg, #f3f4f6);
+    border-color: var(--gh-border-default, #d0d7de);
   }
 
   .btn-secondary:hover {
     @apply no-underline shadow-md;
-    background-color: var(--gh-btn-secondary-hover-bg);
-    border-color: var(--gh-border-muted);
+    background-color: var(--gh-btn-secondary-hover-bg, #e5e7ea);
+    border-color: var(--gh-border-muted, #d8dee4);
   }
 
   /* Card Styles */
