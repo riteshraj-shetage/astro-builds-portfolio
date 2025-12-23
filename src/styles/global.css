@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    /* Light mode colors - GitHub Primer primitives */
-    --gh-canvas-default: #ffffff;
-    --gh-canvas-subtle: #f6f8fa;
-    --gh-canvas-inset: #f6f8fa;
+    /* Light mode colors - GitHub Primer primitives with improved contrast */
+    --gh-canvas-default: #fafbfc;
+    --gh-canvas-subtle: #f3f4f6;
+    --gh-canvas-inset: #ffffff;
     --gh-canvas-overlay: #ffffff;
-    --gh-border-default: #d1d9e0;
+    --gh-border-default: #d0d7de;
     --gh-border-muted: #d8dee4;
-    --gh-border-subtle: #eaeef2;
+    --gh-border-subtle: #e5e7ea;
     --gh-fg-default: #1f2328;
     --gh-fg-muted: #59636e;
     --gh-fg-subtle: #656d76;
@@ -37,6 +37,11 @@
     --gh-blue: #1f6feb;
     --gh-green: #3fb950;
     --gh-gold: #d29922;
+    /* Button colors for light mode */
+    --gh-btn-primary-bg: #1a7f37;
+    --gh-btn-primary-hover-bg: #1a8f3f;
+    --gh-btn-secondary-bg: #f3f4f6;
+    --gh-btn-secondary-hover-bg: #e5e7ea;
   }
 
   .dark {
@@ -73,6 +78,11 @@
     --gh-blue: #1f6feb;
     --gh-green: #3fb950;
     --gh-gold: #d29922;
+    /* Button colors for dark mode */
+    --gh-btn-primary-bg: #238636;
+    --gh-btn-primary-hover-bg: #29903b;
+    --gh-btn-secondary-bg: #21262d;
+    --gh-btn-secondary-hover-bg: #30363d;
   }
 
   * {
@@ -197,24 +207,25 @@
 
   .btn-primary {
     @apply text-gh-fg-onEmphasis border shadow-sm;
-    background-color: var(--gh-btn-primary-bg, #238636);
+    background-color: var(--gh-btn-primary-bg);
     border-color: rgba(27, 31, 36, 0.15);
   }
 
   .btn-primary:hover {
     @apply no-underline shadow-md;
-    background-color: var(--gh-btn-primary-hover-bg, #29903b);
+    background-color: var(--gh-btn-primary-hover-bg);
   }
 
   .btn-secondary {
     @apply text-gh-fg-default border shadow-sm;
-    background-color: var(--gh-btn-secondary-bg, #212830);
-    border-color: rgba(27, 31, 36, 0.15);
+    background-color: var(--gh-btn-secondary-bg);
+    border-color: var(--gh-border-default);
   }
 
   .btn-secondary:hover {
-    @apply no-underline;
-    background-color: var(--gh-btn-secondary-hover-bg, #262c36);
+    @apply no-underline shadow-md;
+    background-color: var(--gh-btn-secondary-hover-bg);
+    border-color: var(--gh-border-muted);
   }
 
   /* Card Styles */
