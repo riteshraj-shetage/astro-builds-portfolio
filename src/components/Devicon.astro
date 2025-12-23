@@ -1,10 +1,10 @@
 ---
 interface Props {
-  skillName: string;
+  iconName: string;
   class?: string;
 }
 
-const { skillName, class: className = "" } = Astro.props;
+const { iconName, class: className = "" } = Astro.props;
 
 // Universal function to convert skill name to icon name
 const convertSkillToIcon = (name: string) => {
@@ -17,9 +17,12 @@ const convertSkillToIcon = (name: string) => {
       variant: "original-wordmark",
     },
     ".NET": { icon: "dot-net", variant: "original" },
+    ".NET Core": { icon: "dotnetcore", variant: "original" },
     Django: { icon: "django", variant: "plain" },
     "C#": { icon: "csharp", variant: "original" },
     "C++": { icon: "cplusplus", variant: "original" },
+    HTML: { icon: "html5", variant: "original" },
+    CSS: { icon: "css3", variant: "original" },
   };
 
   if (specialCases[name]) {
@@ -28,20 +31,17 @@ const convertSkillToIcon = (name: string) => {
   }
 
   // Universal conversion: lowercase, remove spaces and dots
-  const icon = name
-    .toLowerCase()
-    .replace(/\s+/g, "")
-    .replace(/\./g, "");
+  const icon = name.toLowerCase().replace(/\s+/g, "").replace(/\./g, "");
   return { icon, variant: "original" };
 };
 
-const { icon, variant } = convertSkillToIcon(skillName);
+const { icon, variant } = convertSkillToIcon(iconName);
 const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}/${icon}-${variant}.svg`;
 ---
 
 <img
   src={iconUrl}
-  alt={skillName}
+  alt={iconName}
   class={`devicon-img ${className}`}
   data-icon={icon}
   data-variant={variant}
