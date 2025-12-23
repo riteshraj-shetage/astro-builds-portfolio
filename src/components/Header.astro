@@ -33,28 +33,29 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-1">
+      <div class="hidden md:flex items-center gap-1 relative">
         {
           navItems.map((item) => (
             <a
               href={item.href}
-              class="nav-link relative px-3 py-2 text-sm text-gh-fg-default no-underline hover:text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all font-medium"
+              class="nav-link px-3 py-2 text-sm text-gh-fg-default no-underline hover:text-gh-fg-default transition-all font-medium"
               data-section={item.href.substring(1)}
             >
               {item.name}
-              <span class="nav-underline absolute bottom-0 left-0 right-0 h-0.5 bg-gh-rose transform scale-x-0 transition-transform duration-200"></span>
             </a>
           ))
         }
+        <span class="nav-underline-bar absolute -bottom-3 left-0 h-0.5 bg-gh-rose transform transition-all duration-300 ease-out" style="width: 0; opacity: 0;"></span>
 
         <!-- Theme Toggle Button (Desktop) -->
         <button
           id="theme-toggle"
-          class="ml-2 p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all"
+          class="ml-2 p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all relative tooltip-container"
           aria-label="Toggle theme"
         >
           <Icon name="sun" size={20} class="w-5 h-5 hidden" id="sun-icon" />
           <Icon name="moon" size={20} class="w-5 h-5" id="moon-icon" />
+          <span class="tooltip">Toggle theme</span>
         </button>
       </div>
 
@@ -63,7 +64,7 @@ const navItems = [
         <!-- Theme Toggle Button (Mobile) -->
         <button
           id="theme-toggle-mobile"
-          class="p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all"
+          class="p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all relative tooltip-container"
           aria-label="Toggle theme"
         >
           <Icon
@@ -73,6 +74,7 @@ const navItems = [
             id="sun-icon-mobile"
           />
           <Icon name="moon" size={20} class="w-5 h-5" id="moon-icon-mobile" />
+          <span class="tooltip">Toggle theme</span>
         </button>
 
         <button
@@ -180,6 +182,7 @@ const navItems = [
   // Active section detection based on scroll
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
+  const navUnderlineBar = document.querySelector(".nav-underline-bar") as HTMLElement;
   let currentActiveSection = "";
 
   // Constants for scroll detection
@@ -213,18 +216,31 @@ const navItems = [
     if (activeSection && activeSection !== currentActiveSection) {
       currentActiveSection = activeSection;
 
+      // Find the active link
+      let activeLinkElement: Element | null = null;
       navLinks.forEach((link) => {
         const linkSection = link.getAttribute("data-section");
-        const underline = link.querySelector(".nav-underline");
-
         if (linkSection === activeSection) {
-          underline?.classList.add("scale-x-100");
-          underline?.classList.remove("scale-x-0");
-        } else {
-          underline?.classList.add("scale-x-0");
-          underline?.classList.remove("scale-x-100");
+          activeLinkElement = link;
         }
       });
+
+      // Update underline bar position
+      if (activeLinkElement && navUnderlineBar) {
+        const linkElement = activeLinkElement as HTMLElement;
+        const linkRect = linkElement.getBoundingClientRect();
+        const navContainer = linkElement.closest('.md\\:flex');
+        const containerRect = navContainer?.getBoundingClientRect();
+        
+        if (containerRect) {
+          const leftPosition = linkRect.left - containerRect.left;
+          navUnderlineBar.style.width = `${linkRect.width}px`;
+          navUnderlineBar.style.transform = `translateX(${leftPosition}px)`;
+          navUnderlineBar.style.opacity = '1';
+        }
+      } else if (navUnderlineBar) {
+        navUnderlineBar.style.opacity = '0';
+      }
     }
   };
 
