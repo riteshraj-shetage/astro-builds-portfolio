@@ -183,6 +183,7 @@
     line-height: 1.6;
     font-size: 1.125rem;
   }
+  /* Button Styles - GitHub Primer inspired */
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-medium transition-all duration-200 no-underline;
     line-height: 1.5;
@@ -196,24 +197,24 @@
 
   .btn-primary {
     @apply text-gh-fg-onEmphasis border shadow-sm;
-    background-color: #238636;
+    background-color: var(--gh-btn-primary-bg, #238636);
     border-color: rgba(27, 31, 36, 0.15);
   }
 
   .btn-primary:hover {
     @apply no-underline shadow-md;
-    background-color: #29903b;
+    background-color: var(--gh-btn-primary-hover-bg, #29903b);
   }
 
   .btn-secondary {
     @apply text-gh-fg-default border shadow-sm;
-    background-color: #212830;
+    background-color: var(--gh-btn-secondary-bg, #212830);
     border-color: rgba(27, 31, 36, 0.15);
   }
 
   .btn-secondary:hover {
     @apply no-underline;
-    background-color: #32626c;
+    background-color: var(--gh-btn-secondary-hover-bg, #32626c);
   }
 
   /* Card Styles */
@@ -369,6 +370,15 @@
 
   .tooltip-container:hover .tooltip {
     opacity: 1;
+  }
+
+  /* Form Input Focus Styles - GitHub Primer */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #58a6ff !important;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3) !important;
   }
 }
 
