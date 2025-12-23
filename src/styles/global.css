@@ -145,7 +145,7 @@
   }
 
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -214,7 +214,7 @@
 
   .btn-secondary:hover {
     @apply no-underline;
-    background-color: var(--gh-btn-secondary-hover-bg, #32626c);
+    background-color: var(--gh-btn-secondary-hover-bg, #262c36);
   }
 
   /* Card Styles */
@@ -340,7 +340,7 @@
 
   .tooltip {
     position: absolute;
-    bottom: calc(100% + 8px);
+    top: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
     padding: 4px 8px;
@@ -361,11 +361,11 @@
   .tooltip::after {
     content: '';
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     border: 4px solid transparent;
-    border-top-color: var(--gh-border-default);
+    border-bottom-color: var(--gh-border-default);
   }
 
   .tooltip-container:hover .tooltip {

@@ -14,7 +14,7 @@ export type PersonalInfo = {
 }
 
 export type Skill = {
-  category: "Frontend" | "Backend" | "Tools";
+  category: "Frontend" | "Backend" | "Tools" | "Database";
   items: string[];
 }
 
@@ -123,7 +123,7 @@ export const projects: Project[] = [
 export const education: Education[] = [
     {
     degree: "Master of Science in Software Engineering",
-    institution: "Tech Institute",
+    institution: "Modern Institute of Technology",
     period: "2024 - 2026",
     description: "Specialized in distributed systems and cloud computing. Research on microservices architecture.",
     grade: "CGPA: 9.5/10",
