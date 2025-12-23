@@ -93,47 +93,66 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold text-gh-fg-default;
     line-height: 1.25;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    font-weight: 600;
   }
 
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
     line-height: 1.1;
+    font-weight: 700;
   }
 
   h2 {
     @apply text-3xl md:text-4xl lg:text-5xl;
     line-height: 1.2;
+    font-weight: 600;
   }
 
   h3 {
     @apply text-2xl md:text-3xl;
+    font-weight: 600;
   }
 
   h4 {
     @apply text-xl;
+    font-weight: 600;
   }
 
   h5 {
     @apply text-lg;
+    font-weight: 600;
   }
 
   h6 {
     @apply text-base;
+    font-weight: 600;
   }
 
   p {
     line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  blockquote {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   a {
     @apply text-gh-accent-fg transition-colors;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 }
 
 @layer components {
   .section {
     @apply py-20 md:py-32;
+    position: relative;
   }
 
   .section-alt {
@@ -144,26 +163,58 @@
     @apply container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
   }
 
-  /* Button Styles - GitHub-inspired */
+  /* Section Headers - GitHub Primer style */
+  .section-header {
+    @apply text-center mb-16;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-4 text-gh-fg-default;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gh-fg-muted;
+    line-height: 1.6;
+    font-size: 1.125rem;
+  }
+  /* Button Styles - GitHub Primer inspired */
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-medium transition-all duration-200 no-underline;
     line-height: 1.5;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .btn:hover {
+    text-decoration: none;
   }
 
   .btn-primary {
-    @apply bg-gh-success-emphasis text-gh-fg-onEmphasis hover:bg-gh-success-fg border border-gh-success-emphasis shadow-sm;
+    @apply text-gh-fg-onEmphasis border shadow-sm;
+    background-color: var(--gh-btn-primary-bg, #238636);
+    border-color: rgba(27, 31, 36, 0.15);
   }
 
   .btn-primary:hover {
     @apply no-underline shadow-md;
+    background-color: var(--gh-btn-primary-hover-bg, #29903b);
   }
 
   .btn-secondary {
-    @apply bg-gh-canvas-subtle text-gh-fg-default border border-gh-border-default hover:bg-gh-canvas-inset hover:border-gh-accent-muted;
+    @apply text-gh-fg-default border shadow-sm;
+    background-color: var(--gh-btn-secondary-bg, #212830);
+    border-color: rgba(27, 31, 36, 0.15);
   }
 
   .btn-secondary:hover {
     @apply no-underline;
+    background-color: var(--gh-btn-secondary-hover-bg, #32626c);
   }
 
   /* Card Styles */
@@ -178,19 +229,6 @@
 
   .card-highlight {
     @apply card;
-  }
-
-  /* Section Headers */
-  .section-header {
-    @apply text-center mb-16;
-  }
-
-  .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-4 text-gh-fg-default;
-  }
-
-  .section-subtitle {
-    @apply text-lg text-gh-fg-muted max-w-2xl mx-auto;
   }
 
   /* Link Styles */
@@ -293,6 +331,54 @@
     background: linear-gradient(135deg, var(--gh-rose) 0%, var(--gh-blue) 25%, var(--gh-green) 50%, var(--gh-gold) 75%, var(--gh-rose) 100%);
     background-size: 300% 300%;
     animation: gitlines-gradient 8s ease infinite;
+  }
+
+  /* Tooltip - GitHub style */
+  .tooltip-container {
+    position: relative;
+  }
+
+  .tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: var(--gh-canvas-overlay);
+    color: var(--gh-fg-default);
+    border: 1px solid var(--gh-border-default);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: var(--gh-border-default);
+  }
+
+  .tooltip-container:hover .tooltip {
+    opacity: 1;
+  }
+
+  /* Form Input Focus Styles - GitHub Primer */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #58a6ff !important;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3) !important;
   }
 }
 
