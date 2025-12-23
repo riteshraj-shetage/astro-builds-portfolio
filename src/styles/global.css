@@ -81,8 +81,8 @@
     /* Button colors for dark mode */
     --gh-btn-primary-bg: #238636;
     --gh-btn-primary-hover-bg: #29903b;
-    --gh-btn-secondary-bg: #21262d;
-    --gh-btn-secondary-hover-bg: #30363d;
+    --gh-btn-secondary-bg: #212830;
+    --gh-btn-secondary-hover-bg: #262c36;
   }
 
   * {
