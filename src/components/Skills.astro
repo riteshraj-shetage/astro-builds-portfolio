@@ -23,6 +23,10 @@ import Devicon from "./Devicon.astro";
               return "device-desktop";
             } else if (lowerName.includes("backend")) {
               return "server";
+            } else if (lowerName.includes("database")) {
+              return "database";
+            } else if (lowerName.includes("cloud")) {
+              return "cloud";
             } else {
               // Default icon for tools, devops, or other categories
               return "tools";
@@ -54,7 +58,7 @@ import Devicon from "./Devicon.astro";
                   return (
                     <div class="flex items-center gap-3 p-3 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted hover:bg-gh-canvas-inset transition-all group">
                       <div class="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Devicon skillName={skillName} class="w-7 h-7" />
+                        <Devicon iconName={skillName} class="w-7 h-7" />
                       </div>
                       <span class="text-sm font-medium text-gh-fg-default flex-1">
                         {skillName}
