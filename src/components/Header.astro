@@ -20,14 +20,16 @@ const navItems = [
       <!-- Logo/Brand -->
       <a
         href="#home"
-        class="flex items-center gap-2.5 text-gh-fg-default no-underline hover:text-gh-fg-default transition-all group"
+        class="flex items-center gap-2.5 no-underline transition-all group"
       >
-        <img
-          src={personalInfo.brandLogo}
-          alt="Logo"
-          class="w-8 h-8 transition-transform group-hover:scale-110"
-        />
-        <span class="text-lg font-semibold tracking-tight"
+        <div class="w-8 h-8 transition-transform group-hover:scale-110 text-gh-fg-default">
+          <img
+            src={personalInfo.brandLogo}
+            alt="Logo"
+            class="w-full h-full"
+          />
+        </div>
+        <span class="text-lg font-semibold tracking-tight text-gh-fg-default"
           >{personalInfo.brandName}</span
         >
       </a>
