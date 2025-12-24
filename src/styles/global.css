@@ -144,9 +144,26 @@
     font-size: 1rem;
   }
 
+  /* Blockquote - GitHub Primer Prose style */
   blockquote {
-    font-size: 1rem;
-    line-height: 1.5;
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--gh-accent-emphasis);
+    margin: 1.5rem 0;
+  }
+
+  blockquote p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  blockquote footer {
+    margin-top: 1rem;
+    font-family: 'SF Mono', Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    font-size: 0.875rem;
+    color: var(--gh-fg-subtle);
   }
 
   a {
