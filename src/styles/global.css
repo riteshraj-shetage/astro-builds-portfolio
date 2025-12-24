@@ -161,7 +161,7 @@
 
   blockquote footer {
     margin-top: 1rem;
-    font-family: 'SF Mono', Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    @apply font-mono;
     font-size: 0.875rem;
     color: var(--gh-fg-subtle);
   }
