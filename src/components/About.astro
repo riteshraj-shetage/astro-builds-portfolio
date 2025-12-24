@@ -1,5 +1,6 @@
 ---
 import { personalInfo, highlights } from "../data/portfolio";
+import Devicon from "./Devicon.astro";
 import Icon from "./Icon.astro";
 ---
 
@@ -25,12 +26,17 @@ import Icon from "./Icon.astro";
 
           <!-- Inspirational Quote - GitHub Primer Prose style -->
           <blockquote class="my-6">
-            <div class="text-5xl text-gh-fg-muted mb-2 leading-none" aria-hidden="true">"</div>
+            <div
+              class="text-5xl text-gh-fg-muted mb-1 leading-none"
+              aria-hidden="true"
+            >
+              &ldquo;
+            </div>
             <p class="text-gh-fg-default">
-              Nulla ac odio eu magna hendrerit porta. Donec nec eros quis tortor tincidunt vulputate. Aenean id pharetra diam, sit amet auctor leo. Aliquam erat volutpat.
+              {personalInfo.quote}
             </p>
             <footer class="font-mono">
-              Lisa Vanderschuit, Engineering Program Manager, Shopify
+              {personalInfo.name}, {personalInfo.title}
             </footer>
           </blockquote>
 
