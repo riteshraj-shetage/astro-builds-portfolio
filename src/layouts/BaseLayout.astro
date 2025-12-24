@@ -1,18 +1,18 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { 
-  title = "Your Portfolio", 
-  description = "A modern portfolio built with Astro and GitHub-inspired design" 
+const {
+  title = "Your Portfolio",
+  description = "A modern portfolio built with Astro and GitHub-inspired design",
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,10 +20,10 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
+
     <!-- Initialize theme as dark by default -->
     <script is:inline>
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     </script>
   </head>
   <body>

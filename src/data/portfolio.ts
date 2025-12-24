@@ -4,6 +4,7 @@ export type PersonalInfo = {
   title: string;
   tagLine: string;
   bio: string;
+  quote: string;
   location: string;
   email: string;
   github: string;
@@ -55,8 +56,9 @@ export type Credential = {
 export const personalInfo: PersonalInfo = {
   name: "Your Name",
   title: "Full Stack Developer",
-  tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast and continuous learner.",
-  bio: "Aspiring Full Stack Developer with strong programming and database foundations, skilled in building scalable web applications and proactively mastering modern frontend, backend, and cloud technologies.",
+  tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
+  bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
+  quote: "Talk is cheap. Show me the code.",
   location: "San Francisco, CA",
   email: "your.email@example.com",
   github: "https://github.com/yourusername",

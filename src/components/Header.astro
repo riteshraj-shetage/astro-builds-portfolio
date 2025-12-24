@@ -22,12 +22,10 @@ const navItems = [
         href="#home"
         class="flex items-center gap-2.5 no-underline transition-all group"
       >
-        <div class="w-8 h-8 transition-transform group-hover:scale-110 text-gh-fg-default">
-          <img
-            src={personalInfo.brandLogo}
-            alt="Logo"
-            class="w-full h-full"
-          />
+        <div
+          class="w-8 h-8 transition-transform group-hover:scale-110 text-gh-fg-default"
+        >
+          <Icon name="copilot" class="w-full h-full" />
         </div>
         <span class="text-lg font-semibold tracking-tight text-gh-fg-default"
           >{personalInfo.brandName}</span
@@ -47,7 +45,9 @@ const navItems = [
             </a>
           ))
         }
-        <span class="nav-underline-bar absolute -bottom-3 left-0 h-0.5 bg-gh-rose transform transition-all duration-300 ease-out" style="width: 0; opacity: 0;"></span>
+        <span
+          class="nav-underline-bar absolute -bottom-3 left-0 h-0.5 bg-gh-rose transform transition-all duration-300 ease-out"
+          style="width: 0; opacity: 0;"></span>
 
         <!-- Theme Toggle Button (Desktop) -->
         <button
@@ -184,7 +184,9 @@ const navItems = [
   // Active section detection based on scroll
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
-  const navUnderlineBar = document.querySelector(".nav-underline-bar") as HTMLElement;
+  const navUnderlineBar = document.querySelector(
+    ".nav-underline-bar"
+  ) as HTMLElement;
   let currentActiveSection = "";
 
   // Constants for scroll detection
@@ -231,17 +233,17 @@ const navItems = [
       if (activeLinkElement && navUnderlineBar) {
         const linkElement = activeLinkElement as HTMLElement;
         const linkRect = linkElement.getBoundingClientRect();
-        const navContainer = linkElement.closest('.md\\:flex');
+        const navContainer = linkElement.closest(".md\\:flex");
         const containerRect = navContainer?.getBoundingClientRect();
-        
+
         if (containerRect) {
           const leftPosition = linkRect.left - containerRect.left;
           navUnderlineBar.style.width = `${linkRect.width}px`;
           navUnderlineBar.style.transform = `translateX(${leftPosition}px)`;
-          navUnderlineBar.style.opacity = '1';
+          navUnderlineBar.style.opacity = "1";
         }
       } else if (navUnderlineBar) {
-        navUnderlineBar.style.opacity = '0';
+        navUnderlineBar.style.opacity = "0";
       }
     }
   };
