@@ -59,7 +59,7 @@ export const personalInfo: PersonalInfo = {
   title: "Full Stack Developer",
   tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
   bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
-  quote: "Talk is cheap. Show me the code.",
+  quote: "Be the change you wish to see in the world!",
   location: "San Francisco, CA",
   email: "your.email@example.com",
   github: "https://github.com/yourusername",
