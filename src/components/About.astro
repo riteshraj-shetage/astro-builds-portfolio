@@ -90,11 +90,11 @@ import Icon from "./Icon.astro";
             {
               highlights.map((highlight) => (
                 <div class="flex items-start gap-3 p-4 rounded-lg bg-gh-canvas-subtle border border-gh-border-default hover:border-gh-accent-muted transition-all group">
-                  <div class="p-2 rounded-md bg-gh-success-subtle group-hover:bg-gh-success-emphasis transition-colors flex-shrink-0">
+                  <div class="p-2 rounded-md bg-gh-accent-subtle group-hover:bg-gh-accent-emphasis transition-colors flex-shrink-0">
                     <Icon
-                      name="check"
+                      name={highlight.icon}
                       size={20}
-                      class="w-5 h-5 text-gh-success-fg group-hover:text-white transition-colors"
+                      class="w-5 h-5 text-gh-accent-fg group-hover:text-white transition-colors"
                     />
                   </div>
                   <div class="flex-1">
