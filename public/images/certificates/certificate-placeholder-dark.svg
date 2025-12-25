@@ -3,8 +3,8 @@
   <rect width="1200" height="900" fill="#0d1117"/>
   
   <!-- Border -->
-  <rect x="40" y="40" width="1120" height="820" rx="8" fill="none" stroke="#58a6ff" stroke-width="8"/>
-  <rect x="60" y="60" width="1080" height="780" rx="4" fill="none" stroke="#58a6ff" stroke-width="2"/>
+  <rect x="40" y="40" width="1120" height="820" rx="8" fill="none" stroke="#30363d" stroke-width="8"/>
+  <rect x="60" y="60" width="1080" height="780" rx="4" fill="none" stroke="#30363d" stroke-width="2"/>
   
   <!-- Title -->
   <text x="600" y="150" font-family="serif" font-size="56" font-weight="bold" fill="#c9d1d9" text-anchor="middle">CERTIFICATE OF COMPLETION</text>
