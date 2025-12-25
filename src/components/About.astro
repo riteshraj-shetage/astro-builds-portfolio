@@ -17,17 +17,22 @@ import Icon from "./Icon.astro";
         <!-- Overview Section -->
         <div class="card-highlight animate-fade-in-up">
           <h3 class="text-2xl font-semibold text-gh-fg-default mb-4">
+            <Icon
+              name="person"
+              size={24}
+              class="w-6 h-6 text-gh-accent-fg inline-block mr-2 mb-1"
+            />
             Overview
           </h3>
 
-          <p class="text-gh-fg-muted leading-relaxed text-lg mb-6">
+          <p class="text-gh-fg-muted leading-relaxed text-lg mb-6 text-justify">
             {personalInfo.bio}
           </p>
 
           <!-- Inspirational Quote - GitHub Primer Prose style -->
           <blockquote class="my-6">
             <div
-              class="text-5xl text-gh-fg-muted mb-1 leading-none"
+              class="text-5xl text-gh-fg-muted text-md leading-none"
               aria-hidden="true"
             >
               &ldquo;
@@ -74,6 +79,11 @@ import Icon from "./Icon.astro";
           style="animation-delay: 0.1s"
         >
           <h3 class="text-2xl font-semibold mb-6 text-gh-fg-default">
+            <Icon
+              name="sparkle"
+              size={24}
+              class="w-6 h-6 text-gh-gold inline-block mr-2 mb-1"
+            />
             Highlights
           </h3>
           <div class="space-y-4">
@@ -103,7 +113,7 @@ import Icon from "./Icon.astro";
       </div>
 
       <!-- View Resume Button -->
-      <div class="mt-8 text-center">
+      <div class="mt-16 text-center">
         <a
           href="/resume.pdf"
           target="_blank"

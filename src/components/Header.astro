@@ -3,12 +3,12 @@ import { personalInfo } from "../data/portfolio";
 import Icon from "./Icon.astro";
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Credentials", href: "#credentials" },
-  { name: "Education", href: "#education" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", icon: "person", href: "#about" },
+  { name: "Skills", icon: "tools", href: "#skills" },
+  { name: "Projects", icon: "apps", href: "#projects" },
+  { name: "Credentials", icon: "verified", href: "#credentials" },
+  { name: "Education", icon: "mortar-board", href: "#education" },
+  { name: "Contact", icon: "mail", href: "#contact" },
 ];
 ---
 
@@ -41,6 +41,14 @@ const navItems = [
               class="nav-link px-3 py-2 text-sm text-gh-fg-default no-underline hover:text-gh-fg-default transition-all font-medium"
               data-section={item.href.substring(1)}
             >
+              {/* {item.icon && (
+                <Icon
+                  name={item.icon}
+                  size={16}
+                  class="w-4 h-4 mr-1 inline-block"
+                />
+              )} */}
+              {/* <span class="tooltip">{item.name}</span> */}
               {item.name}
             </a>
           ))
