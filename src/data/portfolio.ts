@@ -41,6 +41,7 @@ export type Education = {
 export type Highlight = {
   title: string;
   description: string;
+  icon: string;
 }
 
 export type Credential = {
@@ -150,19 +151,23 @@ export const education: Education[] = [
 export const highlights: Highlight[] = [
   {
     title: "Full Stack Development",
-    description: "Building scalable web applications and distributed systems"
+    description: "Building scalable web applications and distributed systems",
+    icon: "code"
   },
   {
     title: "Open Source Contributor",
-    description: "Active contributor to various open-source projects"
+    description: "Active contributor to various open-source projects",
+    icon: "heart"
   },
   {
     title: "Continuous Learner",
-    description: "Always exploring new technologies and best practices"
+    description: "Always exploring new technologies and best practices",
+    icon: "book"
   },
   {
     title: "Problem Solver",
-    description: "Passionate about tackling complex technical challenges"
+    description: "Passionate about tackling complex technical challenges",
+    icon: "zap"
   }
 ];
 
@@ -172,7 +177,7 @@ export const credentials: Credential[] = [
     issuer: "Amazon Web Services",
     date: "June 2023",
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
-    certificateImage: "/images/certificates/certificate-placeholder.svg",
+    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
     verificationUrl: "https://www.credly.com/badges/example-aws-badge",
     relatedSkills: ["AWS", "Docker", "Node.js", "PostgreSQL"],
   },
@@ -181,7 +186,7 @@ export const credentials: Credential[] = [
     issuer: "Google Cloud",
     date: "March 2022",
     description: "Certification validating proficiency in developing cloud-native applications on GCP.",
-    certificateImage: "/images/certificates/certificate-placeholder.svg",
+    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
     verificationUrl: "https://www.credential.net/example-gcp-credential",
     relatedSkills: ["Python", "Docker", "FastAPI", "MongoDB"],
   },
@@ -190,7 +195,7 @@ export const credentials: Credential[] = [
     issuer: "Cloud Native Computing Foundation",
     date: "September 2023",
     description: "Expert-level certification validating skills in deploying, managing, and troubleshooting Kubernetes clusters.",
-    certificateImage: "/images/certificates/certificate-placeholder.svg",
+    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
     verificationUrl: "https://www.credly.com/badges/example-cka-badge",
     relatedSkills: ["Docker", "AWS", "Linux", "Node.js"],
   },
