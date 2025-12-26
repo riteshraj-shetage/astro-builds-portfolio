@@ -69,6 +69,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./dist
+          publish_dir: ./astro-builds-portfolio/dist
           external_repository: riteshraj-shetage/riteshraj-shetage.github.io
           publish_branch: main
