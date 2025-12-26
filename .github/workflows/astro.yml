@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BUILD_PATH: "./astro-builds-portfolio"
+  BUILD_PATH: "."
 
 jobs:
   build:
@@ -68,6 +68,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./astro-builds-portfolio/dist
+          publish_dir: ./dist
           external_repository: riteshraj-shetage/riteshraj-shetage.github.io
           publish_branch: main
