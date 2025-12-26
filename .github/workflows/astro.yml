@@ -5,7 +5,7 @@
 name: Deploy Astro site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the live branch
   push:
     branches: ["live"]
 
@@ -86,8 +86,11 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub.io repo
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: dist
+          personal_token: ${{ secrets.GH_PAT }}
+          publish_dir: dist
+          external_repository: riteshraj-shetage/riteshraj-shetage.github.io
+          publish_branch: main
+          cname: riteshrajshetage.me
