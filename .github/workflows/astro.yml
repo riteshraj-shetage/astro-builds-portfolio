@@ -70,5 +70,5 @@ jobs:
         with:
           personal_token: ${{ secrets.GH_PAT }}
           publish_dir: ./dist
-          external_repository: your-username/your-username.github.io
+          external_repository: riteshraj-shetage/riteshraj-shetage.github.io
           publish_branch: main
