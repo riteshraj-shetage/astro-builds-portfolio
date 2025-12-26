@@ -26,7 +26,6 @@ export type Project = {
   github: string;
   demo: string;
   image: string;
-  status: string;
 }
 
 export type Education = {
@@ -55,18 +54,18 @@ export type Credential = {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: "Your Name",
+  name: "Riteshraj Shetage",
   title: "Full Stack Developer",
   tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
   bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
   quote: "Be the change you wish to see in the world!",
-  location: "San Francisco, CA",
-  email: "your.email@example.com",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  location: "Pune, India",
+  email: "riteshraj.shetage@outlook.com",
+  github: "https://github.com/riteshraj-shetage",
+  linkedin: "https://linkedin.com/in/riteshraj-shetage",
   profileImage: "/images/profile-photo.svg",
   brandLogo: "/images/brand-logo.svg",
-  brandName: "Your Brand",
+  brandName: "RITESHRAJ.",
 };
 
 export const skills: Skill[] = [
@@ -89,62 +88,65 @@ export const projects: Project[] = [
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
     technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    github: "https://github.com/yourusername/ecommerce",
-    demo: "https://demo.example.com",
+    github: "https://github.com/riteshraj-shetage/",
+    demo: "",
     image: "/images/projects/project-placeholder-1.svg",
-    status: "Active",
   },
   {
     title: "AI Code Assistant",
     description: "An intelligent code completion tool powered by machine learning that helps developers write better code faster.",
     technologies: ["Python", "TensorFlow", "FastAPI", "React"],
-    github: "https://github.com/yourusername/ai-assistant",
-    demo: "https://ai-demo.example.com",
+    github: "https://github.com/riteshraj-shetage/",
+    demo: "",
     image: "/images/projects/project-placeholder-2.svg",
-    status: "Active",
   },
   {
     title: "Task Management App",
     description: "A collaborative task management application with real-time updates, team collaboration features, and analytics.",
     technologies: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
-    github: "https://github.com/yourusername/taskmanager",
-    demo: "https://tasks.example.com",
+    github: "https://github.com/riteshraj-shetage/",
+    demo: "",
     image: "/images/projects/project-placeholder-3.svg",
-    status: "In Development",
   },
   {
     title: "Portfolio Template",
     description: "A modern, responsive portfolio template built with Astro and Tailwind CSS. GitHub-inspired design with dark mode.",
     technologies: ["Astro", "React", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/yourusername/portfolio-template",
-    demo: "https://portfolio.example.com",
+    github: "https://github.com/riteshraj-shetage/",
+    demo: "https://main.d29svny7jof5vp.amplifyapp.com/",
     image: "/images/projects/project-placeholder-4.svg",
-    status: "Active",
   },
 ];
 
 export const education: Education[] = [
     {
-    degree: "Master of Science in Software Engineering",
-    institution: "Modern Institute of Technology",
+    degree: "Master of Computer Applications",
+    institution: "Savitribai Phule Pune University",
     period: "2024 - 2026",
-    description: "Specialized in distributed systems and cloud computing. Research on microservices architecture.",
-    grade: "CGPA: 9.5/10",
+    description: "Advanced studies in computer science, software development, and system design. Engaged in projects involving cloud computing and AI/ML applications.",
+    grade: "CGPA: 9.21/10",
     isCurrent: true,
   },
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University of Technology",
+    degree: "Bachelor of Science in Statistics",
+    institution: "Shivaji University Kolhapur",
     period: "2021 - 2024",
-    description: "Focused on software engineering, algorithms, and data structures. Graduated with honors.",
-    grade: "CGPA: 8.5/10",
+    description: "Focused on statistical methods, data analysis, and programming. Completed projects on data visualization and predictive modeling.",
+    grade: "CGPA: 7.82/10",
   },
   {
-    degree: "High School Diploma in Science",
-    institution: "Central High School",
+    degree: "Higher Secondary Certificate (HSC)",
+    institution: "Rajaram College Kolhapur",
     period: "2020 - 2021",
-    description: "Completed advanced coursework in mathematics, physics, and computer science with distinction.",
-    grade: "Score: 92%",
+    description: "Completed HSC with a focus on Science stream, achieving high marks in Mathematics and Computer Science.",
+    grade: "Score: 77.17%",
+  },
+    {
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Rajaram College Kolhapur",
+    period: "2018 - 2019",
+    description: "Completed SSC with a focus on Science stream, achieving high marks in Mathematics and Science.",
+    grade: "Score: 95.60%",
   },
 ];
 
@@ -173,30 +175,39 @@ export const highlights: Highlight[] = [
 
 export const credentials: Credential[] = [
   {
-    title: "AWS Certified Solutions Architect",
+    title: "Oracle Certified Foundations Associate, OCI 2025",
+    issuer: "Oracle University",
+    date: "October 2025",
+    description: "Certification demonstrating foundational knowledge of Oracle Cloud Infrastructure services and solutions.",
+    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
+    verificationUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=C01E6C73130827CA3E980423A6120A382E0F1C8BCD10099AE85D1A2B07C65E9D",
+    relatedSkills: ["OCI", "Cloud Computing", "Linux", "Docker"],
+  },
+  {
+    title: "Python for Data Science",
+    issuer: "NPTEL",
+    date: "October 2025",
+    description: "Certification course covering Python programming, data analysis, and visualization techniques for data science applications.",
+    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
+    verificationUrl: "https://nptel.ac.in/noc/E_Certificate/NPTEL25CS104S44540397809142614",
+    relatedSkills: ["Python", "Data Science", "Pandas", "NumPy"],
+  },
+  {
+    title: "AWS Fundamentals",
     issuer: "Amazon Web Services",
-    date: "June 2023",
-    description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
+    date: "Aug 2025",
+    description: "Certification validating understanding of AWS core services, architecture, and best practices for deploying applications on AWS.",
     certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
-    verificationUrl: "https://www.credly.com/badges/example-aws-badge",
-    relatedSkills: ["AWS", "Docker", "Node.js", "PostgreSQL"],
+    verificationUrl: "https://www.coursera.org/account/accomplishments/specialization/certificate/H64AESY0QH9A",
+    relatedSkills: ["AWS", "Cloud Computing", "EC2", "S3", "IAM"],
   },
   {
-    title: "Google Cloud Professional Developer",
-    issuer: "Google Cloud",
-    date: "March 2022",
-    description: "Certification validating proficiency in developing cloud-native applications on GCP.",
+    title: "Ubuntu Linux Professional Certificate",
+    issuer: "Canonical",
+    date: "Aug 2025",
+    description: "Certification demonstrating proficiency in Ubuntu Linux system administration and command-line skills.",
     certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
-    verificationUrl: "https://www.credential.net/example-gcp-credential",
-    relatedSkills: ["Python", "Docker", "FastAPI", "MongoDB"],
-  },
-  {
-    title: "Certified Kubernetes Administrator",
-    issuer: "Cloud Native Computing Foundation",
-    date: "September 2023",
-    description: "Expert-level certification validating skills in deploying, managing, and troubleshooting Kubernetes clusters.",
-    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
-    verificationUrl: "https://www.credly.com/badges/example-cka-badge",
-    relatedSkills: ["Docker", "AWS", "Linux", "Node.js"],
-  },
+    verificationUrl: "https://www.linkedin.com/learning/certificates/7855d61d8417f980dc9a6350fe7b02324665e9ecbb764a93fd093ceb3f19a11b?trk=share_certificate",
+    relatedSkills: ["Linux", "Ubuntu", "System Administration", "Shell Scripting"],
+  }
 ];
