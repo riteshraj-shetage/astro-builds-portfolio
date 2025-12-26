@@ -143,7 +143,7 @@ export const education: Education[] = [
   },
     {
     degree: "Secondary School Certificate (SSC)",
-    institution: "Rajaram College Kolhapur",
+    institution: "Shaskiya Vidyaniketan Pusegaon",
     period: "2018 - 2019",
     description: "Completed SSC with a focus on Science stream, achieving high marks in Mathematics and Science.",
     grade: "Score: 95.60%",
