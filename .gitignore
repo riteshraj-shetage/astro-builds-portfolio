@@ -10,6 +10,9 @@ node_modules/
 .env.local
 .env.production
 
+# Git Alias Guide
+GIT_GUIDE.md
+
 # IDE
 .vscode/
 .idea/

@@ -121,7 +121,7 @@ export const projects: Project[] = [
 export const education: Education[] = [
     {
     degree: "Master of Computer Applications",
-    institution: "Savitribai Phule Pune University",
+    institution: "Rajarshi Shahu College of Engineering, Pune",
     period: "2024 - 2026",
     description: "Advanced studies in computer science, software development, and system design. Engaged in projects involving cloud computing and AI/ML applications.",
     grade: "CGPA: 9.21/10",
@@ -129,21 +129,21 @@ export const education: Education[] = [
   },
   {
     degree: "Bachelor of Science in Statistics",
-    institution: "Shivaji University Kolhapur",
+    institution: "Rajarshi Chhatrapati Shahu College, Kolhapur",
     period: "2021 - 2024",
     description: "Focused on statistical methods, data analysis, and programming. Completed projects on data visualization and predictive modeling.",
     grade: "CGPA: 7.82/10",
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
-    institution: "Rajaram College Kolhapur",
+    institution: "Govt. of Maharashtra's Rajaram College, Kolhapur",
     period: "2020 - 2021",
     description: "Completed HSC with a focus on Science stream, excelling in Mathematics and Physics.",
     grade: "Score: 77.17%",
   },
     {
     degree: "Secondary School Certificate (SSC)",
-    institution: "Shaskiya Vidyaniketan Pusegaon",
+    institution: "Shaskiya Vidyaniketan Pusegaon, Satara",
     period: "2018 - 2019",
     description: "Completed SSC with a focus on Science stream, achieving high marks in Mathematics and Science.",
     grade: "Score: 95.60%",
