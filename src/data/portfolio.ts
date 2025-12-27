@@ -195,7 +195,7 @@ export const credentials: Credential[] = [
   {
     title: "AWS Fundamentals",
     issuer: "Amazon Web Services",
-    date: "Aug 2025",
+    date: "August 2025",
     description: "Certification validating understanding of AWS core services, architecture, and best practices for deploying applications on AWS.",
     certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
     verificationUrl: "https://www.coursera.org/account/accomplishments/specialization/certificate/H64AESY0QH9A",
@@ -204,7 +204,7 @@ export const credentials: Credential[] = [
   {
     title: "Ubuntu Linux Professional Certificate",
     issuer: "Canonical",
-    date: "Aug 2025",
+    date: "August 2025",
     description: "Certification demonstrating proficiency in Ubuntu Linux system administration and command-line skills.",
     certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
     verificationUrl: "https://www.linkedin.com/learning/certificates/7855d61d8417f980dc9a6350fe7b02324665e9ecbb764a93fd093ceb3f19a11b?trk=share_certificate",
