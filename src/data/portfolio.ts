@@ -59,7 +59,7 @@ export const personalInfo: PersonalInfo = {
   tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
   bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
   quote: "Be the change you wish to see in the world!",
-  location: "Pune, India",
+  location: "Pune, Maharashtra",
   email: "riteshraj.shetage@outlook.com",
   github: "https://github.com/riteshraj-shetage",
   linkedin: "https://linkedin.com/in/riteshraj-shetage",
