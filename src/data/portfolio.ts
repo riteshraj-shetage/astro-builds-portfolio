@@ -58,7 +58,7 @@ export const personalInfo: PersonalInfo = {
   title: "Full Stack Developer",
   tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
   bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
-  quote: "Be the change you wish to see in the world!",
+  quote: "Be the change you wish to see in the world.",
   location: "Pune, Maharashtra",
   email: "riteshraj.shetage@outlook.com",
   github: "https://github.com/riteshraj-shetage",
@@ -138,7 +138,7 @@ export const education: Education[] = [
     degree: "Higher Secondary Certificate (HSC)",
     institution: "Rajaram College Kolhapur",
     period: "2020 - 2021",
-    description: "Completed HSC with a focus on Science stream, achieving high marks in Mathematics and Computer Science.",
+    description: "Completed HSC with a focus on Science stream, excelling in Mathematics and Physics.",
     grade: "Score: 77.17%",
   },
     {
