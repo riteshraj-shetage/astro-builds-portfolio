@@ -13,7 +13,7 @@ This report was generated for the **live site deployed from this template**:
 - **Best Practices:** 100  
 - **SEO:** 100  
 
-You can view the full report here: [Lighthouse Report](./reports/lighthouse-report.html)
+You can view the full report here: [Lighthouse Report](./reports/riteshrajshetage.me-20251227T112016.html)
 
 
 ## ✨ Features
