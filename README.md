@@ -5,7 +5,7 @@ A modern, high-performance portfolio website built with Astro and inspired by Gi
 ## Lighthouse Report
 
 This report was generated for the **live site deployed from this template**:  
-👉 [riteshrajshetage.me](https://riteshrajshetage.me/report)
+👉 [riteshrajshetage.me](https://riteshrajshetage.me)
 
 ### Scores
 - **Performance:** 100  
@@ -13,7 +13,7 @@ This report was generated for the **live site deployed from this template**:
 - **Best Practices:** 100  
 - **SEO:** 100  
 
-You can view the full report here: [Lighthouse Report](./reports/riteshrajshetage.me-20251227T112016.html)
+You can view the full report here: [Lighthouse Report](https://riteshrajshetage.me/report)
 
 
 ## ✨ Features
