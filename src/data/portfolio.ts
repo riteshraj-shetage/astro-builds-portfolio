@@ -63,7 +63,7 @@ export const personalInfo: PersonalInfo = {
   email: "riteshraj.shetage@outlook.com",
   github: "https://github.com/riteshraj-shetage",
   linkedin: "https://linkedin.com/in/riteshraj-shetage",
-  profileImage: "/images/profile-photo.svg",
+  profileImage: "/images/myprofile.png",
   brandLogo: "/images/brand-logo.svg",
   brandName: "RITESHRAJ.",
 };
@@ -71,15 +71,15 @@ export const personalInfo: PersonalInfo = {
 export const skills: Skill[] = [
   {
     category: "Frontend",
-    items: ["React", "TypeScript", "Astro", "Tailwind CSS", "Next.js"],
+    items: ["HTML5", "CSS3", "JavaScript", "TypeScript"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Python", "PostgreSQL", "MongoDB", "FastAPI"],
+    items: ["Node.js", "Python", "MySQL", "MongoDB"],
   },
   {
     category: "Tools",
-    items: ["Git", "Docker", "AWS", "GitHub Actions", "Linux"],
+    items: ["Git", "Docker", "AWS", "GitHub Actions"],
   },
 ];
 
@@ -131,14 +131,14 @@ export const education: Education[] = [
     degree: "Bachelor of Science in Statistics",
     institution: "Rajarshi Chhatrapati Shahu College, Kolhapur",
     period: "2021 - 2024",
-    description: "Focused on statistical methods, data analysis, and programming. Completed projects on data visualization and predictive modeling.",
+    description: "Focused on statistical methods and data analysis. Completed projects on data visualization and predictive modeling.",
     grade: "CGPA: 7.82/10",
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
     institution: "Govt. of Maharashtra's Rajaram College, Kolhapur",
     period: "2020 - 2021",
-    description: "Completed HSC with a focus on Science stream, excelling in Mathematics and Physics.",
+    description: "Completed HSC with a focus on Science stream, excelling in Physics and Mathematics.",
     grade: "Score: 77.17%",
   },
     {
@@ -179,7 +179,7 @@ export const credentials: Credential[] = [
     issuer: "Oracle University",
     date: "October 2025",
     description: "Certification demonstrating foundational knowledge of Oracle Cloud Infrastructure services and solutions.",
-    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
+    certificateImage: "/images/certificates/oracle-oci-foundations.jpg",
     verificationUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=C01E6C73130827CA3E980423A6120A382E0F1C8BCD10099AE85D1A2B07C65E9D",
     relatedSkills: ["OCI", "Cloud Computing", "Linux", "Docker"],
   },
@@ -188,7 +188,7 @@ export const credentials: Credential[] = [
     issuer: "NPTEL",
     date: "October 2025",
     description: "Certification course covering Python programming, data analysis, and visualization techniques for data science applications.",
-    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
+    certificateImage: "/images/certificates/nptel-python-data-science.jpg",
     verificationUrl: "https://nptel.ac.in/noc/E_Certificate/NPTEL25CS104S44540397809142614",
     relatedSkills: ["Python", "Data Science", "Pandas", "NumPy"],
   },
@@ -197,7 +197,7 @@ export const credentials: Credential[] = [
     issuer: "Amazon Web Services",
     date: "August 2025",
     description: "Certification validating understanding of AWS core services, architecture, and best practices for deploying applications on AWS.",
-    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
+    certificateImage: "/images/certificates/aws-fundamentals-coursera.jpg",
     verificationUrl: "https://www.coursera.org/account/accomplishments/specialization/certificate/H64AESY0QH9A",
     relatedSkills: ["AWS", "Cloud Computing", "EC2", "S3", "IAM"],
   },
@@ -206,7 +206,7 @@ export const credentials: Credential[] = [
     issuer: "Canonical",
     date: "August 2025",
     description: "Certification demonstrating proficiency in Ubuntu Linux system administration and command-line skills.",
-    certificateImage: "/images/certificates/certificate-placeholder-dark.svg",
+    certificateImage: "/images/certificates/ubuntu-linux-professional-canonical.jpg",
     verificationUrl: "https://www.linkedin.com/learning/certificates/7855d61d8417f980dc9a6350fe7b02324665e9ecbb764a93fd093ceb3f19a11b?trk=share_certificate",
     relatedSkills: ["Linux", "Ubuntu", "System Administration", "Shell Scripting"],
   }
