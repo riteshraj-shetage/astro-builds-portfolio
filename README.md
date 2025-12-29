@@ -2,20 +2,6 @@
 
 A modern, high-performance portfolio website built with Astro and inspired by GitHub's clean design. Perfect for developers, designers, and anyone looking to showcase their work professionally.
 
-## Lighthouse Report
-
-This report was generated for the **live site deployed from this template**:  
-👉 [riteshrajshetage.me](https://riteshrajshetage.me)
-
-### Scores
-- **Performance:** 100  
-- **Accessibility:** 96  
-- **Best Practices:** 100  
-- **SEO:** 100  
-
-You can view the full report here: [Lighthouse Report](https://riteshrajshetage.me/report)
-
-
 ## ✨ Features
 
 - **GitHub-Inspired Design**: Clean dark theme with professional aesthetics
@@ -34,6 +20,19 @@ You can view the full report here: [Lighthouse Report](https://riteshrajshetage.
 - **Credentials**: Display certifications with verification links
 - **Education**: Academic background
 - **Contact**: Easy ways to get in touch
+
+## Lighthouse Report
+
+This report was generated for the **live site deployed from this template**:  
+👉 [riteshrajshetage.me](https://riteshrajshetage.me)
+
+### Scores
+- **Performance:** 100  
+- **Accessibility:** 96  
+- **Best Practices:** 100  
+- **SEO:** 100  
+
+You can view the full report here: [Lighthouse Report](https://riteshrajshetage.me/report)
 
 ## 🤝 Contributing
 
