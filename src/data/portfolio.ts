@@ -63,7 +63,7 @@ export const personalInfo: PersonalInfo = {
   email: "riteshraj.shetage@outlook.com",
   github: "https://github.com/riteshraj-shetage",
   linkedin: "https://linkedin.com/in/riteshraj-shetage",
-  profileImage: "/images/myprofile.png",
+  profileImage: "/images/profile.png",
   brandLogo: "/images/brand-logo.svg",
   brandName: "RITESHRAJ.",
 };
