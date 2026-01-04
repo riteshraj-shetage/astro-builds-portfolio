@@ -25,7 +25,6 @@ const navItems = [
         <div
           class="w-8 h-8 transition-transform group-hover:scale-110 text-gh-fg-default"
         >
-          <!-- <Icon name="copilot" class="w-full h-full" /> -->
           <img
             src={personalInfo.brandLogo}
             alt="Logo"
@@ -43,17 +42,9 @@ const navItems = [
           navItems.map((item) => (
             <a
               href={item.href}
-              class="nav-link px-3 py-2 text-sm text-gh-fg-default no-underline hover:text-gh-fg-default transition-all font-medium"
+              class="nav-link px-3 py-2 text-sm text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
               data-section={item.href.substring(1)}
             >
-              {/* {item.icon && (
-                <Icon
-                  name={item.icon}
-                  size={16}
-                  class="w-4 h-4 mr-1 inline-block"
-                />
-              )} */}
-              {/* <span class="tooltip">{item.name}</span> */}
               {item.name}
             </a>
           ))
@@ -114,6 +105,14 @@ const navItems = [
             href={item.href}
             class="block px-3 py-2.5 text-sm text-center text-gh-fg-default no-underline hover:text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all mb-1"
           >
+            {item.icon && (
+              <Icon
+                name={item.icon}
+                size={16}
+                class="w-4 h-4 mr-1 mb-1 inline-block"
+              />
+            )}
+            {<span class="tooltip">{item.name}</span>}
             {item.name}
           </a>
         ))
