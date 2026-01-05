@@ -111,9 +111,9 @@ export const projects: Project[] = [
   {
     title: "Portfolio Template",
     description: "A modern, responsive portfolio template built with Astro and Tailwind CSS. GitHub-inspired design with dark mode.",
-    technologies: ["Astro", "React", "Tailwind CSS", "TypeScript"],
+    technologies: ["Astro", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/riteshraj-shetage/",
-    demo: "https://main.d29svny7jof5vp.amplifyapp.com/",
+    demo: "",
     image: "/images/projects/project-placeholder-4.svg",
   },
 ];
