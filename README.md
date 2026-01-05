@@ -1,6 +1,30 @@
 # 🚀 Astro Portfolio Template
 
+[![Astro](https://img.shields.io/badge/Built%20with-Astro-FF5A03?logo=astro)](https://astro.build/) 
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) 
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/) 
+
 A modern, high-performance portfolio website built with Astro and inspired by GitHub's clean design. Perfect for developers, designers, and anyone looking to showcase their work professionally.
+
+---
+
+## 📦 Quick Start 
+Create a new project using this template: 
+```bash
+npm create astro@latest -- --template riteshraj-shetage/astro-builds-portfolio
+```
+After creating your project with this template, you’ll be prompted to: 
+- **Install dependencies?** → Yes
+- **Initialize git?** → Yes
+
+Then:
+```bash
+  cd ./dir-name
+  npm run dev
+```
+The template will be live at http://localhost:4321.
+
+---
 
 ## ✨ Features
 
@@ -11,15 +35,7 @@ A modern, high-performance portfolio website built with Astro and inspired by Gi
 - **Easy Customization**: Single data file for all content updates
 - **SEO Optimized**: Built-in best practices for search engines
 
-## 📦 What's Inside
-
-- **Hero Section**: Eye-catching introduction with social links
-- **About**: Professional bio with resume download
-- **Skills**: Organized by Frontend, Backend, and Tools with icons
-- **Projects**: Showcase your work with live demos and source code links
-- **Credentials**: Display certifications with verification links
-- **Education**: Academic background
-- **Contact**: Easy ways to get in touch
+---
 
 ## Lighthouse Report
 
