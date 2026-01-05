@@ -49,7 +49,7 @@ This report was generated for the **live site deployed from this template**:
 - **Best Practices:** 100  
 - **SEO:** 100  
 
-You can view the full report here: [Lighthouse Report](https://riteshrajshetage.me/report)
+You can view the full report here: [Lighthouse Report](https://riteshrajshetage.me/reports)
 
 ---
 
