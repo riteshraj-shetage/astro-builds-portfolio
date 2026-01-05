@@ -28,12 +28,13 @@ The template will be live at http://localhost:4321.
 
 ## ✨ Features
 
-- **GitHub-Inspired Design**: Clean dark theme with professional aesthetics
-- **Lightning Fast**: Built with Astro for optimal performance (near-perfect Lighthouse scores)
-- **Modern Tech Stack**: Astro, TypeScript, and Tailwind CSS
-- **Fully Responsive**: Mobile-first design that adapts to all screen sizes
-- **Easy Customization**: Single data file for all content updates
-- **SEO Optimized**: Built-in best practices for search engines
+- **Starter Template** – A ready-to-customize foundation for building your own portfolio  
+- **GitHub-Inspired Design** – Clean dark theme with professional aesthetics  
+- **Lightning Fast** – Near-perfect Lighthouse scores _thanks to Astro’s performance-first approach_  
+- **Modern Tech Stack** – Astro, TypeScript, and Tailwind CSS  
+- **Fully Responsive** – Mobile-first design that adapts to all screen sizes  
+- **Easy Customization** – Update all content from a single data file  
+- **SEO Optimized** – Built-in best practices for search engines  
 
 ---
 
