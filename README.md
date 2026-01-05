@@ -27,5 +27,4 @@ This branch contains the **production-ready build** of my portfolio site, deploy
 ---
 
 ## Credits
-Developed and maintained by **Riteshraj Shetage**.  
-For inquiries, reach out at: `shetageriteshraj@gmail.com`
+Developed and maintained by **Riteshraj Shetage**. 
