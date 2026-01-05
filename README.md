@@ -34,14 +34,6 @@ This report was generated for the **live site deployed from this template**:
 
 You can view the full report here: [Lighthouse Report](https://riteshrajshetage.me/report)
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit issues and pull requests.
-
-## 💬 Support
-
-If you have questions or need help, please open an issue on GitHub.
-
 ---
 
 Made with ❤️ using Astro
