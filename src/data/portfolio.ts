@@ -71,15 +71,15 @@ export const personalInfo: PersonalInfo = {
 export const skills: Skill[] = [
   {
     category: "Frontend",
-    items: ["HTML5", "CSS3", "JavaScript", "TypeScript"],
+    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Astro"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Python", "MySQL", "MongoDB"],
+    items: ["Node.js", "Python", "MySQL", "MongoDB", "FastAPI"],
   },
   {
     category: "Tools",
-    items: ["Git", "Docker", "AWS", "GitHub Actions"],
+    items: ["Git", "Docker", "AWS", "GitHub Actions", "Linux"],
   },
 ];
 
