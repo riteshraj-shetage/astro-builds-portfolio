@@ -111,7 +111,7 @@ export const projects: Project[] = [
   {
     title: "Portfolio Template",
     description: "A modern, responsive portfolio template built with Astro and Tailwind CSS. GitHub-inspired design with dark mode.",
-    technologies: ["Astro", "Tailwind CSS", "TypeScript"],
+    technologies: ["Astro", "Tailwind CSS", "TypeScript", "GitHub CI/CD"],
     github: "https://github.com/riteshraj-shetage/",
     demo: "",
     image: "/images/projects/project-placeholder-4.svg",
@@ -194,7 +194,7 @@ export const credentials: Credential[] = [
   },
   {
     title: "AWS Fundamentals",
-    issuer: "Amazon Web Services",
+    issuer: "Coursera",
     date: "August 2025",
     description: "Certification validating understanding of AWS core services, architecture, and best practices for deploying applications on AWS.",
     certificateImage: "/images/certificates/aws-fundamentals-coursera.jpg",
@@ -203,7 +203,7 @@ export const credentials: Credential[] = [
   },
   {
     title: "Ubuntu Linux Professional Certificate",
-    issuer: "Canonical",
+    issuer: "LinkedIn Learning",
     date: "August 2025",
     description: "Certification demonstrating proficiency in Ubuntu Linux system administration and command-line skills.",
     certificateImage: "/images/certificates/ubuntu-linux-professional-canonical.jpg",
