@@ -85,9 +85,9 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    title: "IT Flashcards API",
+    description: "A RESTful API for IT flashcards built with FastAPI and MongoDB, providing endpoints for CRUD operations and user authentication.",
+    technologies: ["Python", "FastAPI", "Pydantic", "PyMongo", "MongoDB",],
     github: "https://github.com/riteshraj-shetage/",
     demo: "https://github.com/riteshraj-shetage/",
     image: "/images/projects/project-placeholder-1.svg",
