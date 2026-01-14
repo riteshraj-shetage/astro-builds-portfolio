@@ -88,8 +88,8 @@ export const projects: Project[] = [
     title: "IT Flashcards API",
     description: "A RESTful API for IT flashcards built with FastAPI and MongoDB, providing endpoints for CRUD operations and user authentication.",
     technologies: ["Python", "FastAPI", "Pydantic", "PyMongo", "MongoDB",],
-    github: "https://github.com/riteshraj-shetage/",
-    demo: "https://github.com/riteshraj-shetage/",
+    github: "",
+    demo: "",
     image: "/images/projects/project-placeholder-1.svg",
   },
   {
