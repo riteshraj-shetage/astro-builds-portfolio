@@ -178,10 +178,10 @@ export const credentials: Credential[] = [
     title: "Oracle Certified Foundations Associate, OCI 2025",
     issuer: "Oracle University",
     date: "October 2025",
-    description: "Certification demonstrating foundational knowledge of Oracle Cloud Infrastructure services and solutions.",
+    description: "Certification demonstrating foundational knowledge of Oracle Cloud Infrastructure services, security model, compliance, billing, and governance.",
     certificateImage: "/images/certificates/oracle-oci-foundations.jpg",
     verificationUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=C01E6C73130827CA3E980423A6120A382E0F1C8BCD10099AE85D1A2B07C65E9D",
-    relatedSkills: ["OCI", "Cloud Computing", "Linux", "Docker"],
+    relatedSkills: ["OCI", "Cloud Computing", "Networking", "Security"],
   },
   {
     title: "Python for Data Science",
@@ -190,7 +190,7 @@ export const credentials: Credential[] = [
     description: "Certification course covering Python programming, data analysis, and visualization techniques for data science applications.",
     certificateImage: "/images/certificates/nptel-python-data-science.jpg",
     verificationUrl: "https://nptel.ac.in/noc/E_Certificate/NPTEL25CS104S44540397809142614",
-    relatedSkills: ["Python", "Data Science", "Pandas", "NumPy"],
+    relatedSkills: ["Python", "Spyder", "NumPy", "Pandas", "Matplotlib"],
   },
   {
     title: "AWS Fundamentals",
