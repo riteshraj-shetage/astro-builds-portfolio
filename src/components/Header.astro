@@ -45,6 +45,13 @@ const navItems = [
               class="nav-link px-3 py-2 text-sm text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
               data-section={item.href.substring(1)}
             >
+              {item.icon && (
+                <Icon
+                  name={item.icon}
+                  size={16}
+                  class="w-4 h-4 mr-1 mb-1 inline-block text-gh-fg-muted"
+                />
+              )}
               {item.name}
             </a>
           ))
@@ -105,13 +112,13 @@ const navItems = [
             href={item.href}
             class="block px-3 py-2.5 text-sm text-center text-gh-fg-default no-underline hover:text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all mb-1"
           >
-            {/* {item.icon && (
+            {item.icon && (
               <Icon
                 name={item.icon}
                 size={16}
-                class="w-4 h-4 mr-1 mb-1 inline-block"
+                class="w-4 h-4 mr-1 mb-1 inline-block text-gh-fg-muted"
               />
-            )} */}
+            )}
             {item.name}
           </a>
         ))
