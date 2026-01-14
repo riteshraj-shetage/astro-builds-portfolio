@@ -105,7 +105,7 @@ export const projects: Project[] = [
     description: "A self-hostable stack that runs n8n as a private automation backend with persistence, HTTPS, and backups built in.",
     technologies: ["Docker", "n8n", "Traefik", "Ubuntu 24.04", "Shell Scripts"],
     github: "https://github.com/riteshraj-shetage/n8n-compose",
-    demo: "",
+    demo: "https://n8n.riteshrajshetage.me",
     image: "/images/projects/project-placeholder-3.svg",
   },
   {
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     description: "A modern, responsive portfolio template built with Astro and Tailwind CSS. GitHub-inspired design with CI/CD integration.",
     technologies: ["Astro", "Tailwind CSS", "TypeScript", "GitHub CI/CD"],
     github: "https://github.com/riteshraj-shetage/astro-builds-portfolio",
-    demo: "https://github.com/riteshraj-shetage/",
+    demo: "https://riteshraj-shetage.github.io",
     image: "/images/projects/project-placeholder-4.svg",
   },
 ];
