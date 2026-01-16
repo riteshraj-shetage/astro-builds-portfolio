@@ -15,7 +15,7 @@ export type PersonalInfo = {
 }
 
 export type Skill = {
-  category: "Frontend" | "Backend" | "Tools" | "Database";
+  category: string;
   items: string[];
 }
 
@@ -70,16 +70,16 @@ export const personalInfo: PersonalInfo = {
 
 export const skills: Skill[] = [
   {
-    category: "Frontend",
+    category: "Frontend & Web",
     items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Astro"],
   },
   {
-    category: "Backend",
+    category: "Backend & Database",
     items: ["Node.js", "Python", "MySQL", "MongoDB", "FastAPI"],
   },
   {
-    category: "Tools",
-    items: ["Git", "Docker", "AWS", "GitHub Actions", "Linux"],
+    category: "Tools & Platforms",
+    items: ["Git", "Docker", "AWS", "GitHub Actions", "Ubuntu"],
   },
 ];
 
