@@ -42,14 +42,14 @@ const navItems = [
           navItems.map((item) => (
             <a
               href={item.href}
-              class="nav-link px-3 py-2 text-sm text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
+              class="nav-link px-2 py-2 text-sm text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
               data-section={item.href.substring(1)}
             >
               {item.icon && (
                 <Icon
                   name={item.icon}
                   size={16}
-                  class="w-4 h-4 mr-1 mb-1 inline-block text-gh-fg-muted"
+                  class="w-4 h-4 mr-0.5 mb-1 inline-block text-gh-fg-muted"
                 />
               )}
               {item.name}
@@ -63,7 +63,7 @@ const navItems = [
         <!-- Theme Toggle Button (Desktop) -->
         <button
           id="theme-toggle"
-          class="ml-2 p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all relative tooltip-container"
+          class="ml-1 p-2 text-gh-fg-default hover:text-gh-accent-fg hover:bg-gh-canvas-subtle rounded-md transition-all relative tooltip-container"
           aria-label="Toggle theme"
         >
           <Icon name="sun" size={20} class="w-5 h-5 hidden" id="sun-icon" />
