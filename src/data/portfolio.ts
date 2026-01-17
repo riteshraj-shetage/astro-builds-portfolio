@@ -35,7 +35,7 @@ export const projects = [
     title: "IT Flashcards API",
     description: "A RESTful API for IT flashcards built with FastAPI and MongoDB, providing endpoints for CRUD operations and user authentication.",
     technologies: ["Python", "FastAPI", "Pydantic", "PyMongo", "MongoDB",],
-    github: "",
+    github: "https://github.com/riteshraj-shetage/cards-crudapi",
     demo: "",
     image: "/images/projects/project-placeholder-1.svg",
   },
