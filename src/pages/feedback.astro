@@ -1,0 +1,320 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout
+  title="Feedback | Portfolio"
+  description="Share your feedback about the portfolio"
+>
+  <div class="max-w-2xl w-full mx-auto">
+    <section id="feedback" class="section py-7 md:py-14">
+      <div class="container-custom">
+        <div class="section-header">
+          <h2 class="section-title">Give Feedback</h2>
+          <p class="section-subtitle">
+            Your feedback helps me improve. Share your thoughts!
+          </p>
+        </div>
+
+        <!-- Feedback Form -->
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          id="feedbackForm"
+          class="bg-slate-900 border border-slate-800 rounded-xl p-8 needs-validation"
+          data-astro-reload
+          novalidate
+        >
+          <!-- Add your Web3Forms Access Key -->
+          <input
+            type="hidden"
+            name="access_key"
+            value={import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY}
+          />
+
+          <!-- Bot check -->
+          <input type="checkbox" class="hidden" name="botcheck" />
+
+          <!-- Subject for email -->
+          <input type="hidden" name="subject" value="New Portfolio Feedback" />
+
+          <!-- Rating Section -->
+          <div class="mb-6">
+            <label class="block text-lg font-semibold mb-3 text-slate-200">
+              How do you feel about the portfolio?
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <label class="rating-option cursor-pointer">
+                <input
+                  type="radio"
+                  name="rating"
+                  value="Hate it"
+                  class="sr-only rating-input"
+                />
+                <div
+                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                >
+                  <div class="text-3xl grayscale-image">😞</div>
+                  <div class="text-sm font-medium text-slate-400">Hate it</div>
+                </div>
+              </label>
+
+              <label class="rating-option cursor-pointer">
+                <input
+                  type="radio"
+                  name="rating"
+                  value="Not great"
+                  class="sr-only rating-input"
+                />
+                <div
+                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                >
+                  <div class="text-3xl grayscale-image">😕</div>
+                  <div class="text-sm font-medium text-slate-400">
+                    Not great
+                  </div>
+                </div>
+              </label>
+
+              <label class="rating-option cursor-pointer">
+                <input
+                  type="radio"
+                  name="rating"
+                  value="It's ok"
+                  class="sr-only rating-input"
+                />
+                <div
+                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                >
+                  <div class="text-3xl grayscale-image">😊</div>
+                  <div class="text-sm font-medium text-slate-400">It's ok</div>
+                </div>
+              </label>
+
+              <label class="rating-option cursor-pointer">
+                <input
+                  type="radio"
+                  name="rating"
+                  value="Love it"
+                  class="sr-only rating-input"
+                />
+                <div
+                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                >
+                  <div class="text-3xl grayscale-image">😍</div>
+                  <div class="text-sm font-medium text-slate-400">Love it</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Name Field -->
+          <div class="mb-5">
+            <label
+              for="name"
+              class="block text-md font-semibold mb-2 text-slate-200"
+            >
+              Name (optional)
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              class="w-full px-4 py-3 bg-slate-950 border border-slate-700 placeholder:text-slate-500 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-slate-200"
+            />
+          </div>
+
+          <!-- Email Field -->
+          <div class="mb-5">
+            <label
+              for="email"
+              class="block text-md font-semibold mb-2 text-slate-200"
+            >
+              Email (optional)
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your.email@example.com"
+              class="w-full px-4 py-3 bg-slate-950 border border-slate-700 placeholder:text-slate-500 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-slate-200"
+            />
+            <div class="invalid-feedback text-red-400 text-sm mt-1">
+              Please provide a valid email address.
+            </div>
+          </div>
+
+          <!-- Message Field -->
+          <div class="mb-6">
+            <label
+              for="message"
+              class="block text-md font-semibold mb-2 text-slate-200"
+            >
+              Your feedback <span class="text-red-400">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Tell me what you think about the portfolio..."
+              class="w-full px-4 py-3 bg-slate-950 border border-slate-700 placeholder:text-slate-500 rounded-lg outline-none h-32 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-y text-slate-200"
+            ></textarea>
+            <div
+              class="empty-feedback invalid-feedback text-red-400 text-sm mt-1"
+            >
+              Please enter your feedback message.
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full px-6 py-3 btn btn-primary">
+            <Icon name="share" size={20} class="w-5 h-5" />
+            Send Feedback
+          </button>
+
+          <!-- Result Message -->
+          <div id="result" class="mt-4 text-center"></div>
+        </form>
+
+        <!-- Back Link -->
+        <div class="text-center mt-8">
+          <a
+            href="/"
+            class="btn btn-secondary inline-flex items-center gap-2 transition-all text-md"
+          >
+            <Icon
+              name="arrow-left"
+              size={20}
+              class="w-5 h-5 text-gh-fg-muted"
+            />
+            Back to home
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Form Validation Styles */
+      .invalid-feedback,
+      .empty-feedback {
+        display: none;
+      }
+
+      .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+        display: block;
+      }
+
+      .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+        display: block;
+      }
+
+      .is-invalid,
+      .was-validated :invalid {
+        border-color: #dc3545;
+      }
+
+      /* Rating Selection Styles */
+      .rating-option input:checked ~ .rating-card {
+        border-color: #3b82f6;
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .rating-option input:checked ~ .rating-card .text-slate-400 {
+        color: #3b82f6;
+      }
+
+      .rating-option input:checked ~ .rating-card .grayscale-image {
+        filter: grayscale(0%);
+      }
+
+      .rating-option:hover .rating-card .grayscale-image {
+        filter: grayscale(0%);
+      }
+
+      .grayscale-image {
+        filter: grayscale(100%);
+        transition: filter 0.2s;
+      }
+
+      /* Screen Reader Only */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+
+    <script is:inline>
+      // Use astro:page-load event if you are using View Transitions
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          const form = document.getElementById("feedbackForm");
+          const result = document.getElementById("result");
+
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            form.classList.add("was-validated");
+
+            if (!form.checkValidity()) {
+              form.querySelectorAll(":invalid")[0].focus();
+              return;
+            }
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.innerHTML = "Sending...";
+            result.className = "mt-4 text-center text-slate-400";
+
+            fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: json,
+            })
+              .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                  result.classList.remove("text-slate-400");
+                  result.classList.add("text-green-400");
+                  result.innerHTML =
+                    "✓ " + json.message + " Thank you for your feedback!";
+                } else {
+                  console.log(response);
+                  result.classList.remove("text-slate-400");
+                  result.classList.add("text-red-400");
+                  result.innerHTML = json.message;
+                }
+              })
+              .catch((error) => {
+                console.log(error);
+                result.classList.remove("text-slate-400");
+                result.classList.add("text-red-400");
+                result.innerHTML = "Something went wrong!";
+              })
+              .then(function () {
+                form.reset();
+                form.classList.remove("was-validated");
+                setTimeout(() => {
+                  result.style.display = "none";
+                }, 5000);
+              });
+          });
+        },
+        { once: true },
+      );
+    </script>
+  </div></BaseLayout
+>

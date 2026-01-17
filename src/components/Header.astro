@@ -37,21 +37,21 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-1 relative">
+      <div class="hidden md:flex items-center gap-2 relative">
         {
           navItems.map((item) => (
             <a
               href={item.href}
-              class="nav-link px-2 py-2 text-sm text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
+              class="nav-link px-2.5 py-2 text-sm text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
               data-section={item.href.substring(1)}
             >
-              {item.icon && (
+              {/* {item.icon && (
                 <Icon
                   name={item.icon}
                   size={16}
                   class="w-4 h-4 mr-0.5 mb-1 inline-block text-gh-fg-muted"
                 />
-              )}
+              )} */}
               {item.name}
             </a>
           ))

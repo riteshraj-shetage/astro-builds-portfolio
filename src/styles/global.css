@@ -180,10 +180,11 @@
   .section {
     @apply py-20 md:py-32;
     position: relative;
+    border-bottom: 1px solid var(--gh-border-subtle);
   }
 
-  .section-alt {
-    @apply bg-gh-canvas-subtle;
+  .section:last-child {
+    border-bottom: none;
   }
 
   .container-custom {
