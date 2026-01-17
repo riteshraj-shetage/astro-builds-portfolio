@@ -1,60 +1,6 @@
-// Type definitions for better type safety and maintainability
-export type PersonalInfo = {
-  name: string;
-  title: string;
-  tagLine: string;
-  bio: string;
-  quote: string;
-  location: string;
-  email: string;
-  github: string;
-  linkedin: string;
-  profileImage: string;
-  brandLogo: string;
-  brandName: string;
-}
+// Use type definitions for better type safety and maintainability (if required)
 
-export type Skill = {
-  category: "Frontend" | "Backend" | "Tools" | "Database";
-  items: string[];
-}
-
-export type Project = {
-  title: string;
-  description: string;
-  technologies: string[];
-  github: string;
-  demo: string;
-  image: string;
-  status: string;
-}
-
-export type Education = {
-  degree: string;
-  institution: string;
-  period: string;
-  description: string;
-  grade: string;
-  isCurrent?: boolean;
-}
-
-export type Highlight = {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-export type Credential = {
-  title: string;
-  issuer: string;
-  date: string;
-  description: string;
-  certificateImage: string;
-  verificationUrl: string;
-  relatedSkills: string[];
-}
-
-export const personalInfo: PersonalInfo = {
+export const personalInfo = {
   name: "Your Name",
   title: "Full Stack Developer",
   tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
@@ -69,7 +15,7 @@ export const personalInfo: PersonalInfo = {
   brandName: "Your Brand",
 };
 
-export const skills: Skill[] = [
+export const skills = [
   {
     category: "Frontend",
     items: ["React", "TypeScript", "Astro", "Tailwind CSS", "Next.js"],
@@ -84,7 +30,7 @@ export const skills: Skill[] = [
   },
 ];
 
-export const projects: Project[] = [
+export const projects = [
   {
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
@@ -92,7 +38,6 @@ export const projects: Project[] = [
     github: "https://github.com/yourusername/ecommerce",
     demo: "https://demo.example.com",
     image: "/images/projects/project-placeholder-1.svg",
-    status: "Active",
   },
   {
     title: "AI Code Assistant",
@@ -101,7 +46,6 @@ export const projects: Project[] = [
     github: "https://github.com/yourusername/ai-assistant",
     demo: "https://ai-demo.example.com",
     image: "/images/projects/project-placeholder-2.svg",
-    status: "Active",
   },
   {
     title: "Task Management App",
@@ -110,7 +54,6 @@ export const projects: Project[] = [
     github: "https://github.com/yourusername/taskmanager",
     demo: "https://tasks.example.com",
     image: "/images/projects/project-placeholder-3.svg",
-    status: "In Development",
   },
   {
     title: "Portfolio Template",
@@ -119,11 +62,10 @@ export const projects: Project[] = [
     github: "https://github.com/yourusername/portfolio-template",
     demo: "https://portfolio.example.com",
     image: "/images/projects/project-placeholder-4.svg",
-    status: "Active",
   },
 ];
 
-export const education: Education[] = [
+export const education = [
     {
     degree: "Master of Science in Software Engineering",
     institution: "Modern Institute of Technology",
@@ -148,7 +90,7 @@ export const education: Education[] = [
   },
 ];
 
-export const highlights: Highlight[] = [
+export const highlights = [
   {
     title: "Full Stack Development",
     description: "Building scalable web applications and distributed systems",
@@ -171,7 +113,7 @@ export const highlights: Highlight[] = [
   }
 ];
 
-export const credentials: Credential[] = [
+export const credentials = [
   {
     title: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
