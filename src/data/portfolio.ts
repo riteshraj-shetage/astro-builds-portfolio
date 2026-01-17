@@ -1,59 +1,6 @@
-// Type definitions for better type safety and maintainability
-export type PersonalInfo = {
-  name: string;
-  title: string;
-  tagLine: string;
-  bio: string;
-  quote: string;
-  location: string;
-  email: string;
-  github: string;
-  linkedin: string;
-  profileImage: string;
-  brandLogo: string;
-  brandName: string;
-}
+// Use type definitions for better type safety and maintainability (if needed)
 
-export type Skill = {
-  category: string;
-  items: string[];
-}
-
-export type Project = {
-  title: string;
-  description: string;
-  technologies: string[];
-  github: string;
-  demo: string;
-  image: string;
-}
-
-export type Education = {
-  degree: string;
-  institution: string;
-  period: string;
-  description: string;
-  grade: string;
-  isCurrent?: boolean;
-}
-
-export type Highlight = {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-export type Credential = {
-  title: string;
-  issuer: string;
-  date: string;
-  description: string;
-  certificateImage: string;
-  verificationUrl: string;
-  relatedSkills: string[];
-}
-
-export const personalInfo: PersonalInfo = {
+export const personalInfo = {
   name: "Riteshraj Shetage",
   title: "Full Stack Developer",
   tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
@@ -68,7 +15,7 @@ export const personalInfo: PersonalInfo = {
   brandName: "RITESHRAJ.",
 };
 
-export const skills: Skill[] = [
+export const skills = [
   {
     category: "Frontend & Web",
     items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Astro"],
@@ -83,7 +30,7 @@ export const skills: Skill[] = [
   },
 ];
 
-export const projects: Project[] = [
+export const projects = [
   {
     title: "IT Flashcards API",
     description: "A RESTful API for IT flashcards built with FastAPI and MongoDB, providing endpoints for CRUD operations and user authentication.",
@@ -118,7 +65,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const education: Education[] = [
+export const education = [
     {
     degree: "Master of Computer Applications",
     institution: "Rajarshi Shahu College of Engineering, Pune",
@@ -150,7 +97,7 @@ export const education: Education[] = [
   },
 ];
 
-export const highlights: Highlight[] = [
+export const highlights = [
   {
     title: "Full Stack Development",
     description: "Building scalable web applications and distributed systems",
@@ -173,7 +120,7 @@ export const highlights: Highlight[] = [
   }
 ];
 
-export const credentials: Credential[] = [
+export const credentials = [
   {
     title: "Oracle Certified Foundations Associate, OCI 2025",
     issuer: "Oracle University",
