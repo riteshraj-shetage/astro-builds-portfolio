@@ -243,7 +243,6 @@
   .btn-secondary:hover {
     @apply no-underline shadow-md;
     background-color: var(--gh-btn-secondary-hover-bg, #e5e7ea);
-    border-color: var(--gh-border-muted, #d8dee4);
   }
 
   /* Card Styles */
