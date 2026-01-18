@@ -71,7 +71,7 @@ export const education = [
     institution: "Rajarshi Shahu College of Engineering, Pune",
     period: "2024 - 2026",
     description: "Advanced studies in computer science, software development, and system design. Engaged in projects involving cloud computing and AI/ML applications.",
-    grade: "CGPA: 9.21/10",
+    grade: "CGPA: 9.21",
     isCurrent: true,
   },
   {
@@ -79,7 +79,7 @@ export const education = [
     institution: "Rajarshi Chhatrapati Shahu College, Kolhapur",
     period: "2021 - 2024",
     description: "Focused on statistical methods and data analysis. Completed projects on data visualization and predictive modeling.",
-    grade: "CGPA: 7.82/10",
+    grade: "CGPA: 7.82",
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
