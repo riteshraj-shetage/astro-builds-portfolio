@@ -23,7 +23,7 @@ const navItems = [
         class="flex items-center gap-2.5 no-underline transition-all group"
       >
         <div
-          class="w-8 h-8 transition-transform group-hover:scale-110 text-gh-fg-default"
+          class="w-10 h-10 transition-transform group-hover:scale-110 text-gh-fg-default"
         >
           <img
             src={personalInfo.brandLogo}
@@ -31,7 +31,7 @@ const navItems = [
             class="w-full h-full rounded-md"
           />
         </div>
-        <span class="text-lg font-semibold tracking-tight text-gh-fg-default"
+        <span class="text-2xl font-semibold tracking-tight text-gh-fg-default"
           >{personalInfo.brandName}</span
         >
       </a>
@@ -42,14 +42,14 @@ const navItems = [
           navItems.map((item) => (
             <a
               href={item.href}
-              class="nav-link px-2.5 py-2 text-sm text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
+              class="nav-link px-2.5 py-2 text-md text-gh-fg-default hover:bg-gh-canvas-subtle rounded-md transition-all no-underline font-medium"
               data-section={item.href.substring(1)}
             >
               {/* {item.icon && (
                 <Icon
                   name={item.icon}
                   size={16}
-                  class="w-4 h-4 mr-0.5 mb-1 inline-block text-gh-fg-muted"
+                  class="w-5 h-5 mr-1 mb-1 inline-block text-gh-fg-muted"
                 />
               )} */}
               {item.name}
