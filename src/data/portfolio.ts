@@ -10,7 +10,7 @@ export const personalInfo = {
   email: "riteshraj.shetage@outlook.com",
   github: "https://github.com/riteshraj-shetage",
   linkedin: "https://linkedin.com/in/riteshraj-shetage",
-  profileImage: "/images/profile.png",
+  profileImage: "/images/profile-image.png",
   brandLogo: "/images/brand-logo.svg",
   brandName: "iteshraj",
 };
@@ -22,7 +22,7 @@ export const skills = [
   },
   {
     category: "Backend & Database",
-    items: ["Node.js", "Python", "MySQL", "MongoDB", "FastAPI"],
+    items: ["Node.js", "Python", "FastAPI", "MySQL", "MongoDB"],
   },
   {
     category: "Tools & Platforms",
@@ -88,7 +88,7 @@ export const education = [
     description: "Completed HSC with a focus on Science stream, excelling in Physics and Mathematics.",
     grade: "Score: 77.17%",
   },
-    {
+  {
     degree: "Secondary School Certificate (SSC)",
     institution: "Shaskiya Vidyaniketan Pusegaon, Satara",
     period: "2018 - 2019",

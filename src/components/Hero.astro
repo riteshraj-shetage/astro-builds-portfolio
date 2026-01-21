@@ -24,19 +24,12 @@ import Icon from "./Icon.astro";
             <div
               class="w-56 h-56 md:w-72 md:h-72 rounded-full border-2 border-gh-border-default bg-gh-canvas-default animate-fade-in overflow-hidden"
             >
-              {
-                personalInfo.profileImage ? (
-                  <img
-                    src={personalInfo.profileImage}
-                    alt={personalInfo.name}
-                    class="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div class="w-full h-full flex items-center justify-center text-7xl md:text-8xl font-bold text-gh-accent-fg">
-                    {personalInfo.name.charAt(0)}
-                  </div>
-                )
-              }
+              <img
+                src={personalInfo.profileImage ||
+                  "/images/profile-placeholder.svg"}
+                alt={personalInfo.name}
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -85,24 +78,24 @@ import Icon from "./Icon.astro";
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-3 rounded-full bg-gh-accent-subtle border-2 border-gh-accent-muted hover:border-gh-accent-fg hover:bg-gh-accent-emphasis hover:scale-110 transition-all group no-underline shadow-md"
+              class="p-3 rounded-full bg-gh-accent-subtle border-2 border-gh-accent-muted hover:border-gh-accent-fg hover:bg-gh-accent-emphasis hover:scale-110 active:scale-95 transition-all duration-200 ease-in-out group shadow-md"
               aria-label="GitHub"
             >
               <Icon
                 name="mark-github"
                 size={24}
-                class="w-6 h-6 text-gh-accent-fg group-hover:text-white transition-colors"
+                class="w-6 h-6 text-gh-accent-fg group-hover:text-white transition-colors duration-200"
               />
             </a>
             <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-3 rounded-full bg-gh-accent-subtle border-2 border-gh-accent-muted hover:border-gh-accent-fg hover:bg-gh-accent-emphasis hover:scale-110 transition-all group no-underline shadow-md"
+              class="p-3 rounded-full bg-gh-accent-subtle border-2 border-gh-accent-muted hover:border-gh-accent-fg hover:bg-gh-accent-emphasis hover:scale-110 active:scale-95 transition-all duration-200 ease-in-out group shadow-md"
               aria-label="LinkedIn"
             >
               <svg
-                class="w-6 h-6 text-gh-accent-fg group-hover:text-white transition-colors"
+                class="w-6 h-6 text-gh-accent-fg group-hover:text-white transition-colors duration-200"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
