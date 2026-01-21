@@ -2,8 +2,8 @@
 
 export const personalInfo = {
   name: "Riteshraj Shetage",
-  title: "Full Stack Developer",
-  tagLine: "Passionate about building elegant solutions to complex problems. Open source enthusiast.",
+  title: "Python Developer | Open Source Enthusiast",
+  tagLine: "Passionate about building elegant solutions to complex problems.",
   bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
   quote: "Be the change you wish to see in the world.",
   location: "Pune, Maharashtra",
@@ -12,7 +12,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/riteshraj-shetage",
   profileImage: "/images/profile.png",
   brandLogo: "/images/brand-logo.svg",
-  brandName: "RITESHRAJ.",
+  brandName: "iteshraj",
 };
 
 export const skills = [

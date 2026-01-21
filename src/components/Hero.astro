@@ -5,7 +5,7 @@ import Icon from "./Icon.astro";
 
 <section
   id="home"
-  class="section min-h-screen flex items-center relative overflow-hidden"
+  class="section min-h-screen flex items-center relative overflow-hidden pt-20 md:pt-24"
 >
   <!-- Background gradient effect -->
   <div
@@ -16,23 +16,23 @@ import Icon from "./Icon.astro";
   <div class="container-custom relative z-10">
     <div class="max-w-6xl mx-auto">
       <div
-        class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16 animate-fade-in-up"
+        class="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-20 animate-fade-in-up"
       >
         <!-- Avatar with GitHub-style border -->
         <div class="flex-shrink-0">
           <div class="relative">
             <div
-              class="w-48 h-48 md:w-64 md:h-64 rounded-full p-1 border-2 border-gh-border-default bg-gh-canvas-subtle animate-scale-in"
+              class="w-56 h-56 md:w-72 md:h-72 rounded-full border-2 border-gh-border-default bg-gh-canvas-default animate-fade-in overflow-hidden"
             >
               {
                 personalInfo.profileImage ? (
                   <img
                     src={personalInfo.profileImage}
                     alt={personalInfo.name}
-                    class="w-full h-full rounded-full object-cover bg-gh-canvas-default"
+                    class="w-full h-full object-cover"
                   />
                 ) : (
-                  <div class="w-full h-full rounded-full bg-gh-canvas-default flex items-center justify-center text-7xl md:text-8xl font-bold text-gh-accent-fg">
+                  <div class="w-full h-full flex items-center justify-center text-7xl md:text-8xl font-bold text-gh-accent-fg">
                     {personalInfo.name.charAt(0)}
                   </div>
                 )
@@ -42,11 +42,11 @@ import Icon from "./Icon.astro";
         </div>
 
         <!-- Content -->
-        <div class="flex-1 text-center md:text-left space-y-6">
+        <div class="flex-1 text-center md:text-left space-y-8 md:space-y-10">
           <!-- Name and Title -->
-          <div class="space-y-3">
+          <div class="space-y-6">
             <h1
-              class="text-4xl md:text-5xl lg:text-6xl font-bold text-gh-fg-default leading-tight pb-2"
+              class="text-4xl md:text-5xl lg:text-6xl font-semibold text-gh-fg-default leading-tight"
             >
               {personalInfo.name}
             </h1>
@@ -59,13 +59,15 @@ import Icon from "./Icon.astro";
           </div>
 
           <!-- TagLine -->
-          <p class="text-base md:text-lg text-gh-fg-subtle leading-relaxed">
+          <p
+            class="text-base md:text-lg text-gh-fg-subtle leading-relaxed max-w-2xl mx-auto md:mx-0"
+          >
             {personalInfo.tagLine}
           </p>
 
           <!-- CTA Buttons -->
           <div
-            class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2"
+            class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-4"
           >
             <a href="#projects" class="btn btn-primary min-w-[180px]">
               <Icon name="apps" size={20} class="w-5 h-5" />
@@ -78,7 +80,7 @@ import Icon from "./Icon.astro";
           </div>
 
           <!-- Social Links -->
-          <div class="flex gap-4 justify-center md:justify-start pt-4">
+          <div class="flex gap-5 justify-center md:justify-start pt-6">
             <a
               href={personalInfo.github}
               target="_blank"
@@ -114,7 +116,7 @@ import Icon from "./Icon.astro";
       </div>
 
       <!-- Scroll indicator -->
-      <div class="pt-20 text-center animate-bounce">
+      <div class="hidden md:block pt-20 text-center animate-bounce">
         <a
           href="#about"
           class="inline-block text-gh-fg-subtle hover:text-gh-accent-fg transition-colors no-underline"

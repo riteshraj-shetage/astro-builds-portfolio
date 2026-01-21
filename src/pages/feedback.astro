@@ -14,7 +14,7 @@ import Footer from "../components/Footer.astro";
     <section id="feedback" class="section py-7 md:py-14">
       <div class="container-custom">
         <div class="section-header">
-          <h2 class="section-title">Portfolio Feedback</h2>
+          <h2 class="section-title">Feedback</h2>
           <p class="section-subtitle">
             Your feedback helps me improve. Share your thoughts!
           </p>
@@ -38,9 +38,9 @@ import Footer from "../components/Footer.astro";
           <!-- Rating Section -->
           <div class="mb-6">
             <label class="block text-lg mb-3 text-gh-fg-default">
-              How do you feel about my portfolio?
+              How do u feel about my portfolio?
             </label>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+            <div class="grid grid-cols-4 gap-2 sm:gap-5">
               <label
                 class="rating-option flex flex-col items-center gap-2"
                 data-color="danger"
@@ -52,12 +52,16 @@ import Footer from "../components/Footer.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-danger-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-2 sm:p-4 hover:text-gh-danger-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-14 h-14 sm:w-20 sm:h-20"
                 >
-                  <Icon name="smiley-frustrated" size={32} />
+                  <Icon
+                    name="smiley-frustrated"
+                    size={24}
+                    class="sm:w-8 sm:h-8"
+                  />
                 </div>
                 <div
-                  class="text-sm font-medium text-gh-fg-muted pointer-events-none"
+                  class="text-xs sm:text-sm font-medium text-gh-fg-muted pointer-events-none"
                 >
                   Hate it
                 </div>
@@ -74,12 +78,12 @@ import Footer from "../components/Footer.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-attention-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-2 sm:p-4 hover:text-gh-attention-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-14 h-14 sm:w-20 sm:h-20"
                 >
-                  <Icon name="smiley-frown" size={32} />
+                  <Icon name="smiley-frown" size={24} class="sm:w-8 sm:h-8" />
                 </div>
                 <div
-                  class="text-sm font-medium text-gh-fg-muted pointer-events-none"
+                  class="text-xs sm:text-sm font-medium text-gh-fg-muted pointer-events-none"
                 >
                   Not great
                 </div>
@@ -96,12 +100,12 @@ import Footer from "../components/Footer.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-accent-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-2 sm:p-4 hover:text-gh-accent-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-14 h-14 sm:w-20 sm:h-20"
                 >
-                  <Icon name="smiley" size={32} />
+                  <Icon name="smiley" size={24} class="sm:w-8 sm:h-8" />
                 </div>
                 <div
-                  class="text-sm font-medium text-gh-fg-muted pointer-events-none"
+                  class="text-xs sm:text-sm font-medium text-gh-fg-muted pointer-events-none"
                 >
                   It's ok
                 </div>
@@ -118,12 +122,12 @@ import Footer from "../components/Footer.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-success-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-2 sm:p-4 hover:text-gh-success-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-14 h-14 sm:w-20 sm:h-20"
                 >
-                  <Icon name="smiley-grin" size={32} />
+                  <Icon name="smiley-grin" size={24} class="sm:w-8 sm:h-8" />
                 </div>
                 <div
-                  class="text-sm font-medium text-gh-fg-muted pointer-events-none"
+                  class="text-xs sm:text-sm font-medium text-gh-fg-muted pointer-events-none"
                 >
                   Love it
                 </div>
@@ -140,7 +144,7 @@ import Footer from "../components/Footer.astro";
               id="message"
               name="message"
               required
-              placeholder="Provide your thoughts, ideas, or suggestions here…"
+              placeholder="Share your feedback & suggestions here…"
               class="w-full px-4 py-3 bg-canvas-subtle border border-border-default placeholder:text-fg-muted rounded-lg outline-none h-48 transition-all resize-y text-fg-default bg-gh-canvas-inset"
             ></textarea>
           </div>
