@@ -19,7 +19,7 @@ const navItems = [
     <div class="flex items-center justify-between">
       <!-- Logo/Brand -->
       <a
-        href="#home"
+        href="/"
         class="flex items-center gap-2.5 no-underline transition-all group"
       >
         <div
@@ -70,6 +70,14 @@ const navItems = [
           <Icon name="moon" size={20} class="w-5 h-5" id="moon-icon" />
           <span class="tooltip">Toggle theme</span>
         </button>
+
+        <!-- Give Feedback Button (Desktop) -->
+        <a
+          href="/feedback"
+          class="px-4 py-2 text-sm font-medium btn-secondary rounded-md transition-all no-underline flex items-center gap-2"
+        >
+          Give feedback
+        </a>
       </div>
 
       <!-- Mobile Menu and Theme Toggle Buttons -->

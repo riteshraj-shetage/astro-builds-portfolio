@@ -1,12 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "../components/Icon.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Feedback | Portfolio"
-  description="Share your feedback about the portfolio"
+  title="Feedback | My Portfolio"
+  description="Share your feedback about my portfolio"
 >
+  <Header />
   <div class="max-w-2xl w-full mx-auto">
     <section id="feedback" class="section py-7 md:py-14">
       <div class="container-custom">
@@ -22,7 +25,7 @@ import Icon from "../components/Icon.astro";
           action="https://api.web3forms.com/submit"
           method="POST"
           id="feedbackForm"
-          class="bg-slate-900 border border-slate-800 rounded-xl p-5"
+          class="bg-gh-canvas-subtle border border-border-default rounded-xl p-5"
         >
           <input
             type="hidden"
@@ -34,8 +37,17 @@ import Icon from "../components/Icon.astro";
 
           <!-- Rating Section -->
           <div class="mb-6">
-            <label class="block text-lg font-semibold mb-3 text-slate-200">
-              How do you feel about my portfolio?
+            <label class="block text-lg font-semibold mb-3 text-gh-fg-default">
+              How do you feel about my{" "}
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gh-accent-fg hover:underline transition-colors"
+              >
+                portfolio
+              </a>
+              ?
             </label>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
               <label
@@ -49,12 +61,12 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-danger-fg bg-slate-950 border-2 border-slate-700 rounded-full transition-all hover:border-slate-600 aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-danger-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
                 >
                   <Icon name="smiley-frustrated" size={32} />
                 </div>
                 <div
-                  class="text-sm font-medium text-slate-400 pointer-events-none"
+                  class="text-sm font-medium text-fg-muted pointer-events-none"
                 >
                   Hate it
                 </div>
@@ -71,12 +83,12 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-attention-fg bg-slate-950 border-2 border-slate-700 rounded-full transition-all hover:border-slate-600 aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-attention-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
                 >
                   <Icon name="smiley-frown" size={32} />
                 </div>
                 <div
-                  class="text-sm font-medium text-slate-400 pointer-events-none"
+                  class="text-sm font-medium text-fg-muted pointer-events-none"
                 >
                   Not great
                 </div>
@@ -93,12 +105,12 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-accent-fg bg-slate-950 border-2 border-slate-700 rounded-full transition-all hover:border-slate-600 aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-accent-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
                 >
                   <Icon name="smiley" size={32} />
                 </div>
                 <div
-                  class="text-sm font-medium text-slate-400 pointer-events-none"
+                  class="text-sm font-medium text-fg-muted pointer-events-none"
                 >
                   It's ok
                 </div>
@@ -115,12 +127,12 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-success-fg bg-slate-950 border-2 border-slate-700 rounded-full transition-all hover:border-slate-600 aspect-square w-20 h-20"
+                  class="rating-card cursor-pointer flex items-center justify-center p-4 hover:text-gh-success-fg bg-canvas-subtle border-2 border-border-default rounded-full transition-all hover:border-border-muted aspect-square w-20 h-20"
                 >
                   <Icon name="smiley-grin" size={32} />
                 </div>
                 <div
-                  class="text-sm font-medium text-slate-400 pointer-events-none"
+                  class="text-sm font-medium text-fg-muted pointer-events-none"
                 >
                   Love it
                 </div>
@@ -132,16 +144,16 @@ import Icon from "../components/Icon.astro";
           <div class="mb-6">
             <label
               for="message"
-              class="block text-lg font-semibold mb-2 text-slate-200"
+              class="block text-lg font-semibold mb-2 text-fg-default"
             >
-              Your feedback <span class="text-red-400">*</span>
+              Your feedback <span class="text-gh-danger-fg">*</span>
             </label>
             <textarea
               id="message"
               name="message"
               required
               placeholder="Write your feedback here..."
-              class="w-full px-4 py-3 bg-slate-950 border border-slate-700 placeholder:text-slate-500 rounded-lg outline-none h-48 transition-all resize-y text-slate-200"
+              class="w-full px-4 py-3 bg-canvas-subtle border border-border-default placeholder:text-fg-muted rounded-lg outline-none h-48 transition-all resize-y text-fg-default bg-gh-canvas-inset"
             ></textarea>
           </div>
 
@@ -157,122 +169,113 @@ import Icon from "../components/Icon.astro";
           <!-- Result Message -->
           <div id="result" class="mt-4 text-center"></div>
         </form>
-
-        <!-- Back Link -->
-        <div class="text-center mt-8">
-          <a
-            href="/"
-            class="text-gh-accent-fg hover:underline transition-colors no-underline"
-          >
-            <Icon
-              name="arrow-left"
-              size={16}
-              class="w-5 h-5 inline-block mr-0.25 mb-0.5"
-            />
-            Back to home
-          </a>
-        </div>
       </div>
     </section>
-
-    <style>
-      .rating-option[data-color="danger"] input:checked ~ .rating-card {
-        border-color: var(--gh-danger-fg);
-        color: var(--gh-danger-fg);
-      }
-
-      .rating-option[data-color="attention"] input:checked ~ .rating-card {
-        border-color: var(--gh-attention-fg);
-        color: var(--gh-attention-fg);
-      }
-
-      .rating-option[data-color="accent"] input:checked ~ .rating-card {
-        border-color: var(--gh-accent-fg);
-        color: var(--gh-accent-fg);
-      }
-
-      .rating-option[data-color="success"] input:checked ~ .rating-card {
-        border-color: var(--gh-success-fg);
-        color: var(--gh-success-fg);
-      }
-
-      .rating-option input:checked ~ .rating-card {
-        color: inherit;
-      }
-
-      .rating-option input:checked ~ div:last-child {
-        color: inherit;
-      }
-
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
-    </style>
-
-    <script is:inline>
-      document.addEventListener(
-        "DOMContentLoaded",
-        () => {
-          const form = document.getElementById("feedbackForm");
-          const result = document.getElementById("result");
-
-          form.addEventListener("submit", async function (e) {
-            e.preventDefault();
-
-            if (!form.checkValidity()) {
-              return;
-            }
-
-            const formData = new FormData(form);
-            const json = JSON.stringify(Object.fromEntries(formData));
-
-            result.innerHTML = "Sending...";
-            result.className = "mt-4 text-center text-slate-400";
-
-            try {
-              const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                },
-                body: json,
-              });
-
-              const data = await response.json();
-
-              if (response.status === 200) {
-                result.classList.remove("text-slate-400");
-                result.classList.add("text-green-400");
-                result.innerHTML =
-                  "✓ " + data.message + " Thank you for your feedback!";
-              } else {
-                result.classList.remove("text-slate-400");
-                result.classList.add("text-red-400");
-                result.innerHTML = data.message;
-              }
-            } catch (error) {
-              result.classList.remove("text-slate-400");
-              result.classList.add("text-red-400");
-              result.innerHTML = "Something went wrong!";
-            } finally {
-              form.reset();
-              setTimeout(() => {
-                result.style.display = "none";
-              }, 5000);
-            }
-          });
-        },
-        { once: true },
-      );
-    </script>
   </div>
+  <Footer />
+
+  <style>
+    .rating-option[data-color="danger"] input:checked ~ .rating-card {
+      border-color: var(--gh-danger-fg);
+      color: var(--gh-danger-fg);
+    }
+
+    .rating-option[data-color="attention"] input:checked ~ .rating-card {
+      border-color: var(--gh-attention-fg);
+      color: var(--gh-attention-fg);
+    }
+
+    .rating-option[data-color="accent"] input:checked ~ .rating-card {
+      border-color: var(--gh-accent-fg);
+      color: var(--gh-accent-fg);
+    }
+
+    .rating-option[data-color="success"] input:checked ~ .rating-card {
+      border-color: var(--gh-success-fg);
+      color: var(--gh-success-fg);
+    }
+
+    .rating-option input:checked ~ div:last-child {
+      color: inherit;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+
+  <script is:inline>
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        const form = document.getElementById("feedbackForm");
+        const result = document.getElementById("result");
+
+        // Fix header navigation links
+        const headerLinks = document.querySelectorAll('header a[href^="#"]');
+        headerLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            window.location.href = "/#" + targetId;
+          });
+        });
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          if (!form.checkValidity()) {
+            return;
+          }
+
+          const formData = new FormData(form);
+          const json = JSON.stringify(Object.fromEntries(formData));
+
+          result.innerHTML = "Sending...";
+          result.className = "mt-4 text-center text-slate-400";
+
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: json,
+            });
+
+            const data = await response.json();
+
+            if (response.status === 200) {
+              result.classList.remove("text-slate-400");
+              result.classList.add("text-gh-success-fg");
+              result.innerHTML = "Thank you for your feedback!";
+            } else {
+              result.classList.remove("text-slate-400");
+              result.classList.add("text-gh-danger-fg");
+              result.innerHTML = data.message;
+            }
+          } catch (error) {
+            result.classList.remove("text-slate-400");
+            result.classList.add("text-gh-danger-fg");
+            result.innerHTML = "Something went wrong!";
+          } finally {
+            form.reset();
+            setTimeout(() => {
+              result.style.display = "none";
+            }, 5000);
+          }
+        });
+      },
+      { once: true },
+    );
+  </script>
 </BaseLayout>
