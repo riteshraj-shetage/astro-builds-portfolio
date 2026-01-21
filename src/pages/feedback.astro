@@ -115,7 +115,7 @@ import Icon from "../components/Icon.astro";
               name="message"
               required
               placeholder="Tell me what you think about the portfolio..."
-              class="w-full px-4 py-3 bg-slate-950 border border-slate-700 placeholder:text-slate-500 rounded-lg outline-none h-48 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-y text-slate-200"
+              class="w-full px-4 py-3 bg-slate-950 border border-slate-700 placeholder:text-slate-500 rounded-lg outline-none h-48 transition-all resize-y text-slate-200"
             ></textarea>
           </div>
 
@@ -124,6 +124,7 @@ import Icon from "../components/Icon.astro";
             type="submit"
             class="w-full text-base px-6 py-3 btn btn-primary"
           >
+            <Icon name="rocket" size={16} class="w-5 h-5" />
             Send Feedback
           </button>
 
@@ -140,7 +141,7 @@ import Icon from "../components/Icon.astro";
             <Icon
               name="arrow-left"
               size={16}
-              class="w-5 h-5 inline-block mr-1 mb-0.5"
+              class="w-5 h-5 inline-block mr-0.25 mb-0.5"
             />
             Back to home
           </a>
@@ -150,12 +151,12 @@ import Icon from "../components/Icon.astro";
 
     <style>
       .rating-option input:checked ~ .rating-card {
-        border-color: #3b82f6;
-        background: rgba(59, 130, 246, 0.1);
+        border-color: var(--gh-accent-emphasis);
+        background: rgba(56, 139, 253, 0.1);
       }
 
       .rating-option input:checked ~ .rating-card .text-slate-400 {
-        color: #3b82f6;
+        color: var(--gh-accent-emphasis);
       }
 
       .rating-option input:checked ~ .rating-card .grayscale-image {
@@ -170,7 +171,6 @@ import Icon from "../components/Icon.astro";
         filter: grayscale(100%);
         transition: filter 0.2s;
       }
-
       .sr-only {
         position: absolute;
         width: 1px;
