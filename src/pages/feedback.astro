@@ -38,7 +38,7 @@ import Icon from "../components/Icon.astro";
               How do you feel about my portfolio?
             </label>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
-              <label class="rating-option cursor-pointer">
+              <label class="rating-option cursor-pointer" data-color="danger">
                 <input
                   type="radio"
                   name="rating"
@@ -46,14 +46,17 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                  class="rating-card flex flex-col items-center gap-2 p-4 hover:text-gh-danger-fg bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
                 >
-                  <div class="text-3xl grayscale-image">😞</div>
+                  <Icon name="smiley-frustrated" size={32} />
                   <div class="text-sm font-medium text-slate-400">Hate it</div>
                 </div>
               </label>
 
-              <label class="rating-option cursor-pointer">
+              <label
+                class="rating-option cursor-pointer"
+                data-color="attention"
+              >
                 <input
                   type="radio"
                   name="rating"
@@ -61,16 +64,16 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                  class="rating-card flex flex-col items-center gap-2 p-4 hover:text-gh-attention-fg bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
                 >
-                  <div class="text-3xl grayscale-image">😕</div>
+                  <Icon name="smiley-frown" size={32} />
                   <div class="text-sm font-medium text-slate-400">
                     Not great
                   </div>
                 </div>
               </label>
 
-              <label class="rating-option cursor-pointer">
+              <label class="rating-option cursor-pointer" data-color="accent">
                 <input
                   type="radio"
                   name="rating"
@@ -78,14 +81,14 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                  class="rating-card flex flex-col items-center gap-2 p-4 hover:text-gh-accent-fg bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
                 >
-                  <div class="text-3xl grayscale-image">😊</div>
+                  <Icon name="smiley" size={32} />
                   <div class="text-sm font-medium text-slate-400">It's ok</div>
                 </div>
               </label>
 
-              <label class="rating-option cursor-pointer">
+              <label class="rating-option cursor-pointer" data-color="success">
                 <input
                   type="radio"
                   name="rating"
@@ -93,9 +96,9 @@ import Icon from "../components/Icon.astro";
                   class="sr-only"
                 />
                 <div
-                  class="rating-card flex flex-col items-center gap-2 p-4 bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
+                  class="rating-card flex flex-col items-center gap-2 p-4 hover:text-gh-success-fg bg-slate-950 border-2 border-slate-700 rounded-lg transition-all hover:border-slate-600"
                 >
-                  <div class="text-3xl grayscale-image">😍</div>
+                  <Icon name="smiley-grin" size={32} />
                   <div class="text-sm font-medium text-slate-400">Love it</div>
                 </div>
               </label>
@@ -150,24 +153,39 @@ import Icon from "../components/Icon.astro";
     </section>
 
     <style>
+      .rating-option[data-color="danger"] input:checked ~ .rating-card {
+        border-color: var(--gh-danger-fg);
+        color: var(--gh-danger-fg);
+      }
+
+      .rating-option[data-color="attention"] input:checked ~ .rating-card {
+        border-color: var(--gh-attention-fg);
+        color: var(--gh-attention-fg);
+      }
+
+      .rating-option[data-color="accent"] input:checked ~ .rating-card {
+        border-color: var(--gh-accent-fg);
+        color: var(--gh-accent-fg);
+      }
+
+      .rating-option[data-color="success"] input:checked ~ .rating-card {
+        border-color: var(--gh-success-fg);
+        color: var(--gh-success-fg);
+      }
+
       .rating-option input:checked ~ .rating-card {
-        border-color: var(--gh-accent-emphasis);
-        background: rgba(56, 139, 253, 0.1);
+        color: inherit;
       }
 
-      .rating-option input:checked ~ .rating-card .text-slate-400 {
-        color: var(--gh-accent-emphasis);
-      }
-
-      .rating-option input:checked ~ .rating-card .grayscale-image {
+      .rating-option input:checked ~ .rating-card svg {
         filter: grayscale(0%);
       }
 
-      .rating-option:hover .rating-card .grayscale-image {
+      .rating-option:hover .rating-card svg {
         filter: grayscale(0%);
       }
 
-      .grayscale-image {
+      .rating-card svg {
         filter: grayscale(100%);
         transition: filter 0.2s;
       }
