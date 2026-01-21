@@ -44,7 +44,7 @@ export const projects = [
     description: "A Python-based utility to scrape academic portal for new updates, sending real-time alerts via ntfy.",
     technologies: ["Python", "Playwright", "Beautiful Soup", "ntfy", "SQLite"],
     github: "https://github.com/riteshraj-shetage/edusync",
-    demo: "",
+    demo: "https://ntfy.riteshrajshetage.me/",
     image: "/images/projects/project-placeholder-2.svg",
   },
   {
