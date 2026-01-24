@@ -82,14 +82,14 @@ export const education = [
     grade: "CGPA: 7.82",
   },
   {
-    degree: "Higher Secondary Certificate (HSC)",
+    degree: "Higher Secondary Certificate",
     institution: "Govt. of Maharashtra's Rajaram College, Kolhapur",
     period: "2020 - 2021",
     description: "Completed HSC with a focus on Science stream, excelling in Physics and Mathematics.",
     grade: "Score: 77.17%",
   },
   {
-    degree: "Secondary School Certificate (SSC)",
+    degree: "Secondary School Certificate",
     institution: "Shaskiya Vidyaniketan Pusegaon, Satara",
     period: "2018 - 2019",
     description: "Completed SSC with a focus on Science stream, achieving high marks in Mathematics and Science.",
