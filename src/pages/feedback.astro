@@ -150,13 +150,22 @@ import Footer from "../components/Footer.astro";
           </div>
 
           <!-- Submit Button -->
-          <button
-            type="submit"
-            class="w-full text-base px-6 py-3 btn btn-primary"
-          >
-            <Icon name="rocket" size={16} class="w-5 h-5" />
-            Send Feedback
-          </button>
+          <div class="flex gap-2.5 justify-end">
+            <button
+              type="reset"
+              class="w-fit text-base text-gh-fg-muted hover:text-gh-fg-default px-3 py-2 btn hidden"
+              id="resetBtn"
+            >
+              Clear
+            </button>
+            <button
+              type="submit"
+              class="w-fit text-base px-3 py-2 btn btn-primary"
+            >
+              <Icon name="rocket" size={16} class="w-5 h-5" />
+              Send Feedback
+            </button>
+          </div>
 
           <!-- Result Message -->
           <div id="result" class="mt-4 text-center"></div>
@@ -221,6 +230,18 @@ import Footer from "../components/Footer.astro";
           });
         });
 
+        form.addEventListener("input", () => {
+          const clearBtn = document.getElementById("resetBtn");
+          clearBtn.classList.remove("hidden");
+        });
+
+        form.addEventListener("reset", () => {
+          const clearBtn = document.getElementById("resetBtn");
+          clearBtn.classList.add("hidden");
+          result.innerHTML = "";
+          result.className = "mt-4 text-center";
+        });
+
         form.addEventListener("submit", async function (e) {
           e.preventDefault();
 
@@ -261,6 +282,8 @@ import Footer from "../components/Footer.astro";
             result.innerHTML = "Something went wrong!";
           } finally {
             form.reset();
+            const clearBtn = document.getElementById("clearBtn");
+            clearBtn.classList.add("hidden");
             setTimeout(() => {
               result.style.display = "none";
             }, 5000);
