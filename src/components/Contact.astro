@@ -1,6 +1,7 @@
 ---
 import { personalInfo } from "../data/portfolio";
 import Icon from "./Icon.astro";
+import Message from "./Message.astro";
 ---
 
 <section id="contact" class="section">
@@ -90,104 +91,8 @@ import Icon from "./Icon.astro";
         </div>
 
         <!-- Right Column: Contact Form -->
-        <div
-          class="card-highlight animate-fade-in-up"
-          style="animation-delay: 0.2s"
-        >
-          <div class="flex items-center mb-6 justify-between">
-            <h3 class="text-2xl font-semibold text-gh-fg-default">
-              Send a Message
-            </h3>
-
-            <!-- <a
-              href="/feedback"
-              class="text-gh-attention-fg hover:underline transition-colors no-underline"
-            >
-              <Icon name="report" size={20} class="w-5 h-5 inline-block mr-1" />
-            </a> -->
-          </div>
-          <form class="space-y-5">
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-medium text-gh-fg-default mb-2"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="w-full px-4 py-2.5 bg-gh-canvas-inset border border-gh-border-default rounded-md text-gh-fg-default transition-all"
-                placeholder="Your name"
-              />
-            </div>
-
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-medium text-gh-fg-default mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="w-full px-4 py-2.5 bg-gh-canvas-inset border border-gh-border-default rounded-md text-gh-fg-default transition-all"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label
-                for="message"
-                class="block text-sm font-medium text-gh-fg-default mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                class="w-full px-4 py-2.5 bg-gh-canvas-inset border border-gh-border-default rounded-md text-gh-fg-default resize-none transition-all"
-                placeholder="Your message..."></textarea>
-            </div>
-
-            <button type="submit" class="w-full btn btn-primary">
-              <Icon name="paper-airplane" size={20} class="w-5 h-5" />
-              Send Message
-            </button>
-          </form>
-        </div>
+        <Message />
       </div>
     </div>
   </div>
 </section>
-
-<script>
-  import { personalInfo } from "../data/portfolio";
-
-  const form = document.querySelector("form");
-
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Get form data
-    const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
-
-    // Create mailto link with user's email from portfolio data
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-    const body = encodeURIComponent(
-      `From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
-
-    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
-  });
-</script>
