@@ -69,6 +69,7 @@ export const education = [
     {
     degree: "Master of Computer Applications",
     institution: "Rajarshi Shahu College of Engineering, Pune",
+    instituteURL: "https://www.jspmrscoe.edu.in/",
     period: "2024 - 2026",
     description: "Advanced studies in computer science, software development, and system design. Engaged in projects involving cloud computing and AI/ML applications.",
     grade: "CGPA: 9.21",
@@ -77,6 +78,7 @@ export const education = [
   {
     degree: "Bachelor of Science in Statistics",
     institution: "Rajarshi Chhatrapati Shahu College, Kolhapur",
+    instituteURL: "https://www.rcsc.ac.in/",
     period: "2021 - 2024",
     description: "Focused on statistical methods and data analysis. Completed projects on data visualization and predictive modeling.",
     grade: "CGPA: 7.82",
@@ -84,6 +86,7 @@ export const education = [
   {
     degree: "Higher Secondary Certificate",
     institution: "Govt. of Maharashtra's Rajaram College, Kolhapur",
+    instituteURL: "",
     period: "2020 - 2021",
     description: "Completed HSC with a focus on Science stream, excelling in Physics and Mathematics.",
     grade: "Score: 77.17%",
@@ -91,6 +94,7 @@ export const education = [
   {
     degree: "Secondary School Certificate",
     institution: "Shaskiya Vidyaniketan Pusegaon, Satara",
+    instituteURL: "",
     period: "2018 - 2019",
     description: "Completed SSC with a focus on Science stream, achieving high marks in Mathematics and Science.",
     grade: "Score: 95.60%",
