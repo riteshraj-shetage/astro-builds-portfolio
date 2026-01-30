@@ -86,7 +86,7 @@ export const education = [
   {
     degree: "Higher Secondary Certificate",
     institution: "Govt. of Maharashtra's Rajaram College, Kolhapur",
-    instituteURL: "",
+    instituteURL: "https://rajaramcollege.com/",
     period: "2020 - 2021",
     description: "Completed HSC with a focus on Science stream, excelling in Physics and Mathematics.",
     grade: "Score: 77.17%",
