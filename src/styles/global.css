@@ -215,7 +215,7 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-medium transition-all duration-200 no-underline;
     line-height: 1.5;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 500;
   }
 
