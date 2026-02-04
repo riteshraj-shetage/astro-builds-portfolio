@@ -68,7 +68,7 @@ export const projects = [
 export const education = [
     {
     degree: "Master of Computer Applications",
-    institution: "Rajarshi Shahu College of Engineering, Pune",
+    institution: "JSPM's Rajarshi Shahu College of Engineering, Pune",
     instituteURL: "https://www.jspmrscoe.edu.in/",
     period: "2024 - 2026",
     description: "Advanced studies in computer science, software development, and system design. Engaged in projects involving cloud computing and AI/ML applications.",
