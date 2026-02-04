@@ -32,7 +32,7 @@ import Icon from './Icon.astro';
                         <h3 class="text-xl font-semibold text-gh-fg-default">{edu.degree}</h3>
                       </div>
                         {edu.instituteURL ? (
-                          <a href={edu.instituteURL} class="text-gh-fg-default text-md mb-2" target="_blank" rel="noopener noreferrer"><Icon name="organization" size={16} class="w-4.5 h-4.5 text-gh-fg-muted inline-block mb-1 mr-2" /><span class="text-gh-accent-fg">{edu.institution}</span></a>
+                          <a href={edu.instituteURL} class="text-md mb-2 hover:underline hover:text-gh-accent-fg" target="_blank" rel="noopener noreferrer"><Icon name="organization" size={16} class="w-4.5 h-4.5 text-gh-fg-muted inline-block mb-1 mr-2" /><span class="text-gh-accent-fg">{edu.institution}</span></a>
                         ) : (
                           <div class="text-gh-fg-default text-md mb-2"><Icon name="organization" size={16} class="w-4.5 h-4.5 text-gh-fg-muted inline-block mb-1 mr-2" /><span class="text-gh-accent-fg">{edu.institution}</span></div>
                         )}
