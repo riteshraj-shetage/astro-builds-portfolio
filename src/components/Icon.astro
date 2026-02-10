@@ -18,15 +18,16 @@ if (!icon) {
 // Generate the SVG HTML. Provide sensible defaults for fill and viewBox so icons inherit text color
 // and have a consistent coordinate system. Keep width/height from `size` prop.
 const svgHtml = icon
-  ? icon.toSVG({ width: size, height: size, fill: 'currentColor' })
-  : '';
+  ? icon.toSVG({ width: size, height: size, fill: "currentColor" })
+  : "";
 
 // Insert `id` and `class` attributes onto the <svg> tag in one operation to avoid multiple
 // string replacements which can miss the tag after the first replacement.
 let finalSvg = svgHtml;
 if (svgHtml && (className || id)) {
-  const attrs = `${id ? ` id="${id}"` : ''}${className ? ` class="${className}"` : ''}`;
+  const attrs = `${id ? ` id="${id}"` : ""}${className ? ` class="${className}"` : ""}`;
   finalSvg = svgHtml.replace(/^<svg\b/, `<svg${attrs}`);
 }
 ---
+
 {finalSvg && <div set:html={finalSvg} style="display: contents;" />}

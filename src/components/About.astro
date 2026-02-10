@@ -4,7 +4,7 @@ import Devicon from "./Devicon.astro";
 import Icon from "./Icon.astro";
 ---
 
-<section id="about" class="section section-alt">
+<section id="about" class="section">
   <div class="container-custom">
     <div class="section-header">
       <h2 class="section-title">About Me</h2>
@@ -82,7 +82,7 @@ import Icon from "./Icon.astro";
             <Icon
               name="sparkle"
               size={20}
-              class="w-5 h-5 text-gh-gold inline-block mr-2 mb-1"
+              class="w-5 h-5 text-gh-success-fg inline-block mr-2 mb-1"
             />
             Highlights
           </h3>
@@ -98,9 +98,7 @@ import Icon from "./Icon.astro";
                     />
                   </div>
                   <div class="flex-1">
-                    <h4 class="font-semibold text-gh-fg-default mb-1">
-                      {highlight.title}
-                    </h4>
+                    <h4 class="text-gh-fg-default mb-1">{highlight.title}</h4>
                     <p class="text-sm text-gh-fg-muted">
                       {highlight.description}
                     </p>
@@ -113,14 +111,14 @@ import Icon from "./Icon.astro";
       </div>
 
       <!-- View Resume Button -->
-      <div class="mt-16 text-center">
+      <div class="mt-20 text-center">
         <a
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-secondary inline-flex items-center gap-2"
         >
-          <Icon name="file-badge" size={20} class="w-5 h-5" />
+          <Icon name="file-badge" size={20} class="w-5 h-5 text-gh-fg-muted" />
           View Resume
         </a>
       </div>

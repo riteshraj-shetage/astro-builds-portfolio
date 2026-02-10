@@ -1,16 +1,16 @@
 ---
-import { projects } from '../data/portfolio';
+import { personalInfo, projects } from '../data/portfolio';
 import Icon from './Icon.astro';
 ---
 
-<section id="projects" class="section section-alt">
+<section id="projects" class="section">
   <div class="container-custom">
     <div class="section-header">
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">A showcase of my work and open-source contributions</p>
     </div>
 
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
       {projects.map((project, index) => (
         <div class="card-highlight animate-fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
           <!-- Project Image with Hover Overlay -->
@@ -30,7 +30,7 @@ import Icon from './Icon.astro';
                     rel="noopener noreferrer"
                     class="btn btn-secondary text-sm"
                   >
-                    <Icon name="code" size={16} class="w-5 h-5" />
+                    <Icon name="code" size={24} class="w-5 h-5" />
                     Code
                   </a>
                 )}
@@ -41,7 +41,7 @@ import Icon from './Icon.astro';
                     rel="noopener noreferrer"
                     class="btn btn-primary text-sm"
                   >
-                    <Icon name="link-external" size={16} class="w-5 h-5" />
+                    <Icon name="link-external" size={24} class="w-5 h-5" />
                     View
                   </a>
                 )}
@@ -66,7 +66,7 @@ import Icon from './Icon.astro';
             <!-- Technologies -->
             <div class="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gh-accent-subtle text-gh-accent-fg border border-gh-accent-muted hover:bg-gh-accent-emphasis hover:text-white transition-colors">{tech}</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gh-accent-subtle text-gh-accent-fg hover:bg-gh-accent-emphasis hover:text-white transition-colors">{tech}</span>
               ))}
             </div>
           </div>
@@ -74,9 +74,9 @@ import Icon from './Icon.astro';
       ))}
     </div>
 
-    <div class="mt-16 text-center">
-      <a href="https://github.com/yourusername?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-        <Icon name="repo" size={20} class="w-5 h-5" />
+    <div class="mt-20 text-center">
+      <a href={`${personalInfo.github}?tab=repositories`} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        <Icon name="repo" size={20} class="w-5 h-5 text-gh-fg-muted" />
         Browse More
       </a>
     </div>

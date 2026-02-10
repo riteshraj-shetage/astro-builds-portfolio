@@ -180,10 +180,11 @@
   .section {
     @apply py-20 md:py-32;
     position: relative;
+    border-bottom: 1px solid var(--gh-border-subtle);
   }
 
-  .section-alt {
-    @apply bg-gh-canvas-subtle;
+  .section:last-child {
+    border-bottom: none;
   }
 
   .container-custom {
@@ -214,7 +215,7 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-medium transition-all duration-200 no-underline;
     line-height: 1.5;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 500;
   }
 
@@ -242,7 +243,6 @@
   .btn-secondary:hover {
     @apply no-underline shadow-md;
     background-color: var(--gh-btn-secondary-hover-bg, #e5e7ea);
-    border-color: var(--gh-border-muted, #d8dee4);
   }
 
   /* Card Styles */
@@ -405,8 +405,8 @@
   input[type="email"]:focus,
   textarea:focus {
     outline: none;
-    border-color: #58a6ff !important;
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3) !important;
+    border-color: var(--gh-accent-emphasis) !important;
+    border-width: 2px !important;
   }
 }
 

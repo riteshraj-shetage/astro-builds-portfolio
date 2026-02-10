@@ -30,7 +30,6 @@ const convertSkillToIcon = (name: string) => {
     return { icon, variant };
   }
 
-  // Universal conversion: lowercase, remove spaces and dots
   const icon = name.toLowerCase().replace(/\s+/g, "").replace(/\./g, "");
   return { icon, variant: "original" };
 };
