@@ -60,7 +60,7 @@ export const projects = [
     description: "A modern, responsive portfolio template built with Astro and Tailwind CSS. GitHub-inspired design with CI/CD integration.",
     technologies: ["Astro", "Tailwind CSS", "TypeScript", "GitHub CI/CD"],
     github: "https://github.com/riteshraj-shetage/astro-builds-portfolio",
-    demo: "https://riteshraj-shetage.github.io",
+    demo: "https://main.dmh3fx6tlcfsz.amplifyapp.com",
     image: "/images/projects/project-placeholder-4.svg",
   },
 ];
