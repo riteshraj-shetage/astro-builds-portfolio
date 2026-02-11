@@ -140,7 +140,7 @@ export const credentials = [
     date: "October 2025",
     description: "Certification course covering Python programming, data analysis, and visualization techniques for data science applications.",
     certificateImage: "/images/certificates/nptel-python-data-science.jpg",
-    verificationUrl: "https://nptel.ac.in/noc/E_Certificate/NPTEL25CS104S44540397809142614",
+    verificationUrl: "https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs104/Course/NPTEL25CS104S44540397809142614.pdf",
     relatedSkills: ["Python", "Spyder", "NumPy", "Pandas", "Matplotlib"],
   },
   {
