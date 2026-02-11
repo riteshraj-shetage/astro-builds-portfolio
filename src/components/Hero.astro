@@ -1,6 +1,7 @@
 ---
 import { personalInfo } from "../data/portfolio";
 import Icon from "./Icon.astro";
+import { Image } from "astro:assets";
 ---
 
 <section
@@ -24,11 +25,15 @@ import Icon from "./Icon.astro";
             <div
               class="w-56 h-56 md:w-72 md:h-72 rounded-full border-2 border-gh-border-default bg-gh-canvas-default animate-fade-in overflow-hidden"
             >
-              <img
+              <Image
                 src={personalInfo.profileImage ||
                   "/images/profile-placeholder.svg"}
                 alt={personalInfo.name}
+                width={288}
+                height={288}
                 class="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>
