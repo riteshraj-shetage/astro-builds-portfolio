@@ -72,7 +72,7 @@ export const education = [
     instituteURL: "",
     period: "2024 - 2026",
     description: "Specialized in distributed systems and cloud computing. Research on microservices architecture.",
-    grade: "CGPA: 9.5/10",
+    grade: "CGPA: 9.5",
     isCurrent: true,
   },
   {
@@ -81,7 +81,7 @@ export const education = [
     instituteURL: "",
     period: "2021 - 2024",
     description: "Focused on software engineering, algorithms, and data structures. Graduated with honors.",
-    grade: "CGPA: 8.5/10",
+    grade: "CGPA: 8.5",
   },
   {
     degree: "High School Diploma in Science",
