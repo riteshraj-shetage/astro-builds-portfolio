@@ -44,7 +44,7 @@ export const projects = [
     description: "A Python-based utility to scrape academic portal for new updates, sending real-time alerts via ntfy.",
     technologies: ["Python", "Playwright", "Beautiful Soup", "ntfy", "SQLite"],
     github: "https://github.com/riteshraj-shetage/edusync",
-    demo: "https://ntfy.riteshrajshetage.me/",
+    demo: "",
     image: "/images/projects/project-placeholder-2.svg",
   },
   {
@@ -52,7 +52,7 @@ export const projects = [
     description: "A self-hostable stack that runs n8n as a private automation backend with persistence, HTTPS, and backups built in.",
     technologies: ["Docker", "n8n", "Traefik", "Ubuntu 24.04", "Bash Scripts"],
     github: "https://github.com/riteshraj-shetage/n8n-compose",
-    demo: "https://n8n.riteshrajshetage.me",
+    demo: "",
     image: "/images/projects/project-placeholder-3.svg",
   },
   {
