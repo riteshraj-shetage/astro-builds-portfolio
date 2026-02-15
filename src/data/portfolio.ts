@@ -84,7 +84,7 @@ export const education = [
     grade: "CGPA: 7.82",
   },
   {
-    degree: "Higher Secondary Certificate",
+    degree: "12th (Higher Secondary Certificate)",
     institution: "Govt. of Maharashtra's Rajaram College, Kolhapur",
     instituteURL: "https://rajaramcollege.com/",
     period: "2020 - 2021",
@@ -92,7 +92,7 @@ export const education = [
     grade: "Score: 77.17%",
   },
   {
-    degree: "Secondary School Certificate",
+    degree: "10th (Secondary School Certificate)",
     institution: "Shaskiya Vidyaniketan Pusegaon, Satara",
     instituteURL: "",
     period: "2018 - 2019",
