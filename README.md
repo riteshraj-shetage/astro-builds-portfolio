@@ -16,15 +16,16 @@ Create a new project using this template:
 npm create astro@latest -- --template riteshraj-shetage/astro-builds-portfolio
 ```
 
-After creating your project with this template, you’ll be prompted to:
+While creating your portfolio with this template, you’ll be prompted to:
 
+- **Where to create new project?** → ./my-portfolio
 - **Install dependencies?** → Yes
 - **Initialize git?** → Yes
 
 Then:
 
 ```bash
-  cd ./dir-name
+  cd ./my-portfolio
   npm run dev
 ```
 
