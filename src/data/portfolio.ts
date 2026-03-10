@@ -5,7 +5,7 @@ export const personalInfo = {
   title: "Python Developer | Open Source Enthusiast",
   tagLine: "Passionate about building elegant solutions to complex problems.",
   bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
-  quote: "Be the change you wish to see in the world.",
+  quote: "Talk is cheap. Show me the code.",
   location: "Pune, Maharashtra",
   email: "riteshraj.shetage@outlook.com",
   github: "https://github.com/riteshraj-shetage",
