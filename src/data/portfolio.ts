@@ -32,23 +32,23 @@ export const skills = [
 
 export const projects = [
   {
-    title: "IT Flashcards API",
-    description: "A RESTful API for IT flashcards built with FastAPI and MongoDB, providing endpoints for CRUD operations and user authentication.",
-    technologies: ["Python", "FastAPI", "Pydantic", "PyMongo", "MongoDB",],
-    github: "https://github.com/riteshraj-shetage/cards-crudapi",
+    title: "AI-powered Developer Profiler",
+    description: "An AI-powered system that synthesizes Git activity into verifiable professional achievements.",
+    technologies: ["Python", "Django", "SQLite", "React" , "TypeScript", "Gemini API",],
+    github: "https://github.com/riteshraj-shetage/icommit",
     demo: "",
     image: "/images/projects/project-placeholder-1.svg",
   },
   {
-    title: "Academic Portal Utility",
+    title: "Academic Portal Utility Bot",
     description: "A Python-based utility to scrape academic portal for new updates, sending real-time alerts via ntfy.",
     technologies: ["Python", "Playwright", "Beautiful Soup", "ntfy", "SQLite"],
-    github: "https://github.com/riteshraj-shetage/edusync",
+    github: "https://github.com/riteshraj-shetage/get-ntfyd",
     demo: "",
     image: "/images/projects/project-placeholder-2.svg",
   },
   {
-    title: "Private Automation Stack",
+    title: "Private n8n Automation Stack",
     description: "A self-hostable stack that runs n8n as a private automation backend with persistence, HTTPS, and backups built in.",
     technologies: ["Docker", "n8n", "Traefik", "Ubuntu 24.04", "Bash Scripts"],
     github: "https://github.com/riteshraj-shetage/n8n-compose",
