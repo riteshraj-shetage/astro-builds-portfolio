@@ -34,7 +34,7 @@ export const projects = [
   {
     title: "AI-powered Developer Profiler",
     description: "An AI-powered system that synthesizes Git activity into verifiable professional achievements.",
-    technologies: ["Python", "Django", "SQLite", "React" , "TypeScript", "Gemini API",],
+    technologies: ["Python", "Django", "SQLite", "React" , "TypeScript", "Gemini AI",],
     github: "https://github.com/riteshraj-shetage/icommit",
     demo: "",
     image: "/images/projects/project-placeholder-1.svg",
@@ -50,7 +50,7 @@ export const projects = [
   {
     title: "Private n8n Automation Stack",
     description: "A self-hostable stack that runs n8n as a private automation backend with persistence, HTTPS, and backups built in.",
-    technologies: ["Docker", "n8n", "Traefik", "Ubuntu 24.04", "Bash Scripts"],
+    technologies: ["Docker", "n8n", "Traefik", "Shell", "Ubuntu 24.04"],
     github: "https://github.com/riteshraj-shetage/n8n-compose",
     demo: "",
     image: "/images/projects/project-placeholder-3.svg",
