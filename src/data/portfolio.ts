@@ -125,6 +125,15 @@ export const highlights = [
 ];
 
 export const credentials = [
+    {
+    title: "Python Developer Certification",
+    issuer: "freeCodeCamp",
+    date: "April 2026",
+    description: "Comprehensive certification covering advanced Python logic, data structures, and algorithmic problem-solving through project-based learning.",
+    certificateImage: "/images/certificates/fcc-python.jpg",
+    verificationUrl: "https://www.freecodecamp.org/certification/riteshraj-shetage/python-v9",
+    relatedSkills: ["Python", "Data Structures", "Algorithms", "Dynamic Programming"],
+  },
   {
     title: "Oracle Certified Foundations Associate, OCI 2025",
     issuer: "Oracle University",
