@@ -33,7 +33,7 @@ export const skills = [
 export const projects = [
   {
     title: "AI-powered Developer Profiler",
-    description: "An AI-powered system that synthesizes Git activity into verifiable professional achievements.",
+    description: "AI-powered Git profiling that transforms raw commit data into a verified technical portfolio.",
     technologies: ["Python", "Django", "SQLite", "React" , "TypeScript", "Gemini AI",],
     github: "https://github.com/riteshraj-shetage/icommit",
     demo: "",
