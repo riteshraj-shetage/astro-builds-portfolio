@@ -34,7 +34,7 @@ export const projects = [
   {
     title: "AI-powered Developer Profiler",
     description: "AI-powered Git profiling that transforms raw commit data into a verified technical portfolio.",
-    technologies: ["Python", "Django", "SQLite", "React" , "TypeScript", "Gemini AI",],
+    technologies: ["Python", "Django", "PostgreSQL", "React", "GitHub API", "Gemini AI",],
     github: "https://github.com/riteshraj-shetage/icommit",
     demo: "",
     image: "/images/projects/project-placeholder-1.svg",
@@ -58,7 +58,7 @@ export const projects = [
   {
     title: "Developer Portfolio Template",
     description: "A modern, responsive portfolio template built with Astro and Tailwind CSS. GitHub-inspired design with CI/CD integration.",
-    technologies: ["Astro", "Tailwind CSS", "TypeScript", "GitHub CI/CD"],
+    technologies: ["Astro", "Tailwind CSS", "TypeScript", "GitHub Actions"],
     github: "https://github.com/riteshraj-shetage/astro-builds-portfolio",
     demo: "https://main.dmh3fx6tlcfsz.amplifyapp.com",
     image: "/images/projects/project-placeholder-4.svg",
