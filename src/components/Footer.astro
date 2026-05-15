@@ -10,7 +10,16 @@ const currentYear = new Date().getFullYear();
   <div class="container-custom">
     <div class="flex flex-col md:flex-row items-center justify-between gap-2">
       <p class="text-gh-fg-muted text-sm text-center md:text-left">
-        Portafolio de {personalInfo.name}. Built with
+        Portafolio de
+        <a
+          href={personalInfo.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gh-accent-fg hover:text-gh-accent-emphasis no-underline transition-colors"
+        >
+          {personalInfo.name}
+        </a>
+        . Built with
         <a
           href="https://astro.build"
           target="_blank"
