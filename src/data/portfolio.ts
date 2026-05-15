@@ -12,28 +12,28 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/riteshraj-shetage",
   profileImage: "/images/profile-image.png",
   brandLogo: "/images/brand-logo.svg",
-  brandName: "iteshraj",
+  brandName: "ITESHRAJ",
 };
 
 export const skills = [
   {
     category: "Frontend & Web",
-    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Astro"],
+    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Astro", "Tailwind CSS"],
   },
   {
     category: "Backend & Database",
-    items: ["Node.js", "Python", "FastAPI", "MySQL", "MongoDB"],
+    items: ["Python", "Node.js", "Django", "FastAPI", "PostgreSQL", "MySQL", "MongoDB"],
   },
   {
     category: "Tools & Platforms",
-    items: ["Git", "Docker", "AWS", "GitHub Actions", "Ubuntu"],
+    items: ["Git", "Docker", "Linux", "GitHub Actions", "AWS", "IntelliJ", "Figma"],
   },
 ];
 
 export const projects = [
   {
     title: "AI-powered Developer Profiler",
-    description: "AI-powered Git profiling that transforms raw commit data into a verified technical portfolio.",
+    description: "AI-powered Git profiling that transforms raw git activity into a verified technical portfolio.",
     technologies: ["Python", "Django", "PostgreSQL", "React", "GitHub API", "Gemini AI",],
     github: "https://github.com/riteshraj-shetage/icommit",
     demo: "",
@@ -48,8 +48,8 @@ export const projects = [
     image: "/images/projects/project-placeholder-2.svg",
   },
   {
-    title: "Private n8n Automation Stack",
-    description: "A self-hostable stack that runs n8n as a private automation backend with persistence, HTTPS, and backups built in.",
+    title: "Self-Hosted Automation Service",
+    description: "A self-hostable stack that runs n8n as a private automation service with persistence, HTTPS, and backups built in.",
     technologies: ["Docker", "n8n", "Traefik", "Shell", "Ubuntu 24.04"],
     github: "https://github.com/riteshraj-shetage/n8n-compose",
     demo: "",
@@ -126,7 +126,7 @@ export const highlights = [
 export const credentials = [
     {
     title: "Python Developer Certification",
-    issuer: "freecodeCamp",
+    issuer: "freeCodeCamp",
     date: "April 2026",
     description: "Comprehensive certification covering advanced Python logic, data structures, and algorithmic problem-solving through project-based learning.",
     certificateImage: "/images/certificates/fcc-python.jpg",
