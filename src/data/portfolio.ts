@@ -73,7 +73,6 @@ export const education = [
     period: "2024 - 2026",
     description: "Advanced studies in computer science, software development, and system design. Engaged in projects involving cloud computing and AI/ML applications.",
     grade: "CGPA: 9.21",
-    isCurrent: true,
   },
   {
     degree: "Bachelor of Science in Statistics",
@@ -127,7 +126,7 @@ export const highlights = [
 export const credentials = [
     {
     title: "Python Developer Certification",
-    issuer: "freeCodeCamp",
+    issuer: "freecodeCamp",
     date: "April 2026",
     description: "Comprehensive certification covering advanced Python logic, data structures, and algorithmic problem-solving through project-based learning.",
     certificateImage: "/images/certificates/fcc-python.jpg",
@@ -135,7 +134,7 @@ export const credentials = [
     relatedSkills: ["Python", "Data Structures", "Algorithms", "Dynamic Programming"],
   },
   {
-    title: "Oracle Certified Foundations Associate, OCI 2025",
+    title: "Oracle Certified Foundations Associate",
     issuer: "Oracle University",
     date: "October 2025",
     description: "Certification demonstrating foundational knowledge of Oracle Cloud Infrastructure services, security model, compliance, billing, and governance.",
