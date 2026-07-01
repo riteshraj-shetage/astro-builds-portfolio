@@ -1,30 +1,19 @@
-# Astro Builds Portfolio – Live Branch
+# Portfolio — Production Build
 
-This branch contains the **production-ready build** of my portfolio site, deployed at:  
-👉 [riteshrajshetage.me](https://riteshrajshetage.me)
+This branch contains the static build artifacts for my live portfolio.
 
----
-
-## About
-- Built using **Astro** with a custom layout and components.
-- Represents the **live deployment** of the portfolio, not the development source.
-- Contains only finalized assets and code intended for production.
+**Deployment:** [riteshrajshetage.me](https://riteshrajshetage.me)
 
 ---
 
-## Branch Purpose
-- Dedicated to the **live deployment** version of the site.
-- Development and feature work happen in other branches (e.g., `main`, `dev`).
-- Only stable builds are pushed here to ensure consistency with the deployed site.
+## Branch Architecture
 
----
+- **Framework:** Astro (Static Site Generation).
+- **Purpose:** Dedicated deployment branch holding only finalized, production-ready code.
+- **Workflow:** Development occurs in primary branches. Only stable, compiled builds are pushed here to maintain deployment integrity.
 
-## Deployment
-- Hosted at: [riteshrajshetage.me](https://riteshrajshetage.me)
-- Built with Astro’s static site generation.
-- Assets in `/public` are served directly.
+## Infrastructure
 
----
-
-## Credits
-Developed and maintained by **Riteshraj Shetage**. 
+- **Hosting:** [riteshrajshetage.me](https://riteshrajshetage.me)
+- **Assets:** Served directly from `/public`.
+- **Maintainer:** Riteshraj Shetage
