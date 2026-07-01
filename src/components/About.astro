@@ -29,19 +29,19 @@ import Icon from "./Icon.astro";
             {personalInfo.bio}
           </p>
 
-          <!-- Inspirational Quote - GitHub Primer Prose style -->
-          <blockquote class="my-6">
-            <div
-              class="text-5xl text-gh-fg-muted text-md leading-none"
-              aria-hidden="true"
+          <blockquote
+            class="my-8 pl-6 border-l-4 border-gray-300 dark:border-gray-700"
+          >
+            <p
+              class="text-xl italic font-medium text-gh-fg-default leading-relaxed"
             >
-              &ldquo;
-            </div>
-            <p class="text-gh-fg-default">
-              {personalInfo.quote}
+              &ldquo;{personalInfo.quote}&rdquo;
             </p>
-            <footer class="font-mono">
-              {personalInfo.name}, {personalInfo.title}
+            <footer
+              class="mt-4 font-mono text-sm text-gh-fg-muted flex items-center justify-end gap-2"
+            >
+              &mdash;
+              <span class="font-semibold">{personalInfo.name}</span>
             </footer>
           </blockquote>
 

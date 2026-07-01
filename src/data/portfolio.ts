@@ -2,9 +2,9 @@
 
 export const personalInfo = {
   name: "Riteshraj Shetage",
-  title: "Python Developer | Cloud Enthusiast",
+  title: "Python | Linux | Automation",
   tagLine: "Passionate about building elegant solutions to complex problems.",
-  bio: "Aspiring Full Stack Developer with strong programming foundations, skilled in scalable web applications and mastering modern frontend, backend, and cloud technologies.",
+  bio: "Software Engineer with backend and full-stack expertise, building scalable web applications, automating deployment pipelines, and engineering high-performance cloud infrastructure.",
   quote: "Don't seek approval; build leverage.",
   location: "Pune, Maharashtra",
   email: "riteshraj.shetage@outlook.com",
@@ -18,39 +18,39 @@ export const personalInfo = {
 export const skills = [
   {
     category: "Frontend & Web",
-    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Astro", "Tailwind CSS"],
+    items: ["React", "Astro", "Tailwind CSS", "TypeScript", "JavaScript"],
   },
   {
     category: "Backend & Database",
-    items: ["Python", "Node.js", "Django", "FastAPI", "PostgreSQL", "MySQL", "MongoDB"],
+    items: ["Python", "FastAPI", "Django", "PostgreSQL", "SQLite"],
   },
   {
     category: "Tools & Platforms",
-    items: ["Git", "Docker", "Linux", "GitHub Actions", "AWS", "IntelliJ", "Figma"],
+    items: ["Git", "Docker", "Linux", "GitHub Actions", "GraphQL"],
   },
 ];
 
 export const projects = [
   {
-    title: "AI-powered Developer Profiler",
-    description: "AI-powered Git profiling that transforms raw git activity into a verified technical portfolio.",
-    technologies: ["Python", "Django", "PostgreSQL", "React", "GitHub API", "Gemini AI",],
-    github: "https://github.com/riteshraj-shetage/icommit",
-    demo: "",
+    title: "GitHub Telemetry Action (octofetch@v1)",
+    description: "A lightweight, Bun-native execution engine that fires raw query files directly against the GitHub GraphQL API.",
+    technologies: ["TypeScript", "Bun", "GitHub GraphQL API", "GitHub Actions"],
+    github: "https://github.com/riteshraj-shetage/octofetch",
+    demo: "https://github.com/marketplace/actions/octofetch",
     image: "/images/projects/project-placeholder-1.svg",
   },
   {
-    title: "Academic Portal Utility Bot",
-    description: "A Python-based utility to scrape academic portal for new updates, sending real-time alerts via ntfy.",
-    technologies: ["Python", "Playwright", "Beautiful Soup", "ntfy", "SQLite"],
+    title: "Notification Control Plane (powered by ntfy)",
+    description: "A notification control plane that allows users to manage and send notifications to multiple devices and platforms using ntfy.",
+    technologies: ["Python", "FastAPI", "Shell", "Docker Compose", "ntfy", "SQLite"],
     github: "https://github.com/riteshraj-shetage/get-ntfyd",
     demo: "",
     image: "/images/projects/project-placeholder-2.svg",
   },
   {
-    title: "Self-Hosted Automation Service",
+    title: "Self-Hostable Automation Backend (n8n-compose)",
     description: "A self-hostable stack that runs n8n as a private automation service with persistence, HTTPS, and backups built in.",
-    technologies: ["Docker", "n8n", "Traefik", "Shell", "Ubuntu 24.04"],
+    technologies: ["Docker", "n8n", "Traefik", "Shell", "Ubuntu Server"],
     github: "https://github.com/riteshraj-shetage/n8n-compose",
     demo: "",
     image: "/images/projects/project-placeholder-3.svg",
@@ -58,7 +58,7 @@ export const projects = [
   {
     title: "Developer Portfolio Template",
     description: "A modern, responsive portfolio template built with Astro and Tailwind CSS. GitHub-inspired design with CI/CD integration.",
-    technologies: ["Astro", "Tailwind CSS", "TypeScript", "GitHub Actions"],
+    technologies: ["Astro", "Tailwind CSS", "TypeScript", "AWS Amplify"],
     github: "https://github.com/riteshraj-shetage/astro-builds-portfolio",
     demo: "https://main.dmh3fx6tlcfsz.amplifyapp.com",
     image: "/images/projects/project-placeholder-4.svg",
@@ -72,7 +72,7 @@ export const education = [
     instituteURL: "https://www.jspmrscoe.edu.in/",
     period: "2024 - 2026",
     description: "Advanced studies in computer science, software development, and system design. Engaged in projects involving cloud computing and AI/ML applications.",
-    grade: "CGPA: 9.21",
+    grade: "CGPA: 9.20",
   },
   {
     degree: "Bachelor of Science in Statistics",
