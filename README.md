@@ -48,7 +48,7 @@ The template will be live at http://localhost:4321.
 ## Lighthouse Report
 
 This report was generated for the **live site deployed from this template**:  
-👉 [riteshrajshetage.me](https://riteshrajshetage.me)
+👉 [https://riteshraj-shetage.github.io](https://riteshraj-shetage.github.io)
 
 ### Scores
 
@@ -57,4 +57,4 @@ This report was generated for the **live site deployed from this template**:
 - **Best Practices:** 100
 - **SEO:** 100
 
-You can view the full report here: [Lighthouse Report](https://riteshrajshetage.me/reports)
+You can view the full report here: [Lighthouse Report](https://riteshraj-shetage.github.io/reports)
